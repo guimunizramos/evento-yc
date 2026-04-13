@@ -21,6 +21,7 @@ const HeroSection = () => {
       <img src={heroImage} alt="Casa de alto padrão com Estrutura Metálica" className="hidden md:block w-full h-full object-cover" />
       <img src={heroImageMobile} alt="Casa de alto padrão com Estrutura Metálica" className="block md:hidden w-full h-full object-cover" />
       <div className="absolute inset-0 bg-background/75" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-b from-transparent to-background" />
     </div>
 
     {/* Content */}
