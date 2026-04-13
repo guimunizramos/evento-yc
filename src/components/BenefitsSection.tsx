@@ -25,7 +25,7 @@ const BenefitsSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-6 md:mb-16">
           <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">
             Por que o financiamento é a escolha de{" "}
-            <span className="text-primary">investidores inteligentes</span>?
+            <span className="text-primary">investidores inteligentes?</span>
           </h2>
         </div>
 
