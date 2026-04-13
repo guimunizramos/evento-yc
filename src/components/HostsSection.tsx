@@ -1,4 +1,5 @@
 import thiagoPhoto from "@/assets/thiago-cardim.png";
+import juniorPhoto from "@/assets/junior-ganzerli.png";
 
 const hosts = [
   {
