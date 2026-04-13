@@ -21,7 +21,7 @@ const CTASection = () => {
               <div className="flex flex-col gap-4 md:flex-row md:justify-center md:gap-6 mb-8 md:mb-10">
                 <div className="flex items-center justify-center gap-2 text-foreground">
                   <Calendar className="w-4 h-4 md:w-6 md:h-6 text-primary" />
-                  <span className="text-base md:text-lg font-medium"><b>DATA:</b> 02/04</span>
+                  <span className="text-base md:text-lg font-medium"><b>DATA:</b> 07/05</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-foreground">
                   <Clock className="w-4 h-4 md:w-6 md:h-6 text-primary" />

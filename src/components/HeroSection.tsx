@@ -28,18 +28,19 @@ const HeroSection = () => {
       <div className="max-w-4xl text-center flex-col flex items-center justify-center">
         {/* Tag */}
         <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 border border-primary/30 mb-3 md:mb-8">
-          <span className="text-xs md:text-sm font-semibold text-primary uppercase tracking-wider">CONVITE EXCLUSIVO YOUCON</span>
+          <span className="text-xs md:text-sm font-semibold text-primary uppercase tracking-wider">CONSULTORIA EXCLUSIVA YOUCON</span>
         </div>
 
         {/* H1 */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight mb-4 md:mb-6">
-          Vãos livres, elegância e velocidade: O diferencial da{" "}
-          <span className="text-primary">Estrutura Metálica</span> para a sua nova casa.
+          DA COMPRA DO TERRENO AO ACABAMENTO FINAL: FINANCIE{" "}
+          <span className="text-primary">100%</span> DA SUA OBRA DE{" "}
+          <span className="text-primary">ALTO PADRÃO</span>.
         </h1>
 
         {/* H2 */}
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-2xl">
-          Chega de limitações no seu projeto. Descubra como a Estrutura Metálica entrega residências de alto padrão mais rápido, com ambientes 100% integrados e um nível de sofisticação que o concreto comum não acompanha.
+          Descubra como alavancar seu patrimônio e tirar o seu projeto do papel com fluxo de caixa inteligente, taxas exclusivas e as melhores linhas de crédito do mercado.
         </p>
 
         {/* CTA */}
