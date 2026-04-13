@@ -11,12 +11,12 @@ const CTASection = () => {
           <div className="p-6 md:p-8 lg:p-12 rounded-xl md:rounded-3xl border-2 border-primary/40 bg-card/50 glow-box">
             <div className="text-center">
               <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">
-                O projeto da sua nova casa não precisa ter limites.{" "}
-                <span className="text-primary">Inscreva-se.</span>
+                A estratégia financeira que separa o sonho da execução.{" "}
+                <span className="text-primary">Inscreva-se agora.</span>
               </h2>
               <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 md:mb-10 leading-relaxed">
-                Essa é a oportunidade de tirar todas as suas dúvidas diretamente com quem projeta
-                e com quem constrói, antes de tomar sua decisão.
+                Tire suas dúvidas sobre o uso inteligente do crédito imobiliário com quem planeja
+                e com quem viabiliza obras de alto padrão.
               </p>
 
               <div className="flex flex-col gap-4 md:flex-row md:justify-center md:gap-6 mb-8 md:mb-10">
