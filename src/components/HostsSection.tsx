@@ -1,4 +1,5 @@
 import thiagoPhoto from "@/assets/thiago-cardim.png";
+import juniorPhoto from "@/assets/junior-ganzerli.png";
 
 const hosts = [
   {
@@ -13,7 +14,7 @@ const hosts = [
     role: "Convidado Especial",
     title: "Diretor Corpsa Crédito Imobiliário",
     description: "Especialista em crédito imobiliário com quase 30 anos de mercado. À frente da Corpsa, é referência nacional em assessoria e desburocratização de financiamentos habitacionais.",
-    photo: null,
+    photo: juniorPhoto,
   },
 ];
 
