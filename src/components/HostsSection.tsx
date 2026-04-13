@@ -23,7 +23,7 @@ const HostsSection = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-6 md:mb-16">
           <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            A união da Estética com a Engenharia
+            Estratégia, Arquitetura e Inteligência Financeira
           </h2>
         </div>
 
