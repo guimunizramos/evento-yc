@@ -2,10 +2,10 @@ import { Check } from "lucide-react";
 import { Button } from "./ui/button";
 
 const agendaItems = [
-  "A força da Estrutura Metálica na prática para criar vãos livres e integração total.",
-  "Como funciona a linha de produção e montagem que elimina o improviso do canteiro de obras.",
-  "Abertura de números reais: O comparativo financeiro entre o concreto e a estrutura metálica.",
-  "Mesa Redonda: O momento exato para você trazer as perguntas sobre o seu terreno ou as ideias que tem para a sua futura casa.",
+  "Como funciona a análise de crédito para obras residenciais de alto padrão.",
+  "Cronograma físico-financeiro: Como garantir as liberações do banco sem atrasos.",
+  "Modalidade Terreno + Construção: O passo a passo para quem ainda não tem o lote.",
+  "Mesa Redonda: Tire suas dúvidas sobre o seu perfil de crédito e viabilidade bancária.",
 ];
 
 const AgendaSection = () => {
@@ -22,7 +22,7 @@ const AgendaSection = () => {
               O que vamos apresentar nesta Consultoria Fechada:
             </h2>
             <p className="text-sm md:text-lg lg:text-xl text-muted-foreground">
-              Nesta mesa redonda exclusiva, o CEO da YouCon, Thiago Cardim, e o engenheiro Rodrigo Vilela (Arka) vão abrir os bastidores de casas reais e tirar todas as suas dúvidas.
+              O CEO da YouCon, Thiago Cardim, recebe Junior Ganzerli, diretor da Corpsa, para abrir a 'caixa preta' do financiamento de alto padrão.
             </p>
           </div>
 

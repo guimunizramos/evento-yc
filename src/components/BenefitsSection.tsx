@@ -3,18 +3,18 @@ import { Maximize, Rocket, Scale } from "lucide-react";
 const benefits = [
   {
     icon: Maximize,
-    title: "Amplitude e Beleza sem Barreiras",
-    description: "Crie grandes fachadas de vidro e salas totalmente abertas, sem aqueles pilares indesejados no meio do caminho.",
+    title: "Preservação de Patrimônio",
+    description: "Não tire dinheiro dos seus investimentos. Use o crédito bancário para construir enquanto seu capital segue rendendo.",
   },
   {
     icon: Rocket,
-    title: "As Chaves na Mão Muito Antes",
-    description: "Sua casa montada com precisão de fábrica, antecipando o fim da obra e eliminando o \"atraso eterno\".",
+    title: "Taxas Diferenciadas",
+    description: "Entenda as linhas específicas para construção (SBPE) que possuem as menores taxas para o segmento de luxo.",
   },
   {
     icon: Scale,
-    title: "Comparativo Real (Concreto x Metálica)",
-    description: "Entenda em quais cenários essa solução se torna mais inteligente e rentável para o seu orçamento.",
+    title: "Terreno + Construção",
+    description: "Saiba como financiar desde a compra do lote até o acabamento final em um único contrato simplificado.",
   },
 ];
 
@@ -24,7 +24,7 @@ const BenefitsSection = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-6 md:mb-16">
           <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">
-            Por que olhar além da construção tradicional?
+            Por que o financiamento é a escolha de investidores inteligentes?
           </h2>
         </div>
 

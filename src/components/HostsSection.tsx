@@ -1,20 +1,19 @@
 import thiagoPhoto from "@/assets/thiago-cardim.png";
-import rodrigoPhoto from "@/assets/foto-rodrigo.png";
 
 const hosts = [
   {
     name: "THIAGO CARDIM",
     role: "Anfitrião",
     title: "CEO YouCon",
-    description: "Arquiteto focado em entregar residências únicas. É especialista em traduzir os desejos das famílias em projetos atemporais, utilizando métodos construtivos que garantem conforto e previsibilidade.",
+    description: "Arquiteto especialista em viabilizar residências de alto padrão, integrando design arrojado com inteligência financeira e previsibilidade de obra.",
     photo: thiagoPhoto,
   },
   {
-    name: "RODRIGO VILELA",
+    name: "JUNIOR GANZERLI",
     role: "Convidado Especial",
-    title: "Arka Engenharia",
-    description: "Engenheiro especialista em cálculo estrutural e soluções em BIM. É o responsável por transformar projetos arquitetônicos de alta complexidade em estruturas metálicas viáveis e extremamente seguras.",
-    photo: rodrigoPhoto,
+    title: "Diretor Corpsa Crédito Imobiliário",
+    description: "Especialista em crédito imobiliário com quase 30 anos de mercado. À frente da Corpsa, é referência nacional em assessoria e desburocratização de financiamentos habitacionais.",
+    photo: null,
   },
 ];
 
