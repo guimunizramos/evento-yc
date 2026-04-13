@@ -19,7 +19,8 @@ const AgendaSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-6 md:mb-12">
             <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">
-              O que vamos apresentar nesta Consultoria Fechada:
+              O que vamos apresentar nesta{" "}
+              <span className="text-primary">Consultoria Fechada</span>:
             </h2>
             <p className="text-sm md:text-lg lg:text-xl text-muted-foreground">
               O CEO da YouCon, Thiago Cardim, recebe Junior Ganzerli, diretor da Corpsa, para abrir a 'caixa preta' do financiamento de alto padrão.

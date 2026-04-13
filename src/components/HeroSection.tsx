@@ -33,9 +33,8 @@ const HeroSection = () => {
 
         {/* H1 */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight mb-4 md:mb-6">
-          Da compra do Terreno ao Acabamento Final: Financie{" "}
-          <span className="text-primary">100%</span> da sua Obra de{" "}
-          <span className="text-primary">Alto Padrão</span>
+          Da compra do Terreno ao Acabamento Final:{" "}
+          <span className="text-primary">Financie 100% da sua Obra de Alto Padrão</span>
         </h1>
 
         {/* H2 */}
