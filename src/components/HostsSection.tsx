@@ -60,9 +60,10 @@ const HostsSection = () => {
               <p className="text-sm md:text-lg font-semibold text-foreground mb-2 md:mb-4">
                 {host.title}
               </p>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                {host.description}
-              </p>
+              <p
+                className="text-sm md:text-base text-muted-foreground leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: host.description }}
+              />
             </div>
           ))}
         </div>
