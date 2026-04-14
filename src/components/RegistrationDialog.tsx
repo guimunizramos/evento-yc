@@ -90,7 +90,7 @@ const RegistrationDialog = ({ open, onOpenChange }: RegistrationDialogProps) => 
       const password = '123456';
       const credentials = btoa(`${username}:${password}`);
 
-      const response = await fetch("https://webhook.lp-youconprojetos.com.br/webhook/estrutura-metalica", {
+      const response = await fetch("https://webhook.lp-youconprojetos.com.br/webhook/eventos-youcon", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
