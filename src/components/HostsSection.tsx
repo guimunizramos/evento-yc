@@ -14,7 +14,7 @@ const hosts = [
     name: "JUNIOR GANZERLI",
     role: "Convidado Especial",
     title: "Diretor Corpsa Crédito Imobiliário",
-    description: "Especialista em crédito imobiliário com quase 30 anos de mercado e diretor da Corpsa, <strong>o maior correspondente Caixa do Brasil</strong>. É referência nacional em desburocratização e inteligência financeira para o segmento premium.",
+    description: "Especialista em crédito imobiliário com quase 30 anos de mercado e diretor da Corpsa. É referência nacional em desburocratização e inteligência financeira para o segmento premium.",
     photo: juniorPhoto,
   },
 ];
