@@ -33,13 +33,16 @@ const HostsSection = () => {
           {hosts.map((host, index) => (
             <div
               key={index}
-              className="text-center p-4 md:p-8 rounded-xl md:rounded-2xl bg-card border border-border relative overflow-hidden"
+              className="text-center p-4 md:p-8 pt-12 md:pt-14 rounded-xl md:rounded-2xl bg-card border border-border relative overflow-hidden"
             >
-              {/* Rotated Label - Only for Junior */}
+              {/* Top Banner - Only for Junior */}
               {host.name === "JUNIOR GANZERLI" && (
-                <div className="absolute -top-3 -right-12 md:-top-4 md:-right-16 z-10">
-                  <div className="bg-primary text-primary-foreground text-[10px] md:text-xs font-bold uppercase tracking-wider py-1 px-12 md:py-1.5 md:px-16 rotate-45 shadow-lg">
-                    Maior Correspondente Caixa do Brasil
+                <div className="absolute top-0 left-0 right-0 bg-primary z-10">
+                  <div className="flex items-center justify-center gap-1.5 py-1.5 md:py-2 px-4">
+                    <Trophy className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary-foreground" />
+                    <span className="text-primary-foreground text-[10px] md:text-xs font-bold uppercase tracking-wider">
+                      Maior Correspondente Caixa do Brasil
+                    </span>
                   </div>
                 </div>
               )}
