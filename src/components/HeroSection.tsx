@@ -40,7 +40,7 @@ const HeroSection = () => {
   };
   return <section className="relative min-h-screen flex flex-col py-8 md:py-[95px] overflow-hidden">
     {/* Header with Logo */}
-    <header className="relative z-20 md:py-6 py-6">
+    <header className="relative z-20 py-3 md:py-6">
       <div className="container mx-auto px-4 md:px-6 items-center justify-center flex flex-row">
         <img src={youconLogo} alt="YouCon Arquitetura" className="h-8 md:h-12" />
       </div>
