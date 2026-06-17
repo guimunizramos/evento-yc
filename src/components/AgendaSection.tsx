@@ -2,10 +2,10 @@ import { Check } from "lucide-react";
 import { Button } from "./ui/button";
 
 const agendaItems = [
-  "Como funciona a análise de crédito para obras residenciais de alto padrão.",
-  "Cronograma físico-financeiro: Como garantir as liberações do banco sem atrasos.",
-  "Modalidade Terreno + Construção: O passo a passo para quem ainda não tem o lote.",
-  "Mesa Redonda: Tire suas dúvidas sobre o seu perfil de crédito e viabilidade bancária.",
+  "Terreno: O que precisa ser analisado antes de começar o projeto da sua casa.",
+  "Projeto e Orçamento: Como alinhar o que você deseja construir ao valor disponível.",
+  "Decisões Antecipadas: O que precisa ser definido no projeto e não deve ser deixado para a obra.",
+  "Consultoria ao Vivo: Envie suas dúvidas sobre terreno, projeto, orçamento e construção.",
 ];
 
 const AgendaSection = () => {
@@ -20,10 +20,10 @@ const AgendaSection = () => {
           <div className="text-center mb-6 md:mb-12">
             <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">
               O que vamos apresentar nesta{" "}
-              <span className="text-primary">Consultoria Fechada</span>:
+              <span className="text-primary">Consultoria Coletiva</span>:
             </h2>
             <p className="text-sm md:text-lg lg:text-xl text-muted-foreground">
-              O CEO da YouCon, Thiago Cardim, recebe Junior Ganzerli, diretor da Corpsa, para abrir a 'caixa preta' do financiamento de alto padrão.
+              O arquiteto Thiago Cardim vai mostrar os principais erros cometidos por quem pretende construir e como tomar decisões mais seguras antes da obra.
             </p>
           </div>
 

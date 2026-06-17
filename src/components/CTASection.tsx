@@ -11,18 +11,17 @@ const CTASection = () => {
           <div className="p-6 md:p-8 lg:p-12 rounded-xl md:rounded-3xl border-2 border-primary/40 bg-card/50 glow-box">
             <div className="text-center">
               <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">
-                A estratégia financeira que separa o sonho da execução.{" "}
+                As decisões que evitam erros na obra começam no projeto.{" "}
                 <span className="text-primary">Inscreva-se agora.</span>
               </h2>
               <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 md:mb-10 leading-relaxed">
-                Tire suas dúvidas sobre o uso inteligente do crédito imobiliário com quem planeja
-                e com quem viabiliza obras de alto padrão.
+                Participe de uma consultoria coletiva com um arquiteto e entenda como planejar melhor a construção da sua casa, evitando desperdícios, retrabalhos e custos futuros.
               </p>
 
               <div className="flex flex-col gap-4 md:flex-row md:justify-center md:gap-6 mb-8 md:mb-10">
                 <div className="flex items-center justify-center gap-2 text-foreground">
                   <Calendar className="w-4 h-4 md:w-6 md:h-6 text-primary" />
-                  <span className="text-base md:text-lg font-medium"><b>DATA:</b> 07/05</span>
+                  <span className="text-base md:text-lg font-medium"><b>DATA:</b> 01/07</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-foreground">
                   <Clock className="w-4 h-4 md:w-6 md:h-6 text-primary" />
@@ -30,7 +29,7 @@ const CTASection = () => {
                 </div>
                 <div className="flex items-center justify-center gap-2 text-foreground">
                   <MapPin className="w-4 h-4 md:w-6 md:h-6 text-primary" />
-                  <span className="text-base md:text-lg font-medium"><b>Call Fechada</b> ao Vivo (Meet)</span>
+                  <span className="text-base md:text-lg font-medium">Call Fechada ao Vivo (Meet)</span>
                 </div>
               </div>
 
@@ -39,7 +38,7 @@ const CTASection = () => {
               </Button>
 
               <p className="text-xs text-muted-foreground mt-3 md:mt-6">
-                Link enviado após cadastro
+                Link enviado após o cadastro
               </p>
             </div>
           </div>
