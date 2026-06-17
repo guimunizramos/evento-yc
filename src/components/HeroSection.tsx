@@ -71,7 +71,7 @@ const HeroSection = () => {
           <span className="text-xs md:text-sm font-semibold text-primary uppercase tracking-wider">CONSULTORIA EXCLUSIVA YOUCON</span>
         </div>
 
-        {/* H1 */}
+        {/* H1: keep the main headline balanced with CSS instead of manual line breaks. */}
         <h1 className="max-w-[20rem] sm:max-w-[38rem] md:max-w-[48rem] lg:max-w-[56.25rem] text-[1.75rem] sm:text-[2.15rem] md:text-[2.75rem] lg:text-[3.35rem] xl:text-[3.75rem] font-bold text-foreground leading-[1.1] md:leading-[1.08] tracking-[-0.02em] mb-4 md:mb-6">
           <span className="block text-primary">Antes de Construir:</span>
           <span className="block mx-auto max-w-[20rem] sm:max-w-[36rem] md:max-w-[48rem] lg:max-w-[56.25rem] text-balance">
