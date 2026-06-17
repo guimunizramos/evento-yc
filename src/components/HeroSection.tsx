@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-house.jpg";
-import heroImageMobile from "@/assets/hero-house-mobile.jpg";
+import heroImage from "@/assets/bg-desktop.jpg";
+import heroImageMobile from "@/assets/bg-mobile.jpg";
 import youconLogo from "@/assets/youcon-logo.png";
 const HeroSection = () => {
   const scrollToForm = () => {
