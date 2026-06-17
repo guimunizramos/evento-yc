@@ -8,7 +8,7 @@ const HeroSection = () => {
       behavior: 'smooth'
     });
   };
-  return <section className="relative min-h-screen flex flex-col py-8 md:py-[95px]">
+  return <section className="relative min-h-screen flex flex-col py-8 md:py-[95px] overflow-hidden">
     {/* Header with Logo */}
     <header className="relative z-20 md:py-6 py-6">
       <div className="container mx-auto px-4 md:px-6 items-center justify-center flex flex-row">
@@ -18,8 +18,16 @@ const HeroSection = () => {
 
     {/* Background Image with Overlay */}
     <div className="absolute inset-0">
-      <img src={heroImage} alt="Casa de alto padrão com Estrutura Metálica" className="hidden md:block w-full h-full object-cover" />
-      <img src={heroImageMobile} alt="Casa de alto padrão com Estrutura Metálica" className="block md:hidden w-full h-full object-cover" />
+      <div
+        className="hidden md:block absolute inset-0 bg-cover bg-center bg-fixed will-change-transform"
+        style={{ backgroundImage: `url(${heroImage})` }}
+        aria-label="Casa de alto padrão com Estrutura Metálica"
+      />
+      <div
+        className="block md:hidden absolute inset-0 bg-cover bg-center bg-fixed will-change-transform"
+        style={{ backgroundImage: `url(${heroImageMobile})` }}
+        aria-label="Casa de alto padrão com Estrutura Metálica"
+      />
       <div className="absolute inset-0 bg-background/75" />
       <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-b from-transparent to-background" />
     </div>
@@ -34,12 +42,12 @@ const HeroSection = () => {
 
         {/* H1 */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight mb-4 md:mb-6">
-          Antes de Construir:{" "}
-          <span className="text-primary">Descubra os Erros que Podem Encarecer a Sua Obra</span>
+          <span className="text-primary">Antes de Construir:</span>{" "}
+          Descubra os Erros que Podem Encarecer a Sua Obra
         </h1>
 
         {/* H2 */}
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-2xl">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-2xl">
           Participe de uma consultoria coletiva com o arquiteto Thiago Cardim e entenda como evitar decisões que geram desperdícios, retrabalhos e custos inesperados na construção da sua casa.
         </p>
 
