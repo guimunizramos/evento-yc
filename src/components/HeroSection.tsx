@@ -67,7 +67,7 @@ const HeroSection = () => {
     <div className="container mx-auto md:px-6 relative z-10 flex-1 py-0 flex-row px-6 flex items-center justify-center">
       <div className="max-w-4xl text-center flex-col flex items-center justify-center">
         {/* Tag */}
-        <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 border border-primary/30 -mt-3 mb-3 md:mt-0 md:mb-8">
+        <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 border border-primary/30 -mt-1.5 mb-3 md:mt-0 md:mb-8">
           <span className="text-xs md:text-sm font-semibold text-primary uppercase tracking-wider">CONSULTORIA EXCLUSIVA YOUCON</span>
         </div>
 
@@ -75,8 +75,7 @@ const HeroSection = () => {
         <h1 className="max-w-[20rem] sm:max-w-[38rem] md:max-w-[48rem] lg:max-w-[58rem] xl:max-w-[68rem] text-[1.75rem] sm:text-[2.15rem] md:text-[2.75rem] lg:text-[3.4rem] xl:text-[4rem] font-bold text-foreground leading-[1.08] sm:leading-[1.1] md:leading-[1.08] tracking-[-0.02em] mb-4 md:mb-6">
           <span className="block text-primary">Antes de Construir:</span>
           <span className="block mx-auto max-w-[20rem] sm:max-w-[36rem] md:max-w-[47rem] lg:max-w-[56rem] xl:max-w-[66rem]">
-            <span className="block sm:inline">Descubra os Erros que</span>{" "}
-            <span className="block sm:inline">Podem</span>{" "}
+            Descubra os Erros que Podem{" "}
             <br className="hidden md:block" />
             Encarecer a <span className="whitespace-nowrap">Sua Obra</span>
           </span>
