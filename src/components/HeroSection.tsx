@@ -34,13 +34,13 @@ const HeroSection = () => {
 
         {/* H1 */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight mb-4 md:mb-6">
-          Da compra do Terreno ao Acabamento Final:{" "}
-          <span className="text-primary">Financie sua Obra de Alto Padrão</span>
+          Antes de Construir:{" "}
+          <span className="text-primary">Descubra os Erros que Podem Encarecer a Sua Obra</span>
         </h1>
 
         {/* H2 */}
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-2xl">
-          Descubra como alavancar seu patrimônio e tirar o seu projeto do papel com fluxo de caixa inteligente, taxas exclusivas e as melhores linhas de crédito do mercado.
+          Participe de uma consultoria coletiva com o arquiteto Thiago Cardim e entenda como evitar decisões que geram desperdícios, retrabalhos e custos inesperados na construção da sua casa.
         </p>
 
         {/* CTA */}
@@ -52,7 +52,7 @@ const HeroSection = () => {
 
         {/* Sub-CTA text */}
         <p className="text-xs md:text-sm text-muted-foreground mt-3 md:mt-4">
-          Evento Online e Gratuito | Vagas Limitadas
+          Consultoria ao Vivo
         </p>
       </div>
     </div>

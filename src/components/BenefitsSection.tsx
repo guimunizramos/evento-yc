@@ -1,20 +1,20 @@
-import { ShieldCheck, BadgePercent, MapPinHouse } from "lucide-react";
+import { ClipboardCheck, CircleDollarSign, Layers } from "lucide-react";
 
 const benefits = [
   {
-    icon: ShieldCheck,
-    title: "Preservação de Patrimônio",
-    description: "Não tire dinheiro dos seus investimentos. Use o crédito bancário para construir enquanto seu capital segue rendendo.",
+    icon: ClipboardCheck,
+    title: "Decisões sem Planejamento",
+    description: "Quando terreno, projeto e orçamento não são analisados em conjunto, os problemas aparecem durante a execução.",
   },
   {
-    icon: BadgePercent,
-    title: "Taxas Diferenciadas",
-    description: "Entenda as linhas específicas para construção (SBPE) que possuem as menores taxas para o segmento de luxo.",
+    icon: CircleDollarSign,
+    title: "Gastos e Retrabalhos",
+    description: "Mudanças realizadas durante a obra costumam gerar desperdícios, atrasos e custos que poderiam ter sido evitados.",
   },
   {
-    icon: MapPinHouse,
-    title: "Terreno + Construção",
-    description: "Saiba como financiar desde a compra do lote até o acabamento final em um único contrato simplificado.",
+    icon: Layers,
+    title: "Projetos Desconectados",
+    description: "A falta de integração entre arquitetura, estrutura e instalações aumenta o risco de conflitos no canteiro.",
   },
 ];
 
@@ -24,8 +24,7 @@ const BenefitsSection = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-6 md:mb-16">
           <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">
-            Por que o financiamento é a escolha de{" "}
-            <span className="text-primary">investidores inteligentes?</span>
+            Por que os maiores erros de uma obra começam antes da construção?
           </h2>
         </div>
 
