@@ -65,7 +65,7 @@ const HeroSection = () => {
 
     {/* Content */}
     <div className="container mx-auto md:px-6 relative z-10 flex-1 py-0 flex-row px-6 flex items-center justify-center">
-      <div className="max-w-4xl text-center flex-col flex items-center justify-center">
+      <div className="max-w-[56.25rem] text-center flex-col flex items-center justify-center">
         {/* Tag */}
         <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 border border-primary/30 mb-3 md:mb-8">
           <span className="text-xs md:text-sm font-semibold text-primary uppercase tracking-wider">CONSULTORIA EXCLUSIVA YOUCON</span>
