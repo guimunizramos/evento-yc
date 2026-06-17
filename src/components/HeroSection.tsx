@@ -64,7 +64,7 @@ const HeroSection = () => {
     </div>
 
     {/* Content */}
-    <div className="container mx-auto md:px-6 relative z-10 flex-1 py-0 flex-row px-6 flex items-start md:items-center justify-center pt-6 md:pt-0">
+    <div className="container mx-auto md:px-6 relative z-10 flex-1 py-0 flex-row px-6 flex items-start md:items-center justify-center pt-8 md:pt-0">
       <div className="max-w-4xl text-center flex-col flex items-center justify-center">
         {/* Tag */}
         <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-primary/10 border border-primary/30 -mt-1.5 mb-3 md:mt-0 md:mb-8">
