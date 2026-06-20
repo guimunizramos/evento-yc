@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { trackLead } from "@/lib/pixel";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -108,9 +109,7 @@ const RegistrationDialog = ({ open, onOpenChange }: RegistrationDialogProps) => 
       console.error("Erro ao enviar dados para o webhook:", error);
     }
 
-    if (typeof window !== "undefined" && (window as any).fbq) {
-      (window as any).fbq("track", "Lead");
-    }
+    trackLead();
 
     await new Promise((resolve) => setTimeout(resolve, 300));
     window.location.href = "https://chat.whatsapp.com/BxXxLl9oORFDK16nmeBaX7";
