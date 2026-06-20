@@ -104,13 +104,15 @@ const RegistrationDialog = ({ open, onOpenChange }: RegistrationDialogProps) => 
       }
 
       console.log("Webhook enviado com sucesso!");
-      if (typeof window !== "undefined" && (window as any).fbq) {
-        (window as any).fbq("track", "Lead");
-      }
     } catch (error) {
       console.error("Erro ao enviar dados para o webhook:", error);
     }
 
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "Lead");
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, 300));
     window.location.href = "https://chat.whatsapp.com/BxXxLl9oORFDK16nmeBaX7";
 
     reset();
