@@ -4,34 +4,19 @@ import heroImage from "@/assets/bg-desktop.jpg";
 import heroImageMobile from "@/assets/bg-mobile.jpg";
 import youconLogo from "@/assets/youcon-logo.png";
 const HeroSection = () => {
-  const mobileBgRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 767px)");
     const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const updateParallax = () => {
-      const mobileBg = mobileBgRef.current;
-
-      if (!mobileBg || !mobileQuery.matches || reducedMotionQuery.matches) {
-        if (mobileBg) {
-          mobileBg.style.transform = "translate3d(0, 0, 0)";
-        }
-        return;
-      }
-
-      const offset = window.scrollY * 0.22;
-      mobileBg.style.transform = `translate3d(0, ${offset}px, 0)`;
+      if (!bgRef.current || reducedMotionQuery.matches) return;
+      bgRef.current.style.transform = `translate3d(0, ${window.scrollY * 0.3}px, 0)`;
     };
 
     updateParallax();
     window.addEventListener("scroll", updateParallax, { passive: true });
-    window.addEventListener("resize", updateParallax);
-
-    return () => {
-      window.removeEventListener("scroll", updateParallax);
-      window.removeEventListener("resize", updateParallax);
-    };
+    return () => window.removeEventListener("scroll", updateParallax);
   }, []);
   const scrollToForm = () => {
     document.getElementById('cta-section')?.scrollIntoView({
@@ -46,19 +31,12 @@ const HeroSection = () => {
       </div>
     </header>
 
-    {/* Background Image with Overlay */}
-    <div className="absolute inset-0">
-      <div
-        className="hidden md:block absolute inset-0 bg-cover bg-center bg-fixed will-change-transform"
-        style={{ backgroundImage: `url(${heroImage})` }}
-        aria-label="Casa de alto padrão com Estrutura Metálica"
-      />
-      <div
-        ref={mobileBgRef}
-        className="block md:hidden absolute -inset-y-16 inset-x-0 bg-cover bg-center will-change-transform"
-        style={{ backgroundImage: `url(${heroImageMobile})` }}
-        aria-label="Casa de alto padrão com Estrutura Metálica"
-      />
+    {/* Background Image with Parallax */}
+    <div className="absolute inset-0 overflow-hidden">
+      <div ref={bgRef} className="absolute inset-0 scale-110 will-change-transform">
+        <img src={heroImage} alt="" className="hidden md:block w-full h-full object-cover" />
+        <img src={heroImageMobile} alt="" className="block md:hidden w-full h-full object-cover" />
+      </div>
       <div className="absolute inset-0 bg-background/75" />
       <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-b from-transparent to-background" />
     </div>

@@ -5,28 +5,19 @@ import heroImageMobile from "@/assets/inc-hero-mobile.jpg";
 import youconLogo from "@/assets/youcon-logo.png";
 
 const HeroSection = () => {
-  const mobileBgRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 767px)");
     const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const updateParallax = () => {
-      const mobileBg = mobileBgRef.current;
-      if (!mobileBg || !mobileQuery.matches || reducedMotionQuery.matches) {
-        if (mobileBg) mobileBg.style.transform = "translate3d(0, 0, 0)";
-        return;
-      }
-      mobileBg.style.transform = `translate3d(0, ${window.scrollY * 0.22}px, 0)`;
+      if (!bgRef.current || reducedMotionQuery.matches) return;
+      bgRef.current.style.transform = `translate3d(0, ${window.scrollY * 0.3}px, 0)`;
     };
 
     updateParallax();
     window.addEventListener("scroll", updateParallax, { passive: true });
-    window.addEventListener("resize", updateParallax);
-    return () => {
-      window.removeEventListener("scroll", updateParallax);
-      window.removeEventListener("resize", updateParallax);
-    };
+    return () => window.removeEventListener("scroll", updateParallax);
   }, []);
 
   const scrollToForm = () => document.getElementById("cta-section")?.scrollIntoView({ behavior: "smooth" });
@@ -39,18 +30,11 @@ const HeroSection = () => {
         </div>
       </header>
 
-      <div className="absolute inset-0">
-        <div
-          className="hidden md:block absolute inset-0 bg-cover bg-center bg-fixed will-change-transform"
-          style={{ backgroundImage: `url(${heroImage})` }}
-          aria-label="Empreendimento imobiliário de alto padrão"
-        />
-        <div
-          ref={mobileBgRef}
-          className="block md:hidden absolute -inset-y-16 inset-x-0 bg-cover bg-center will-change-transform"
-          style={{ backgroundImage: `url(${heroImageMobile})` }}
-          aria-label="Empreendimento imobiliário de alto padrão"
-        />
+      <div className="absolute inset-0 overflow-hidden">
+        <div ref={bgRef} className="absolute inset-0 scale-110 will-change-transform">
+          <img src={heroImage} alt="" className="hidden md:block w-full h-full object-cover" />
+          <img src={heroImageMobile} alt="" className="block md:hidden w-full h-full object-cover" />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
       </div>
