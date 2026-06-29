@@ -1,4 +1,5 @@
 import thiagoPhoto from "@/assets/thiago-cardim.png";
+import samuelPhoto from "@/assets/samuel-mosca.jpg";
 
 const hosts = [
   {
@@ -10,7 +11,7 @@ const hosts = [
   {
     name: "SAMUEL MOSCA",
     role: "Especialista em Patrimônio Imobiliário e sócio-fundador da SMH Patrimonial",
-    photo: null as string | null,
+    photo: samuelPhoto as string | null,
     description: "Formado em Direito e sócio-fundador da SMH Patrimonial, Samuel Mosca atua na condução estratégica de projetos voltados à estruturação patrimonial. Seu trabalho conecta o mercado imobiliário a decisões societárias, tributárias e sucessórias, com foco na construção, consolidação e continuidade de patrimônios.",
   },
 ];
