@@ -47,7 +47,7 @@ const HeroSection = () => {
           </div>
 
           <h1 className="max-w-[20rem] sm:max-w-[38rem] md:max-w-[48rem] lg:max-w-[58rem] xl:max-w-[68rem] text-[28px] sm:text-[2.15rem] md:text-[2.75rem] lg:text-[3.4rem] xl:text-[4rem] font-bold text-foreground leading-[1.08] tracking-[-0.02em] mb-4 md:mb-6">
-            Como transformar terrenos em empreendimentos que constroem patrimônio.
+            Como transformar terrenos em <span className="text-primary">empreendimentos que constroem patrimônio</span>.
           </h1>
 
           <p className="text-[14px] md:text-[18px] text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-2xl">

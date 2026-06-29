@@ -48,7 +48,7 @@ const HeroSection = () => {
           </div>
 
           <h1 className="text-[28px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight mb-4 md:mb-6">
-            Existe um jeito mais inteligente, limpo e rápido de construir a sua casa.
+            Existe um jeito mais <span className="text-primary">inteligente, limpo e rápido</span> de construir a sua casa.
           </h1>
 
           <p className="text-[14px] md:text-[18px] text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-2xl">

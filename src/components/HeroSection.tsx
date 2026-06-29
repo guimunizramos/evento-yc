@@ -37,8 +37,9 @@ const HeroSection = () => {
         <img src={heroImage} alt="" className="hidden md:block w-full h-full object-cover" />
         <img src={heroImageMobile} alt="" className="block md:hidden w-full h-full object-cover" />
       </div>
-      <div className="absolute inset-0 bg-background/75" />
-      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-b from-transparent to-background" />
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
     </div>
 
     {/* Content */}
