@@ -47,11 +47,11 @@ const HeroSection = () => {
             <span className="text-xs md:text-sm font-semibold text-primary uppercase tracking-wider">CONVITE EXCLUSIVO YOUCON</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight mb-4 md:mb-6">
+          <h1 className="text-[34px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight mb-4 md:mb-6">
             Existe um jeito mais inteligente, limpo e rápido de construir a sua casa.
           </h1>
 
-          <p className="text-[18px] text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-2xl">
+          <p className="text-[22px] md:text-[18px] text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-2xl">
             A <span className="text-foreground font-semibold">YouCon Arquitetura</span> convida você para uma consultoria exclusiva com{" "}
             <span className="text-foreground font-semibold">Thiago Cardim</span> sobre uma tecnologia construtiva que vem revolucionando o alto padrão: o{" "}
             <span className="text-primary font-semibold">Light Steel Frame</span>.
