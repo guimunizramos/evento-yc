@@ -50,7 +50,7 @@ const HeroSection = () => {
             Como transformar terrenos em <span className="text-primary">empreendimentos que constroem patrimônio</span>.
           </h1>
 
-          <p className="text-[14px] md:text-[18px] text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-2xl">
+          <p className="text-[14px] md:text-[18px] text-[#cfcfcf] leading-relaxed mb-8 md:mb-10 max-w-2xl">
             A <span className="text-foreground font-semibold">YouCon Arquitetura</span> convida você para uma consultoria exclusiva com{" "}
             <span className="text-foreground font-semibold">Thiago Cardim</span> e{" "}
             <span className="text-foreground font-semibold">Samuel Mosca</span> sobre incorporação imobiliária. Entenda como identificar o potencial de um terreno, estruturar um empreendimento e tomar decisões mais estratégicas para a construção de patrimônio.

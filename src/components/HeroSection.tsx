@@ -59,7 +59,7 @@ const HeroSection = () => {
         </h1>
 
         {/* H2 */}
-        <p className="text-[14px] sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-2xl">
+        <p className="text-[14px] sm:text-base md:text-lg lg:text-xl text-[#cfcfcf] leading-relaxed mb-8 md:mb-10 max-w-2xl">
           Participe de uma consultoria gratuita com o arquiteto Thiago Cardim e entenda como evitar decisões que geram desperdícios, retrabalhos e custos inesperados na construção da sua casa.
         </p>
 

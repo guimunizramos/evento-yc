@@ -51,7 +51,7 @@ const HeroSection = () => {
             Existe um jeito mais <span className="text-primary">inteligente, limpo e rápido</span> de construir a sua casa.
           </h1>
 
-          <p className="text-[14px] md:text-[18px] text-muted-foreground leading-relaxed mb-8 md:mb-10 max-w-2xl">
+          <p className="text-[14px] md:text-[18px] text-[#cfcfcf] leading-relaxed mb-8 md:mb-10 max-w-2xl">
             A <span className="text-foreground font-semibold">YouCon Arquitetura</span> convida você para uma consultoria exclusiva com{" "}
             <span className="text-foreground font-semibold">Thiago Cardim</span> sobre uma tecnologia construtiva que vem revolucionando o alto padrão: o{" "}
             <span className="text-primary font-semibold">Light Steel Frame</span>.
