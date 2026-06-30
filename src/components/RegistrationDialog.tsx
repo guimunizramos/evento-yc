@@ -12,6 +12,7 @@ import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 interface RegistrationDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  evento: string;
 }
 
 const brazilianStates = [
@@ -44,7 +45,7 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-const RegistrationDialog = ({ open, onOpenChange }: RegistrationDialogProps) => {
+const RegistrationDialog = ({ open, onOpenChange, evento }: RegistrationDialogProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
@@ -97,7 +98,7 @@ const RegistrationDialog = ({ open, onOpenChange }: RegistrationDialogProps) => 
           "Content-Type": "application/json",
           "Authorization": `Basic ${credentials}`
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify({ ...data, evento })
       });
 
       if (!response.ok) {
