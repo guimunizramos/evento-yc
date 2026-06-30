@@ -46,7 +46,7 @@ const CTASection = () => {
       </div>
     </section>
 
-    <RegistrationDialog open={dialogOpen} onOpenChange={setDialogOpen} evento="construcao-residencial" />
+    <RegistrationDialog open={dialogOpen} onOpenChange={setDialogOpen} evento="evento" />
   </>;
 };
 export default CTASection;
