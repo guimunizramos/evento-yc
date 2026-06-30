@@ -42,7 +42,7 @@ const CTASection = () => {
           </div>
         </div>
       </section>
-      <RegistrationDialog open={dialogOpen} onOpenChange={setDialogOpen} evento="incorporacao" />
+      <RegistrationDialog open={dialogOpen} onOpenChange={setDialogOpen} evento="incorporacao" /* inc */ />
     </>
   );
 };
