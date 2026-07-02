@@ -178,9 +178,9 @@ function CtaButton({
   size?: "md" | "lg" | "xl";
 }) {
   const sizes = {
-    md: "px-6 py-3 text-sm",
-    lg: "px-8 py-4 text-base",
-    xl: "px-10 py-5 text-lg",
+    md: "px-5 py-2.5 text-xs sm:px-6 sm:py-3 sm:text-sm",
+    lg: "px-6 py-3 text-sm sm:px-8 sm:py-4 sm:text-base",
+    xl: "px-8 py-4 text-base sm:px-10 sm:py-5 sm:text-lg",
   } as const;
   return (
     <button
@@ -252,7 +252,7 @@ function Hero({ onCta }: { onCta: () => void }) {
           />
         </div>
         <p className="mb-5">
-          <span className="inline-flex items-center rounded-full border border-brand-orange/40 bg-brand-orange/10 px-4 py-1.5 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-brand-orange">
+          <span className="inline-flex items-center rounded-full border border-brand-orange/40 bg-brand-orange/10 px-4 py-1.5 text-xs sm:px-3.5 sm:py-1 font-semibold uppercase tracking-[0.25em] text-brand-orange">
             Condição Exclusiva
           </span>
         </p>
@@ -261,7 +261,7 @@ function Hero({ onCta }: { onCta: () => void }) {
           src="/hero-aniversario.svg"
           alt=""
           aria-hidden
-          className="mx-auto w-full max-w-[240px] sm:max-w-md md:max-w-lg"
+          className="mx-auto w-full max-w-[288px] sm:max-w-md md:max-w-lg"
         />
         <div className="mt-10">
           <CtaButton onClick={onCta} size="lg">
@@ -450,7 +450,7 @@ function OfferTransition({
               >
                 🎁
               </span>
-              <span className="inline-flex items-center rounded-full bg-gradient-brand px-8 py-4 text-base font-semibold uppercase tracking-wider text-white shadow-xl shadow-brand-red/30 transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-brand-red/40 group-focus-visible:ring-2 group-focus-visible:ring-brand-orange group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-brand-ink">
+              <span className="inline-flex items-center rounded-full bg-gradient-brand px-6 py-3 text-sm sm:px-8 sm:py-4 sm:text-base font-semibold uppercase tracking-wider text-white shadow-xl shadow-brand-red/30 transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-brand-red/40 group-focus-visible:ring-2 group-focus-visible:ring-brand-orange group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-brand-ink">
                 Clique para abrir seu presente
                 <span aria-hidden className="ml-2 transition-transform group-hover:translate-x-1">
                   →
@@ -553,8 +553,10 @@ function Bonuses() {
                 </div>
               </div>
               {i < BONUSES.length - 1 && (
-                <div className="flex justify-center py-1" aria-hidden>
-                  <span className="text-3xl font-black text-brand-orange/70">+</span>
+                <div className="flex w-full items-center justify-center py-2" aria-hidden>
+                  <span className="flex h-12 w-12 items-center justify-center text-5xl font-black leading-none text-brand-orange/70">
+                    +
+                  </span>
                 </div>
               )}
             </div>
