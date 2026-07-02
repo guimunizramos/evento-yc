@@ -261,7 +261,7 @@ function Hero({ onCta }: { onCta: () => void }) {
           src="/hero-aniversario.svg"
           alt=""
           aria-hidden
-          className="mx-auto w-full max-w-md sm:max-w-xl md:max-w-2xl"
+          className="mx-auto w-full max-w-[240px] sm:max-w-md md:max-w-lg"
         />
         <div className="mt-10">
           <CtaButton onClick={onCta} size="lg">
@@ -531,7 +531,7 @@ function Bonuses() {
             <div key={b.title}>
               <div className="group overflow-hidden rounded-2xl border border-white/10 bg-card transition hover:border-brand-orange/40 hover:shadow-[0_0_30px_-4px_rgba(255,122,60,0.35)]">
                 <AssetPlaceholder label={b.title} ratio="aspect-video" bare />
-                <div className="flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-6">
+                <div className="flex flex-col items-center gap-3 p-5 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-6 sm:text-left">
                   <div className="flex-1">
                     <p className="text-lg sm:text-xl font-semibold text-white">
                       {b.title}
@@ -540,7 +540,7 @@ function Bonuses() {
                       <p className="mt-1 text-sm text-white/60">({b.subtitle})</p>
                     )}
                   </div>
-                  <div className="flex shrink-0 items-center gap-4 sm:flex-col sm:items-end sm:gap-2">
+                  <div className="flex shrink-0 flex-col items-center gap-1 sm:items-end sm:gap-2">
                     {b.was && (
                       <span className="text-lg sm:text-xl font-semibold text-white/50 line-through decoration-brand-red/70 decoration-2">
                         {b.was}
