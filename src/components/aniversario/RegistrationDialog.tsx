@@ -45,6 +45,28 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
+const INVESTMENT_CODES: Record<FormData["investmentAmount"], string> = {
+  "Entre R$ 100 mil e R$ 500 mil": "100_500_mil",
+  "Entre R$ 600 mil e R$ 800 mil": "600_800_mil",
+  "Entre R$ 800 mil e R$ 1,2 milhão": "800_mil_1_2_milhao",
+  "Entre R$ 1,2 milhão e R$ 2 milhões ou mais": "1_2_2_milhoes_mais",
+};
+
+const UTM_KEYS = [
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "gclid",
+  "fbclid",
+] as const;
+
+function getTrackingParams() {
+  const params = new URLSearchParams(window.location.search);
+  return Object.fromEntries(UTM_KEYS.map((key) => [key, params.get(key) ?? ""]));
+}
+
 const RegistrationDialog = ({ open, onOpenChange, evento }: RegistrationDialogProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -92,13 +114,28 @@ const RegistrationDialog = ({ open, onOpenChange, evento }: RegistrationDialogPr
       const password = '123456';
       const credentials = btoa(`${username}:${password}`);
 
-      const response = await fetch("https://webhook.lp-youconprojetos.com.br/webhook/eventos-youcon", {
+      const payload = {
+        tipo_servico: "",
+        investimento: INVESTMENT_CODES[data.investmentAmount],
+        quando: "",
+        possui_terreno: data.hasLot,
+        possui_projeto: data.hasProject === "sim" ? "projeto_arquitetonico" : "sem_projeto",
+        nome: data.name,
+        telefone: data.phone,
+        email: data.email,
+        cidade: data.city,
+        estado: data.state,
+        ...getTrackingParams(),
+        evento,
+      };
+
+      const response = await fetch("https://webhook.lp-youconprojetos.com.br/webhook/formulario-lp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Basic ${credentials}`
         },
-        body: JSON.stringify({ ...data, evento })
+        body: JSON.stringify(payload)
       });
 
       if (!response.ok) {
