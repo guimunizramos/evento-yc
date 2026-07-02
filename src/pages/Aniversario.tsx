@@ -193,20 +193,47 @@ function CtaButton({
   );
 }
 
-function VideoPlaceholder({ label }: { label: string }) {
+function VideoCard({
+  src,
+  poster,
+  label,
+}: {
+  src: string;
+  poster: string;
+  label: string;
+}) {
+  const [playing, setPlaying] = useState(false);
+
+  if (playing) {
+    return (
+      <video
+        className="aspect-[9/16] w-full rounded-xl bg-black object-cover"
+        src={src}
+        poster={poster}
+        controls
+        autoPlay
+        playsInline
+      />
+    );
+  }
+
   return (
-    <div className="relative flex aspect-[9/16] w-full items-center justify-center overflow-hidden rounded-xl border border-dashed border-white/20 bg-white/[0.03]">
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,122,60,0.06)_0%,transparent_50%,rgba(232,67,28,0.06)_100%)]" />
-      <div className="text-center">
-        <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
-          <Play className="h-4 w-4 text-white/70" fill="currentColor" strokeWidth={0} />
-        </div>
-        <p className="text-[10px] font-semibold uppercase tracking-widest text-brand-orange">
-          Vídeo pendente
-        </p>
-        <p className="mt-1 text-xs font-semibold text-white/60 px-4">{label}</p>
-      </div>
-    </div>
+    <button
+      type="button"
+      onClick={() => setPlaying(true)}
+      aria-label={`Reproduzir vídeo: ${label}`}
+      className="group relative flex aspect-[9/16] w-full items-center justify-center overflow-hidden rounded-xl bg-black"
+    >
+      <img
+        src={poster}
+        alt={label}
+        className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-black/15 transition group-hover:bg-black/5" />
+      <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white/20 shadow-lg backdrop-blur transition group-hover:scale-110 group-hover:bg-white/30">
+        <Play className="h-6 w-6 translate-x-0.5 text-white" fill="currentColor" strokeWidth={0} />
+      </span>
+    </button>
   );
 }
 
@@ -314,6 +341,29 @@ function Counter({
   );
 }
 
+const VIDEOS: Array<{ src: string; poster: string; label: string }> = [
+  {
+    src: "/videos/prova-social-03.mp4",
+    poster: "/videos/posters/prova-social-03.jpg",
+    label: "Depoimento de cliente",
+  },
+  {
+    src: "/videos/prova-social-02.mp4",
+    poster: "/videos/posters/prova-social-02.jpg",
+    label: "Obra em execução",
+  },
+  {
+    src: "/videos/prova-social-01.mp4",
+    poster: "/videos/posters/prova-social-01.jpg",
+    label: "Fachada finalizada",
+  },
+  {
+    src: "/videos/prova-social-04.mp4",
+    poster: "/videos/posters/prova-social-04.jpg",
+    label: "Bastidores do projeto",
+  },
+];
+
 function History() {
   return (
     <section className="border-b border-white/5 bg-brand-surface/40 py-20 sm:py-28">
@@ -326,10 +376,9 @@ function History() {
         </h2>
 
         <div className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
-          <VideoPlaceholder label="Depoimento de cliente" />
-          <VideoPlaceholder label="Obra em execução" />
-          <VideoPlaceholder label="Fachada finalizada" />
-          <VideoPlaceholder label="Bastidores do projeto" />
+          {VIDEOS.map((v) => (
+            <VideoCard key={v.src} {...v} />
+          ))}
         </div>
 
         <div className="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-8 sm:gap-10 md:grid-cols-3">
