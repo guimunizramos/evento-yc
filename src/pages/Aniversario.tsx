@@ -193,34 +193,6 @@ function CtaButton({
   );
 }
 
-function AssetPlaceholder({
-  label,
-  className = "",
-  ratio = "aspect-[4/3]",
-  bare = false,
-}: {
-  label: string;
-  className?: string;
-  ratio?: string;
-  bare?: boolean;
-}) {
-  return (
-    <div
-      className={`relative flex ${ratio} w-full items-center justify-center overflow-hidden bg-white/[0.03] ${
-        bare ? "" : "rounded-lg border border-dashed border-white/20"
-      } ${className}`}
-    >
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,122,60,0.06)_0%,transparent_50%,rgba(232,67,28,0.06)_100%)]" />
-      <div className="text-center">
-        <p className="text-[10px] font-semibold uppercase tracking-widest text-brand-orange">
-          Asset pendente
-        </p>
-        <p className="mt-1 text-xs text-white/60 px-4">{label}</p>
-      </div>
-    </div>
-  );
-}
-
 function VideoPlaceholder({ label }: { label: string }) {
   return (
     <div className="relative flex aspect-[9/16] w-full items-center justify-center overflow-hidden rounded-xl border border-dashed border-white/20 bg-white/[0.03]">
@@ -484,7 +456,17 @@ function NoLand({ onCta }: { onCta: () => void }) {
             </CtaButton>
           </div>
         </div>
-        <AssetPlaceholder label="Terreno / vista aérea de lote" ratio="aspect-[4/3]" />
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-white/[0.03]">
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,122,60,0.06)_0%,transparent_50%,rgba(232,67,28,0.06)_100%)]" />
+          <img
+            src="/terreno-lote.jpg"
+            alt="Casal observando terrenos em condomínio"
+            className="absolute inset-0 h-full w-full object-cover"
+            onError={(e) => {
+              e.currentTarget.style.display = "none";
+            }}
+          />
+        </div>
       </div>
     </section>
   );
@@ -495,17 +477,37 @@ const BONUSES: Array<{
   subtitle?: string;
   was: string | null;
   now: string;
+  image?: string;
 }> = [
-  { title: "Estimativa Completa de Custo da Obra", was: "R$ 1.200,00", now: "Incluso" },
-  { title: "Consultoria para Definição do Método Construtivo", was: "R$ 350,00", now: "Incluso" },
-  { title: "Assessoria de Interiores", was: "R$ 2.500,00", now: "GRATUITA" },
-  { title: "Crédito de 5% para Contratação do Projeto de Interiores", was: null, now: "Incluso" },
-  { title: "Simulação de Financiamento da Obra", was: null, now: "Incluso" },
   {
-    title: "Assessoria para Escolha do Terreno",
-    subtitle: "avaliação de potencial, desafios e possibilidades antes da compra",
+    title: "Estimativa Completa de Custo da Obra",
+    was: "R$ 1.200,00",
+    now: "Incluso",
+    image: "/bonus/estimativa-custo.png",
+  },
+  {
+    title: "Consultoria para Definição do Método Construtivo",
+    was: "R$ 350,00",
+    now: "Incluso",
+    image: "/bonus/consultoria-metodo.png",
+  },
+  {
+    title: "Assessoria de Interiores",
+    was: "R$ 2.500,00",
+    now: "GRATUITA",
+    image: "/bonus/assessoria-interiores.png",
+  },
+  {
+    title: "Crédito de 5% para Contratação do Projeto de Interiores",
     was: null,
     now: "Incluso",
+    image: "/bonus/credito-5-interiores.png",
+  },
+  {
+    title: "Simulação de Financiamento da Obra",
+    was: null,
+    now: "Incluso",
+    image: "/bonus/simulacao-financiamento.png",
   },
 ];
 
@@ -526,11 +528,23 @@ function Bonuses() {
           Tudo isso <span className="text-gradient-brand">somado</span> pra você.
         </h2>
 
-        <div className="mx-auto mt-14 max-w-2xl space-y-4">
+        <div className="mx-auto mt-14 max-w-2xl">
           {BONUSES.map((b, i) => (
             <div key={b.title}>
               <div className="group overflow-hidden rounded-2xl border border-white/10 bg-card transition hover:border-brand-orange/40 hover:shadow-[0_0_30px_-4px_rgba(255,122,60,0.35)]">
-                <AssetPlaceholder label={b.title} ratio="aspect-video" bare />
+                <div className="relative aspect-video w-full overflow-hidden bg-white/[0.03]">
+                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,122,60,0.06)_0%,transparent_50%,rgba(232,67,28,0.06)_100%)]" />
+                  {b.image && (
+                    <img
+                      src={b.image}
+                      alt={b.title}
+                      className="absolute inset-0 h-full w-full object-contain p-3"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
+                  )}
+                </div>
                 <div className="flex flex-col items-center gap-3 p-5 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-6 sm:text-left">
                   <div className="flex-1">
                     <p className="text-lg sm:text-xl font-semibold text-white">
@@ -553,7 +567,7 @@ function Bonuses() {
                 </div>
               </div>
               {i < BONUSES.length - 1 && (
-                <div className="flex w-full items-center justify-center py-2" aria-hidden>
+                <div className="flex w-full items-center justify-center py-3" aria-hidden>
                   <span className="flex h-12 w-12 items-center justify-center text-5xl font-black leading-none text-brand-orange/70">
                     +
                   </span>
