@@ -159,9 +159,9 @@ const RegistrationDialog = ({ open, onOpenChange, evento }: RegistrationDialogPr
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="lp-aniversario-font w-[calc(100%-2rem)] max-w-md mx-auto bg-card border-primary/20 p-4 md:p-6 rounded-xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="lp-aniversario-font w-[calc(100%-2rem)] max-w-md sm:max-w-lg mx-auto bg-card border-primary/20 p-4 md:p-6 rounded-xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-xl md:text-2xl font-bold text-center text-foreground">
+          <DialogTitle className="px-6 sm:px-0 text-xl md:text-2xl font-bold text-center text-foreground">
             Garanta sua proposta de aniversário
           </DialogTitle>
         </DialogHeader>
@@ -176,7 +176,7 @@ const RegistrationDialog = ({ open, onOpenChange, evento }: RegistrationDialogPr
               placeholder="Seu nome"
               className="bg-background border-muted-foreground/20 focus:border-primary h-12 text-base"
             />
-            {errors.name && <p className="text-destructive text-xs">{errors.name.message}</p>}
+            {errors.name && <p className="text-destructive text-xs font-semibold">{errors.name.message}</p>}
           </div>
 
           {/* 2. E-mail */}
@@ -189,7 +189,7 @@ const RegistrationDialog = ({ open, onOpenChange, evento }: RegistrationDialogPr
               placeholder="seu@email.com"
               className="bg-background border-muted-foreground/20 focus:border-primary h-12 text-base"
             />
-            {errors.email && <p className="text-destructive text-xs">{errors.email.message}</p>}
+            {errors.email && <p className="text-destructive text-xs font-semibold">{errors.email.message}</p>}
           </div>
 
           {/* 3. WhatsApp */}
@@ -204,7 +204,7 @@ const RegistrationDialog = ({ open, onOpenChange, evento }: RegistrationDialogPr
               className="bg-background border-muted-foreground/20 focus:border-primary h-12 text-base"
               maxLength={15}
             />
-            {errors.phone && <p className="text-destructive text-xs">{errors.phone.message}</p>}
+            {errors.phone && <p className="text-destructive text-xs font-semibold">{errors.phone.message}</p>}
           </div>
 
           <div className="grid grid-cols-5 gap-3">
@@ -217,7 +217,7 @@ const RegistrationDialog = ({ open, onOpenChange, evento }: RegistrationDialogPr
                 placeholder="Ex: São Paulo"
                 className="bg-background border-muted-foreground/20 focus:border-primary h-12 text-base"
               />
-              {errors.city && <p className="text-destructive text-xs">{errors.city.message}</p>}
+              {errors.city && <p className="text-destructive text-xs font-semibold">{errors.city.message}</p>}
             </div>
 
             {/* 5. Estado */}
@@ -238,7 +238,7 @@ const RegistrationDialog = ({ open, onOpenChange, evento }: RegistrationDialogPr
                   </option>
                 ))}
               </select>
-              {errors.state && <p className="text-destructive text-xs">{errors.state.message}</p>}
+              {errors.state && <p className="text-destructive text-xs font-semibold">{errors.state.message}</p>}
             </div>
           </div>
 
@@ -258,7 +258,7 @@ const RegistrationDialog = ({ open, onOpenChange, evento }: RegistrationDialogPr
                 <Label htmlFor="lot-no" className="text-base text-foreground cursor-pointer">Não</Label>
               </div>
             </RadioGroup>
-            {errors.hasLot && <p className="text-destructive text-xs">{errors.hasLot.message}</p>}
+            {errors.hasLot && <p className="text-destructive text-xs font-semibold">{errors.hasLot.message}</p>}
           </div>
 
           {/* 8. Já possui projeto? */}
@@ -277,7 +277,7 @@ const RegistrationDialog = ({ open, onOpenChange, evento }: RegistrationDialogPr
                 <Label htmlFor="project-no" className="text-base text-foreground cursor-pointer">Não</Label>
               </div>
             </RadioGroup>
-            {errors.hasProject && <p className="text-destructive text-xs">{errors.hasProject.message}</p>}
+            {errors.hasProject && <p className="text-destructive text-xs font-semibold">{errors.hasProject.message}</p>}
           </div>
 
           {/* 10. Previsão de custo */}
@@ -304,7 +304,7 @@ const RegistrationDialog = ({ open, onOpenChange, evento }: RegistrationDialogPr
                 <Label htmlFor="invest-1200-plus" className="text-base text-foreground cursor-pointer">Entre R$ 1,2 milhão e R$ 2 milhões ou mais</Label>
               </div>
             </RadioGroup>
-            {errors.investmentAmount && <p className="text-destructive text-xs">{errors.investmentAmount.message}</p>}
+            {errors.investmentAmount && <p className="text-destructive text-xs font-semibold">{errors.investmentAmount.message}</p>}
           </div>
 
           <Button

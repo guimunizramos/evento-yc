@@ -104,13 +104,13 @@ function TimeBlock({ value, label }: { value: string; label: string }) {
       <span className="rounded bg-white/10 px-1.5 py-0.5 text-sm sm:text-base font-bold leading-none">
         {value}
       </span>
-      <span className="text-[10px] uppercase text-white/60">{label}</span>
+      <span className="text-[10px] font-semibold uppercase text-white/60">{label}</span>
     </span>
   );
 }
 
 function Sep() {
-  return <span className="text-white/30">:</span>;
+  return <span className="font-semibold text-white/30">:</span>;
 }
 
 function UrgencyBar({
@@ -204,7 +204,7 @@ function VideoPlaceholder({ label }: { label: string }) {
         <p className="text-[10px] font-semibold uppercase tracking-widest text-brand-orange">
           Vídeo pendente
         </p>
-        <p className="mt-1 text-xs text-white/60 px-4">{label}</p>
+        <p className="mt-1 text-xs font-semibold text-white/60 px-4">{label}</p>
       </div>
     </div>
   );
@@ -309,7 +309,7 @@ function Counter({
           {suffix}
         </span>
       </p>
-      <p className="mt-3 text-xs sm:text-sm uppercase tracking-widest text-white/60">{label}</p>
+      <p className="mt-3 text-xs sm:text-sm font-semibold uppercase tracking-widest text-white/60">{label}</p>
     </div>
   );
 }
@@ -359,7 +359,7 @@ function Solution() {
           <span className="text-gradient-brand">Solução Completa YouCon</span>: todos os
           profissionais que você precisa em um só lugar.
         </h2>
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+        <div className="mt-14 grid max-w-xs grid-cols-1 gap-6 mx-auto sm:max-w-none sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
           {SERVICES.map(({ name, icon: Icon }) => (
             <div
               key={name}
@@ -400,7 +400,7 @@ function OfferTransition({
         <h2 className="text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-[0.95] text-white">
           O presente é <span className="text-gradient-brand">pra você!</span>
         </h2>
-        <p className="mt-8 text-lg sm:text-xl text-white/80 leading-relaxed">
+        <p className="mt-8 text-lg sm:text-xl font-semibold text-white/80 leading-relaxed">
           E para celebrar essa data, preparamos uma{" "}
           <span className="font-semibold text-white">Condição Especial</span> para quem também
           quer dar o próximo passo.
@@ -429,7 +429,7 @@ function OfferTransition({
                 </span>
               </span>
             </button>
-            <p className="text-xs uppercase tracking-[0.25em] text-white/40">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/40">
               Sua oferta de aniversário te espera
             </p>
           </div>
@@ -447,7 +447,7 @@ function NoLand({ onCta }: { onCta: () => void }) {
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white">
             Ainda não tem <span className="text-gradient-brand">terreno?</span>
           </h2>
-          <p className="mt-4 text-lg text-white/70">
+          <p className="mt-4 text-lg font-semibold text-white/70">
             Te ajudamos a escolher o melhor e com mais segurança.
           </p>
           <div className="mt-8">
@@ -551,7 +551,7 @@ function Bonuses() {
                       {b.title}
                     </p>
                     {b.subtitle && (
-                      <p className="mt-1 text-sm text-white/60">({b.subtitle})</p>
+                      <p className="mt-1 text-sm font-semibold text-white/60">({b.subtitle})</p>
                     )}
                   </div>
                   <div className="flex shrink-0 flex-col items-center gap-1 sm:items-end sm:gap-2">
@@ -578,7 +578,7 @@ function Bonuses() {
         </div>
 
         <div className="mx-auto mt-14 max-w-2xl text-center">
-          <p className="text-lg text-white/70">
+          <p className="text-lg font-semibold text-white/70">
             Tudo isso custaria mais de{" "}
             <span className="font-bold text-white line-through decoration-brand-red/70">
               {BONUS_TOTAL}
@@ -607,8 +607,8 @@ function PaymentCondition() {
 
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-white/10 bg-card p-8 transition hover:border-brand-orange/40 hover:shadow-[0_0_30px_-4px_rgba(255,122,60,0.35)]">
-            <p className="text-xs uppercase tracking-widest text-white/50">Entrada</p>
-            <p className="mt-4 text-2xl text-white/40 line-through">
+            <p className="text-xs font-semibold uppercase tracking-widest text-white/50">Entrada</p>
+            <p className="mt-4 text-2xl font-semibold text-white/40 line-through">
               40% de entrada
             </p>
             <p className="mt-2 text-4xl sm:text-5xl font-black leading-tight text-gradient-brand">
@@ -616,8 +616,8 @@ function PaymentCondition() {
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-card p-8 transition hover:border-brand-orange/40 hover:shadow-[0_0_30px_-4px_rgba(255,122,60,0.35)]">
-            <p className="text-xs uppercase tracking-widest text-white/50">Parcelamento</p>
-            <p className="mt-4 text-2xl text-white/40 line-through">3x no boleto</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-white/50">Parcelamento</p>
+            <p className="mt-4 text-2xl font-semibold text-white/40 line-through">3x no boleto</p>
             <p className="mt-2 text-4xl sm:text-5xl font-black leading-tight text-gradient-brand">
               6x no cartão sem juros
             </p>
@@ -657,8 +657,9 @@ function Footer() {
           alt="YouCon — Arquitetura e Engenharia"
           className="h-14 sm:h-16 w-auto"
         />
-        <p className="mt-6 text-xs text-white/40">
-          © {new Date().getFullYear()} YouCon. Todos os direitos reservados.
+        <p className="mt-6 text-xs font-semibold text-white/40">
+          © {new Date().getFullYear()} YouCon Arquitetura e Engenharia. Todos os direitos
+          reservados.
         </p>
       </div>
     </footer>
