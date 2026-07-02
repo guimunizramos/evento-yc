@@ -207,7 +207,7 @@ function VideoCard({
   if (playing) {
     return (
       <video
-        className="aspect-[9/16] w-full rounded-xl bg-black object-cover"
+        className="aspect-[9/16] w-full rounded-xl border border-brand-orange/40 bg-black object-cover transition hover:shadow-[0_0_30px_-4px_rgba(255,122,60,0.35)]"
         src={src}
         poster={poster}
         controls
@@ -222,7 +222,7 @@ function VideoCard({
       type="button"
       onClick={() => setPlaying(true)}
       aria-label={`Reproduzir vídeo: ${label}`}
-      className="group relative flex aspect-[9/16] w-full items-center justify-center overflow-hidden rounded-xl bg-black"
+      className="group relative flex aspect-[9/16] w-full items-center justify-center overflow-hidden rounded-xl border border-brand-orange/40 bg-black transition hover:border-brand-orange/70 hover:shadow-[0_0_30px_-4px_rgba(255,122,60,0.35)]"
     >
       <img
         src={poster}
