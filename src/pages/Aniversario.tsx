@@ -673,6 +673,14 @@ const Aniversario = () => {
   const openForm = () => setOpen(true);
 
   useEffect(() => {
+    const previousTitle = document.title;
+    document.title = "Aniversário YouCon";
+    return () => {
+      document.title = previousTitle;
+    };
+  }, []);
+
+  useEffect(() => {
     if (revealed) {
       revealRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
