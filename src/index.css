@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
@@ -148,4 +149,74 @@
   to {
     opacity: 1;
   }
+}
+
+/* ---------- Aniversário LP (página /aniversario) ---------- */
+
+.lp-aniversario,
+.lp-aniversario-font {
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.text-gradient-brand {
+  background-image: linear-gradient(100deg, #FF9A5C 0%, #FF7A3C 40%, #E8431C 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-gradient-brand {
+  background-image: linear-gradient(100deg, #FF7A3C 0%, #E8431C 100%);
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(120vh) translateX(var(--confetti-drift, 0px))
+      rotate(var(--confetti-spin, 360deg));
+  }
+}
+
+.animate-confetti-fall {
+  animation: confetti-fall linear infinite;
+}
+
+@keyframes gift-wiggle {
+  0%, 55%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  10% {
+    transform: rotate(-10deg) scale(1.06);
+  }
+  20% {
+    transform: rotate(9deg) scale(1.06);
+  }
+  30% {
+    transform: rotate(-7deg) scale(1.03);
+  }
+  40% {
+    transform: rotate(5deg) scale(1.01);
+  }
+}
+
+.animate-gift-wiggle {
+  animation: gift-wiggle 2.4s ease-in-out infinite;
+  transform-origin: 50% 85%;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise-in {
+  animation: rise-in 0.7s ease-out both;
 }

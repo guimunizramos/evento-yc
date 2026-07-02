@@ -61,6 +61,11 @@ export default {
           dark: "hsl(var(--section-dark))",
           alt: "hsl(var(--section-alt))",
         },
+        // Aniversário LP brand tokens
+        "brand-orange": "#FF7A3C",
+        "brand-red": "#E8431C",
+        "brand-ink": "#161310",
+        "brand-surface": "#221D18",
       },
       borderRadius: {
         lg: "var(--radius)",
