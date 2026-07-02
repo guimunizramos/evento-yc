@@ -256,13 +256,13 @@ function Hero({ onCta }: { onCta: () => void }) {
             Condição Exclusiva
           </span>
         </p>
-        <h1 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase leading-[0.9] text-white">
-          Aniversário{" "}
-          <span className="block text-gradient-brand">YouCon</span>
-        </h1>
-        <p className="mt-6 text-base sm:text-lg uppercase tracking-[0.3em] text-white">
-          Since 2020
-        </p>
+        <h1 className="sr-only">Aniversário YouCon — Since 2020</h1>
+        <img
+          src="/hero-aniversario.svg"
+          alt=""
+          aria-hidden
+          className="mx-auto w-full max-w-md sm:max-w-xl md:max-w-2xl"
+        />
         <div className="mt-10">
           <CtaButton onClick={onCta} size="lg">
             Quero minha proposta
