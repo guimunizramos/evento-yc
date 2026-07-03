@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import SteelFrame from "./pages/SteelFrame";
 import Incorporacao from "./pages/Incorporacao";
 import Aniversario from "./pages/Aniversario";
+import TreinamentoImagensIA from "./pages/TreinamentoImagensIA";
 import { initPixel } from "@/lib/pixel";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/steel-frame" element={<SteelFrame />} />
             <Route path="/incorporacao" element={<Incorporacao />} />
             <Route path="/aniversario" element={<Aniversario />} />
+            <Route path="/treinamento-imagens-ia" element={<TreinamentoImagensIA />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </BrowserRouter>
