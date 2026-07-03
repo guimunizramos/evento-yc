@@ -137,8 +137,12 @@ function Hero() {
 
 function ResultImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="aspect-video w-full overflow-hidden rounded-2xl border border-brand-orange/40 transition duration-300 hover:border-brand-orange hover:shadow-[0_0_40px_-2px_rgba(255,122,60,0.65)]">
-      <img src={src} alt={alt} className="h-full w-full object-cover" />
+    <div className="group aspect-video w-full overflow-hidden rounded-2xl border border-brand-orange/40 transition duration-300 hover:border-brand-orange hover:shadow-[0_0_40px_-2px_rgba(255,122,60,0.65)]">
+      <img
+        src={src}
+        alt={alt}
+        className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+      />
     </div>
   );
 }
