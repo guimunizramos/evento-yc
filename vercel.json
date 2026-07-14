@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/incorporacao", "destination": "/incorporacao.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
