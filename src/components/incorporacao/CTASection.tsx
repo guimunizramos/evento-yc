@@ -17,12 +17,12 @@ const CTASection = () => {
                   O seu terreno pode ser o início de um novo patrimônio.
                 </h2>
                 <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 md:mb-10 leading-relaxed">
-                  Participe desta consultoria fechada com Thiago Cardim e Samuel Mosca e entenda como analisar o potencial de um terreno, estruturar um empreendimento e tomar decisões imobiliárias mais estratégicas.
+                  Participe deste Workshop, uma collab entre YouCon e SMH com Thiago Cardim e Samuel Mosca, e entenda como analisar o potencial de um terreno, estruturar um empreendimento e tomar decisões imobiliárias mais estratégicas.
                 </p>
                 <div className="flex flex-col gap-4 md:flex-row md:justify-center md:gap-6 mb-8 md:mb-10">
                   <div className="flex items-center justify-center gap-2 text-foreground">
                     <Calendar className="w-4 h-4 md:w-6 md:h-6 text-primary" />
-                    <span className="text-base md:text-lg font-medium"><b>DATA:</b> 16/07</span>
+                    <span className="text-base md:text-lg font-medium"><b>DATA:</b> 23/07</span>
                   </div>
                   <div className="flex items-center justify-center gap-2 text-foreground">
                     <Clock className="w-4 h-4 md:w-6 md:h-6 text-primary" />
@@ -34,7 +34,7 @@ const CTASection = () => {
                   </div>
                 </div>
                 <Button variant="hero" size="xl" onClick={() => setDialogOpen(true)} className="w-full sm:w-auto text-sm md:text-base h-12 md:h-14">
-                  QUERO PARTICIPAR DA CONSULTORIA
+                  RESERVAR MEU LUGAR NO WORKSHOP
                 </Button>
                 <p className="text-xs text-muted-foreground mt-3 md:mt-6">Link enviado após o cadastro</p>
               </div>

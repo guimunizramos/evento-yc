@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-const EVENT_TIMESTAMP = new Date("2026-07-16T20:00:00-03:00").getTime();
+const EVENT_TIMESTAMP = new Date("2026-07-23T20:00:00-03:00").getTime();
 const getTimeLeft = () => Math.max(EVENT_TIMESTAMP - Date.now(), 0);
 const formatTimeUnit = (value: number) => String(value).padStart(2, "0");
 
@@ -28,10 +28,10 @@ const CountdownBanner = () => {
     <div className="fixed left-0 right-0 top-0 z-50 bg-primary/95 text-white shadow-md backdrop-blur-sm">
       <div className="container mx-auto flex min-h-[64px] flex-row flex-wrap items-center justify-center gap-x-3 gap-y-1.5 px-3 py-2 text-center md:min-h-[56px] md:flex-nowrap md:gap-4">
         <p className="text-[10px] font-semibold uppercase tracking-wide sm:text-xs md:text-sm">
-          {hasStarted ? "A consultoria já começou!" : "Consultoria gratuita ao vivo em:"}
+          {hasStarted ? "O Workshop já começou!" : "Workshop gratuito ao vivo em:"}
         </p>
         {!hasStarted && (
-          <div className="grid grid-cols-4 gap-1 sm:gap-1.5" aria-label="Contagem regressiva para 16/07/2026 às 20h">
+          <div className="grid grid-cols-4 gap-1 sm:gap-1.5" aria-label="Contagem regressiva para 23/07/2026 às 20h">
             {([["days", "Dias"], ["hours", "Horas"], ["minutes", "Min"], ["seconds", "Seg"]] as const).map(([key, label]) => (
               <div key={label} className="min-w-[42px] rounded bg-black/15 px-1.5 py-1 leading-none md:min-w-[52px] md:px-2">
                 <span className="block text-sm font-extrabold sm:text-base md:text-xl">{formatTimeUnit(countdown[key])}</span>

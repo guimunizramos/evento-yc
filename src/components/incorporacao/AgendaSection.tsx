@@ -8,6 +8,7 @@ const agendaItems = [
   { title: "Estruturação do empreendimento", description: "Veja como as diferentes etapas e profissionais precisam estar conectados para transformar o potencial do terreno em um projeto estruturado." },
   { title: "Modelos de parceria", description: "Conheça possibilidades de participação entre proprietários de terrenos, investidores, incorporadores e parceiros estratégicos." },
   { title: "Estratégia patrimonial", description: "Entenda como decisões imobiliárias bem estruturadas podem contribuir para a construção, consolidação e continuidade do patrimônio." },
+  { title: "Arquitetura de Capital e Segurança", description: "Veja como a forma de estruturar um empreendimento pode influenciar a proteção patrimonial e a segurança jurídica de cada etapa do projeto." },
 ];
 
 const AgendaSection = () => {
@@ -19,7 +20,7 @@ const AgendaSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-6 md:mb-12">
             <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">
-              O que vamos abordar nesta Consultoria Fechada:
+              O que vamos abordar neste Workshop:
             </h2>
             <p className="text-sm md:text-lg lg:text-xl text-muted-foreground">
               Um encontro direto e prático para quem possui um terreno, avalia oportunidades imobiliárias ou deseja entender os caminhos para desenvolver um empreendimento.

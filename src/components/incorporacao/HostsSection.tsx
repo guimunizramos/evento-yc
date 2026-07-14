@@ -6,7 +6,7 @@ const hosts = [
     name: "THIAGO CARDIM",
     role: "Arquiteto e CEO da YouCon Arquitetura",
     photo: thiagoPhoto as string | null,
-    description: "À frente da YouCon Arquitetura, Thiago Cardim atua no desenvolvimento de projetos completos e estudos de viabilidade que conectam arquitetura, engenharia e estratégia imobiliária. Durante a consultoria, ele mostrará como analisar o potencial construtivo de terrenos e transformar essas informações em empreendimentos mais funcionais, atrativos e competitivos.",
+    description: "À frente da YouCon Arquitetura, Thiago Cardim atua no desenvolvimento de projetos completos e estudos de viabilidade que conectam arquitetura, engenharia e estratégia imobiliária. Durante o Workshop, ele mostrará como analisar o potencial construtivo de terrenos e transformar essas informações em empreendimentos mais funcionais, atrativos e competitivos.",
   },
   {
     name: "SAMUEL MOSCA",
