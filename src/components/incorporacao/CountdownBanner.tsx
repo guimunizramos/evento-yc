@@ -28,7 +28,7 @@ const CountdownBanner = () => {
     <div className="fixed left-0 right-0 top-0 z-50 bg-primary/95 text-white shadow-md backdrop-blur-sm">
       <div className="container mx-auto flex min-h-[64px] flex-row flex-wrap items-center justify-center gap-x-3 gap-y-1.5 px-3 py-2 text-center md:min-h-[56px] md:flex-nowrap md:gap-4">
         <p className="text-[10px] font-semibold uppercase tracking-wide sm:text-xs md:text-sm">
-          {hasStarted ? "O Workshop já começou!" : "Workshop gratuito ao vivo em:"}
+          {hasStarted ? "O Workshop já começou!" : "Workshop gratuito e ao vivo em:"}
         </p>
         {!hasStarted && (
           <div className="grid grid-cols-4 gap-1 sm:gap-1.5" aria-label="Contagem regressiva para 23/07/2026 às 20h">

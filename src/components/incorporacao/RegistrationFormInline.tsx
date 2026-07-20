@@ -127,7 +127,7 @@ const RegistrationFormInline = ({ evento }: RegistrationFormInlineProps) => {
   };
 
   return (
-    <div className="rounded-xl md:rounded-2xl border border-primary/20 bg-card p-5 md:p-8">
+    <div>
       <div className="mb-5 md:mb-6">
         <div className="flex items-baseline justify-between gap-3">
           <h3 className="text-lg md:text-2xl font-bold text-foreground">

@@ -6,13 +6,13 @@ const hosts = [
     name: "THIAGO CARDIM",
     role: "Arquiteto e CEO da YouCon Arquitetura",
     photo: thiagoPhoto as string | null,
-    description: "À frente da YouCon Arquitetura, Thiago Cardim atua no desenvolvimento de projetos completos e estudos de viabilidade que conectam arquitetura, engenharia e estratégia imobiliária. Durante o Workshop, ele mostrará como analisar o potencial construtivo de terrenos e transformar essas informações em empreendimentos mais funcionais, atrativos e competitivos.",
+    description: "À frente da YouCon Arquitetura, Thiago Cardim atua no desenvolvimento de projetos completos e estudos de viabilidade para empreendimentos imobiliários. Durante o workshop, vai mostrar como decisões arquitetônicas influenciam o aproveitamento, os custos, a funcionalidade e o potencial comercial do empreendimento.",
   },
   {
     name: "SAMUEL MOSCA",
-    role: "Especialista em Patrimônio Imobiliário e sócio-fundador da SMH Patrimonial",
+    role: "Especialista em Incorporação Imobiliária e sócio-fundador da SMH Patrimonial",
     photo: samuelPhoto as string | null,
-    description: "Formado em Direito e sócio-fundador da SMH Patrimonial, Samuel Mosca atua na condução estratégica de projetos voltados à estruturação patrimonial. Seu trabalho conecta o mercado imobiliário a decisões societárias, tributárias e sucessórias, com foco na construção, consolidação e continuidade de patrimônios.",
+    description: "Formado em Direito e sócio-fundador da SMH Patrimonial, Samuel Mosca atua na estruturação estratégica de negócios e empreendimentos imobiliários. Durante o workshop, vai abordar a modelagem da incorporação, os principais riscos, as possibilidades de parceria e as decisões necessárias para viabilizar o negócio.",
   },
 ];
 
@@ -21,10 +21,10 @@ const HostsSection = () => (
     <div className="container mx-auto px-4 md:px-6">
       <div className="text-center mb-4 md:mb-8">
         <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground">
-          Duas visões estratégicas sobre incorporação e patrimônio
+          Duas visões estratégicas sobre <span className="text-primary">projeto e incorporação</span>
         </h2>
         <p className="text-sm md:text-lg text-muted-foreground mt-3 md:mt-6 max-w-2xl mx-auto">
-          Arquitetura e estruturação patrimonial reunidas para mostrar os principais caminhos entre o potencial de um terreno e o desenvolvimento de um empreendimento.
+          Arquitetura e incorporação reunidas para mostrar como decisões técnicas e estratégicas precisam caminhar juntas na estruturação de um empreendimento.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-4xl mx-auto">

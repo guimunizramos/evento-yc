@@ -44,18 +44,16 @@ const HeroSection = () => {
       <div className="container mx-auto md:px-6 relative z-10 flex-1 py-0 flex-row px-6 flex items-start md:items-center justify-center pt-[60px] md:pt-0">
         <div className="max-w-4xl text-center flex-col flex items-center justify-center">
           <div className="inline-flex items-center px-2 py-1 md:px-4 md:py-2 rounded-full bg-primary/10 border border-primary/30 -mt-1.5 mb-3 md:mt-0 md:mb-8">
-            <span className="text-[0.6rem] md:text-sm font-semibold text-primary uppercase tracking-wider">WORKSHOP EXCLUSIVO</span>
+            <span className="text-[0.6rem] md:text-sm font-semibold text-primary uppercase tracking-wider">WORKSHOP EXCLUSIVO: INCORPORAÇÃO IMOBILIÁRIA</span>
           </div>
 
           <h1 className="max-w-[20rem] sm:max-w-[38rem] md:max-w-[48rem] lg:max-w-[58rem] xl:max-w-[68rem] text-[28px] sm:text-[2.15rem] md:text-[2.75rem] lg:text-[3.4rem] xl:text-[4rem] font-bold text-foreground leading-[1.08] tracking-[-0.02em] mb-4 md:mb-6">
-            Como transformar terrenos em <span className="text-primary">empreendimentos que constroem patrimônio</span>.
+            Como estruturar empreendimentos imobiliários <span className="text-primary">viáveis e rentáveis</span>.
           </h1>
 
           <p className="text-[14px] md:text-[18px] text-[#cfcfcf] leading-relaxed mb-8 md:mb-10 max-w-2xl">
-            A <span className="text-foreground font-semibold">YouCon Arquitetura</span> e a{" "}
-            <span className="text-foreground font-semibold">SMH</span> reúnem{" "}
             <span className="text-foreground font-semibold">Thiago Cardim</span> e{" "}
-            <span className="text-foreground font-semibold">Samuel Mosca</span> em um workshop prático sobre incorporação imobiliária. Entenda como identificar o potencial de um terreno, estruturar um empreendimento e tomar decisões mais estratégicas para a construção de patrimônio.
+            <span className="text-foreground font-semibold">Samuel Mosca</span> mostram como projeto, viabilidade e estratégia de incorporação precisam trabalhar juntos para reduzir erros e aumentar o potencial do empreendimento.
           </p>
 
           <div className="flex flex-col items-center gap-4 w-full">
@@ -71,7 +69,7 @@ const HeroSection = () => {
             </span>
             <span className="hidden md:inline text-muted-foreground">|</span>
             <p className="text-xs md:text-sm text-muted-foreground">
-              Workshop online e gratuito | Vagas limitadas
+              23/07, às 20h | Evento online e gratuito
             </p>
           </div>
         </div>

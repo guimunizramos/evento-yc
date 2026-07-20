@@ -17,9 +17,9 @@ const PatrimonyIcon = () => (
 );
 
 const benefits = [
-  { icon: LandIcon, title: "Potencial do Terreno", description: "Localização, dimensões, legislação e vocação precisam ser analisadas para revelar o que realmente pode ser desenvolvido em cada área." },
-  { icon: BlueprintIcon, title: "Viabilidade do Empreendimento", description: "Produto imobiliário, área construída, custos e potencial de mercado precisam estar alinhados para transformar uma ideia em um negócio viável." },
-  { icon: PatrimonyIcon, title: "Construção de Patrimônio", description: "Uma estruturação bem planejada pode transformar o terreno em um empreendimento capaz de gerar valor e fortalecer o patrimônio ao longo do tempo." },
+  { icon: LandIcon, title: "Produto imobiliário", description: "Definir público, posicionamento, tipologias e diferenciais é fundamental para criar um produto alinhado à demanda do mercado." },
+  { icon: BlueprintIcon, title: "Projeto e viabilidade", description: "O projeto precisa equilibrar legislação, aproveitamento, custos, funcionalidade e potencial comercial." },
+  { icon: PatrimonyIcon, title: "Estratégia de incorporação", description: "A modelagem do negócio deve conectar parceiros, investimentos, etapas e decisões para reduzir riscos e preservar a rentabilidade." },
 ];
 
 const BenefitsSection = () => (
@@ -27,10 +27,10 @@ const BenefitsSection = () => (
     <div className="container mx-auto px-4 md:px-6">
       <div className="text-center max-w-3xl mx-auto mb-6 md:mb-16">
         <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">
-          O que transforma um terreno em uma oportunidade imobiliária?
+          O que transforma um projeto em um <span className="text-primary">empreendimento viável</span>?
         </h2>
         <p className="text-sm md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
-          Um empreendimento não começa na obra. Ele começa com uma leitura estratégica do terreno, uma análise criteriosa de viabilidade e uma estruturação capaz de conectar arquitetura, mercado e patrimônio.
+          Um empreendimento rentável não depende apenas de uma boa ideia. Ele exige decisões técnicas e estratégicas que conectem produto, projeto, mercado e incorporação desde o início.
         </p>
       </div>
       <div className="mb-10 md:mb-16">
