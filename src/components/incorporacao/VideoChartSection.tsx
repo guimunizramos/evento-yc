@@ -7,32 +7,22 @@ import { Play } from "lucide-react";
  */
 const VIDEO_SRC: string | null =
   "https://527cfmgcrs4j7fu9.public.blob.vercel-storage.com/incorporacao/workshop-incorporacao.mp4";
-const VIDEO_POSTER: string | null = null;
+const VIDEO_POSTER: string | null =
+  "https://527cfmgcrs4j7fu9.public.blob.vercel-storage.com/incorporacao/workshop-incorporacao-poster.jpg";
 
 const VideoPlayer = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || typeof IntersectionObserver === "undefined") return;
+    if (!video) return;
 
-    // Só começa a tocar quando o vídeo entra na viewport: com autoplay puro, o
-    // arquivo inteiro seria baixado já no carregamento da página.
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => {
-            /* navegador bloqueou o autoplay: os controles seguem disponíveis */
-          });
-        } else {
-          video.pause();
-        }
-      },
-      { threshold: 0.4 },
-    );
-
-    observer.observe(video);
-    return () => observer.disconnect();
+    // O atributo autoPlay já basta na maioria dos casos; este play() extra cobre
+    // navegadores que ignoram autoplay até o elemento ter sido montado. Muted
+    // garante que a política de autoplay permita, sem gesto do usuário.
+    video.play().catch(() => {
+      /* autoplay bloqueado: o poster aparece e os controles seguem disponíveis */
+    });
   }, []);
 
   return (
@@ -43,10 +33,11 @@ const VideoPlayer = () => {
         {VIDEO_SRC ? (
           <video
             ref={videoRef}
-            controls
+            autoPlay
             muted
             loop
             playsInline
+            controls
             preload="metadata"
             poster={VIDEO_POSTER ?? undefined}
             className="h-full w-full object-cover"
@@ -74,12 +65,13 @@ const stages = ["Concepção", "Viabilidade", "Projeto", "Desenvolvimento"];
 const semEstruturacao = [32, 37, 41, 45];
 const comEstruturacao = [32, 54, 90, 130];
 
-// A viewBox é mais larga que a área plotada para o rótulo "Desenvolvimento",
-// centralizado no último ponto, não ser cortado na borda direita.
+// A área plotada é recuada das bordas do viewBox para os rótulos das pontas
+// ("Concepção" e "Desenvolvimento"), centralizados nos pontos, terem respiro e
+// não encostarem na borda do card.
 const CHART_W = 400;
 const BASELINE = 150;
-const X_START = 54;
-const X_END = 338;
+const X_START = 66;
+const X_END = 326;
 
 const pointsFor = (values: number[]) =>
   values.map((value, index) => ({
@@ -276,7 +268,7 @@ const ComparisonChart = () => {
               x={point.x}
               y={BASELINE + 18}
               textAnchor="middle"
-              className="fill-muted-foreground text-[10px]"
+              className="fill-muted-foreground text-[8.5px]"
             >
               {stages[index]}
             </text>
