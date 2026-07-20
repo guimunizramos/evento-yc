@@ -64,7 +64,7 @@ const VideoPlayer = () => {
         )}
       </div>
       <p className="mt-4 text-center text-sm leading-relaxed text-muted-foreground md:text-base">
-        Assista ao vídeo e entenda o que você vai aprender neste workshop.
+        Assista ao vídeo e entenda o que você vai aprender neste Workshop.
       </p>
     </div>
   );
@@ -152,10 +152,13 @@ const ComparisonChart = () => {
 
   return (
     <div ref={chartRef} className="flex flex-col rounded-xl border border-border bg-card/50 p-5 md:rounded-2xl md:p-8 lg:h-[560px]">
-      <h3 className="text-base font-bold text-foreground md:text-xl">
-        Decisões isoladas x <span className="text-primary">empreendimento bem estruturado</span>
+      {/* No mobile o título quebra em três linhas centralizadas; no desktop volta a uma linha à esquerda. */}
+      <h3 className="text-center text-base font-bold text-foreground md:text-left md:text-xl">
+        <span className="block md:inline">Decisões isoladas</span>{" "}
+        <span className="block md:inline">x</span>{" "}
+        <span className="block text-primary md:inline">empreendimento bem estruturado</span>
       </h3>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
+      <p className="mt-2 text-center text-sm leading-relaxed text-muted-foreground md:text-left md:text-base">
         Quando projeto, viabilidade e incorporação são desenvolvidos em conjunto, as decisões se
         tornam mais precisas e o empreendimento ganha mais potencial de resultado.
       </p>
@@ -280,7 +283,7 @@ const ComparisonChart = () => {
           ))}
         </svg>
 
-        <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:gap-6">
+        <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-6">
           <span className="inline-flex items-center gap-2 text-xs text-muted-foreground md:text-sm">
             <span className="h-0.5 w-4 rounded-full bg-muted-foreground/60" />
             Sem estruturação integrada
@@ -291,7 +294,7 @@ const ComparisonChart = () => {
           </span>
         </div>
 
-        <p className="mt-4 text-[11px] leading-relaxed text-muted-foreground md:text-xs">
+        <p className="mt-4 text-center text-[11px] leading-relaxed text-muted-foreground md:text-left md:text-xs">
           Gráfico ilustrativo sobre a evolução de um empreendimento ao longo de sua estruturação.
         </p>
       </div>

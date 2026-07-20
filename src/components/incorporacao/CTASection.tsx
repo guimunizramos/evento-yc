@@ -11,7 +11,7 @@ const CTASection = () => (
               Um empreendimento rentável começa com <span className="text-primary">decisões bem estruturadas</span>.
             </h2>
             <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 md:mb-10 leading-relaxed">
-              Participe deste workshop gratuito com Thiago Cardim e Samuel Mosca e entenda como integrar projeto, viabilidade e incorporação para desenvolver empreendimentos mais seguros e preparados para o mercado.
+              Participe deste Workshop gratuito com Thiago Cardim e Samuel Mosca e entenda como integrar projeto, viabilidade e incorporação para desenvolver empreendimentos mais seguros e preparados para o mercado.
             </p>
             <div className="flex flex-col gap-4 md:flex-row md:justify-center md:gap-6">
               <div className="flex items-center justify-center gap-2 text-foreground">

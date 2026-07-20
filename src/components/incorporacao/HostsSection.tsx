@@ -6,13 +6,13 @@ const hosts = [
     name: "THIAGO CARDIM",
     role: "Arquiteto e CEO da YouCon Arquitetura",
     photo: thiagoPhoto as string | null,
-    description: "À frente da YouCon Arquitetura, Thiago Cardim atua no desenvolvimento de projetos completos e estudos de viabilidade para empreendimentos imobiliários. Durante o workshop, vai mostrar como decisões arquitetônicas influenciam o aproveitamento, os custos, a funcionalidade e o potencial comercial do empreendimento.",
+    description: "À frente da YouCon Arquitetura, Thiago Cardim atua no desenvolvimento de projetos completos e estudos de viabilidade para empreendimentos imobiliários. Durante o Workshop, vai mostrar como decisões arquitetônicas influenciam o aproveitamento, os custos, a funcionalidade e o potencial comercial do empreendimento.",
   },
   {
     name: "SAMUEL MOSCA",
     role: "Especialista em Incorporação Imobiliária e sócio-fundador da SMH Patrimonial",
     photo: samuelPhoto as string | null,
-    description: "Formado em Direito e sócio-fundador da SMH Patrimonial, Samuel Mosca atua na estruturação estratégica de negócios e empreendimentos imobiliários. Durante o workshop, vai abordar a modelagem da incorporação, os principais riscos, as possibilidades de parceria e as decisões necessárias para viabilizar o negócio.",
+    description: "Formado em Direito e sócio-fundador da SMH Patrimonial, Samuel Mosca atua na estruturação estratégica de negócios e empreendimentos imobiliários. Durante o Workshop, vai abordar a modelagem da incorporação, os principais riscos, as possibilidades de parceria e as decisões necessárias para viabilizar o negócio.",
   },
 ];
 

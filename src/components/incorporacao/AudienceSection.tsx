@@ -29,7 +29,7 @@ const AudienceSection = () => (
       <div className="text-center max-w-3xl mx-auto mb-6 md:mb-16">
         {/* Sobre o laranja o destaque é feito em branco — laranja sobre laranja não teria contraste. */}
         <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-3 md:mb-6">
-          Para quem é <span className="text-white">este workshop</span>
+          Para quem é <span className="text-white">este Workshop</span>
         </h2>
         <p className="text-sm md:text-lg lg:text-xl text-primary-foreground/80 leading-relaxed">
           Um encontro para quem deseja estruturar novos empreendimentos, aprimorar projetos em desenvolvimento ou tomar decisões mais seguras na incorporação imobiliária.

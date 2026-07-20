@@ -185,8 +185,8 @@ const RegistrationFormInline = ({ evento }: RegistrationFormInlineProps) => {
               {errors.phone && <p className="text-destructive text-xs">{errors.phone.message}</p>}
             </div>
 
-            <div className="grid grid-cols-5 gap-3">
-              <div className="space-y-1.5 col-span-4">
+            <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
+              <div className="space-y-1.5 col-span-2 sm:col-span-4">
                 <Label htmlFor="inc-city" className="text-base text-foreground">Cidade</Label>
                 <Input
                   id="inc-city"
