@@ -70,8 +70,8 @@ const comEstruturacao = [32, 54, 90, 130];
 // O respiro dos rótulos das pontas vem da fonte pequena, não de margens largas.
 const CHART_W = 400;
 const BASELINE = 150;
-const X_START = 34;
-const X_END = 362;
+const X_START = 22;
+const X_END = 378;
 
 const pointsFor = (values: number[]) =>
   values.map((value, index) => ({
@@ -263,17 +263,25 @@ const ComparisonChart = () => {
             />
           ))}
 
-          {comPoints.map((point, index) => (
-            <text
-              key={`label-${stages[index]}`}
-              x={point.x}
-              y={BASELINE + 18}
-              textAnchor="middle"
-              className="fill-muted-foreground text-[8px]"
-            >
-              {stages[index]}
-            </text>
-          ))}
+          {comPoints.map((point, index) => {
+            // O primeiro rótulo alinha à esquerda e o último à direita, então eles
+            // não vazam além das pontas — assim a área plotada pode preencher quase
+            // toda a largura sem margens grandes (que inchariam no desktop).
+            const isFirst = index === 0;
+            const isLast = index === comPoints.length - 1;
+            const anchor = isFirst ? "start" : isLast ? "end" : "middle";
+            return (
+              <text
+                key={`label-${stages[index]}`}
+                x={point.x}
+                y={BASELINE + 18}
+                textAnchor={anchor}
+                className="fill-muted-foreground text-[8px]"
+              >
+                {stages[index]}
+              </text>
+            );
+          })}
         </svg>
 
         <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-6">
