@@ -1,3 +1,4 @@
+import AmbientGlow from "./AmbientGlow";
 import thiagoPhoto from "@/assets/thiago-cardim.png";
 import samuelPhoto from "@/assets/samuel-mosca.jpg";
 
@@ -17,8 +18,9 @@ const hosts = [
 ];
 
 const HostsSection = () => (
-  <section className="py-10 md:py-20 lg:py-28 bg-background">
-    <div className="container mx-auto px-4 md:px-6">
+  <section className="relative overflow-hidden py-10 md:py-20 lg:py-28 bg-background">
+    <AmbientGlow preset="b" />
+    <div className="relative container mx-auto px-4 md:px-6">
       <div className="text-center mb-4 md:mb-8">
         <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground">
           Duas visões estratégicas sobre <span className="text-primary">projeto e incorporação</span>

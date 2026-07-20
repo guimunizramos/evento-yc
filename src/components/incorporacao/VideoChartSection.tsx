@@ -36,8 +36,10 @@ const VideoPlayer = () => {
   }, []);
 
   return (
-    <div className="mx-auto w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[340px]">
-      <div className="relative aspect-[9/16] overflow-hidden rounded-[2rem] border-2 border-primary/30 bg-card shadow-lg">
+    <div className="mx-auto w-full max-w-[260px] sm:max-w-[300px] lg:w-[315px] lg:max-w-none">
+      {/* No desktop a altura é fixa (BOX_H) e a largura sai dela, mantendo o 9:16
+          exato — assim o frame e o card do gráfico ficam do mesmo tamanho. */}
+      <div className="relative aspect-[9/16] overflow-hidden rounded-[2rem] border-2 border-primary/30 bg-card shadow-lg lg:aspect-auto lg:h-[560px]">
         {VIDEO_SRC ? (
           <video
             ref={videoRef}
@@ -149,7 +151,7 @@ const ComparisonChart = () => {
   }, []);
 
   return (
-    <div ref={chartRef} className="rounded-xl border border-border bg-card/50 p-5 md:rounded-2xl md:p-8">
+    <div ref={chartRef} className="flex flex-col rounded-xl border border-border bg-card/50 p-5 md:rounded-2xl md:p-8 lg:h-[560px]">
       <h3 className="text-base font-bold text-foreground md:text-xl">
         Decisões isoladas x <span className="text-primary">empreendimento bem estruturado</span>
       </h3>
@@ -158,7 +160,7 @@ const ComparisonChart = () => {
         tornam mais precisas e o empreendimento ganha mais potencial de resultado.
       </p>
 
-      <div className="mt-5 md:mt-7">
+      <div className="mt-5 flex flex-1 flex-col justify-center md:mt-7">
         <svg
           viewBox={`0 0 ${CHART_W} 190`}
           className="w-full"
@@ -298,7 +300,7 @@ const ComparisonChart = () => {
 };
 
 const VideoChartSection = () => (
-  <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-8 lg:items-center">
+  <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-8 lg:items-start">
     <VideoPlayer />
     <ComparisonChart />
   </div>

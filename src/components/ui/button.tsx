@@ -19,6 +19,12 @@ const buttonVariants = cva(
         hero: "bg-primary text-primary-foreground hover:bg-primary-hover animate-pulse-glow font-bold tracking-wide",
         // Outline orange for secondary CTAs
         "hero-outline": "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground font-semibold",
+        // CTA verde preenchido (LP de incorporação) — degradê com brilho pulsante
+        "cta-green":
+          "bg-[linear-gradient(135deg,hsl(150_85%_26%)_0%,hsl(145_75%_36%)_50%,hsl(140_70%_45%)_100%)] text-white hover:brightness-110 animate-pulse-glow-green font-bold tracking-wide",
+        // Variante secundária do CTA verde, sem pulso, para ações de apoio
+        "cta-green-soft":
+          "bg-[linear-gradient(135deg,hsl(150_85%_22%)_0%,hsl(145_60%_30%)_100%)] text-white hover:brightness-125 font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",

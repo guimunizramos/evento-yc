@@ -220,7 +220,7 @@ const RegistrationFormInline = ({ evento }: RegistrationFormInlineProps) => {
 
             <Button
               type="button"
-              variant="hero"
+              variant="cta-green"
               size="lg"
               className="w-full mt-6 h-12 text-base"
               onClick={handleAdvance}
@@ -297,7 +297,7 @@ const RegistrationFormInline = ({ evento }: RegistrationFormInlineProps) => {
             <div className="flex flex-col gap-3 mt-6 sm:flex-row-reverse">
               <Button
                 type="submit"
-                variant="hero"
+                variant="cta-green"
                 size="lg"
                 className="w-full h-12 text-base"
                 disabled={!isValid || isSubmitting}
@@ -306,7 +306,7 @@ const RegistrationFormInline = ({ evento }: RegistrationFormInlineProps) => {
               </Button>
               <Button
                 type="button"
-                variant="ghost"
+                variant="cta-green-soft"
                 size="lg"
                 className="w-full h-12 text-base sm:w-auto sm:px-6"
                 onClick={() => setStep(1)}

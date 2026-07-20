@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import AmbientGlow from "./AmbientGlow";
 
 const agendaItems = [
   { title: "Como funciona uma incorporação imobiliária", description: "Entenda as principais etapas, decisões e agentes envolvidos na estruturação de um empreendimento." },
@@ -26,25 +27,40 @@ const AgendaSection = () => {
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const index = Number((entry.target as HTMLElement).dataset.index);
-          // A linha só avança: uma vez aceso, o marco permanece aceso.
-          setReachedIndex((current) => (index > current ? index : current));
-        });
-      },
-      { threshold: 0.5, rootMargin: "0px 0px -15% 0px" },
-    );
+    // A timeline inteira cabe em um viewport de altura normal, então observar a
+    // interseção de cada item acenderia os sete de uma vez. O progresso é medido
+    // pela posição de cada marco em relação a uma linha de referência na tela.
+    let ticking = false;
 
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    const update = () => {
+      ticking = false;
+      const referenceLine = window.innerHeight * 0.65;
+      let last = -1;
+      elements.forEach((el, index) => {
+        if (el.getBoundingClientRect().top <= referenceLine) last = index;
+      });
+      setReachedIndex(last);
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
-    <section className="py-10 md:py-20 lg:py-28 bg-background">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="relative overflow-hidden py-10 md:py-20 lg:py-28 bg-background">
+      <AmbientGlow preset="c" />
+      <div className="relative container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 md:mb-14">
             <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">
@@ -107,7 +123,7 @@ const AgendaSection = () => {
           </ol>
 
           <div className="text-center">
-            <Button variant="hero-outline" size="xl" onClick={scrollToForm} className="w-full sm:w-auto text-sm md:text-base h-12 md:h-14">
+            <Button variant="cta-green" size="xl" onClick={scrollToForm} className="w-full sm:w-auto text-sm md:text-base h-12 md:h-14">
               QUERO PARTICIPAR DESSA AULA
             </Button>
           </div>

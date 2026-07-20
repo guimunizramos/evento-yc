@@ -106,11 +106,25 @@
     @apply border border-primary/30;
     box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
   }
+
+  /* Superfícies laranja da LP de incorporação: degradê no lugar do laranja chapado. */
+  .bg-orange-gradient {
+    background-image: linear-gradient(
+      135deg,
+      hsl(14 92% 45%) 0%,
+      hsl(25 100% 50%) 45%,
+      hsl(36 100% 57%) 100%
+    );
+  }
 }
 
 @layer utilities {
   .animate-pulse-glow {
     animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow-green {
+    animation: pulseGlowGreen 2s ease-in-out infinite;
   }
 
   .animate-fade-up {
@@ -128,6 +142,15 @@
   }
   50% {
     box-shadow: 0 0 40px hsl(25, 100%, 50%, 0.6);
+  }
+}
+
+@keyframes pulseGlowGreen {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(145, 70%, 40%, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(145, 70%, 40%, 0.6);
   }
 }
 

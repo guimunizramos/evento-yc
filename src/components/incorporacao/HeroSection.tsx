@@ -57,7 +57,7 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col items-center gap-4 w-full">
-            <Button variant="hero" size="xl" onClick={scrollToForm} className="w-full sm:w-auto text-sm md:text-base h-12 md:h-14">
+            <Button variant="cta-green" size="xl" onClick={scrollToForm} className="w-full sm:w-auto text-sm md:text-base h-12 md:h-14">
               QUERO GARANTIR MINHA VAGA
             </Button>
           </div>
@@ -69,7 +69,7 @@ const HeroSection = () => {
             </span>
             <span className="hidden md:inline text-muted-foreground">|</span>
             <p className="text-xs md:text-sm text-muted-foreground">
-              23/07, às 20h | Evento online e gratuito
+              Evento online e gratuito
             </p>
           </div>
         </div>
