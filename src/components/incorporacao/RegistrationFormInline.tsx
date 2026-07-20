@@ -222,7 +222,7 @@ const RegistrationFormInline = ({ evento }: RegistrationFormInlineProps) => {
               type="button"
               variant="cta-green"
               size="lg"
-              className="w-full mt-6 h-12 text-base"
+              className="w-full mt-6 h-12 rounded-full text-base"
               onClick={handleAdvance}
             >
               CONTINUAR
@@ -299,7 +299,7 @@ const RegistrationFormInline = ({ evento }: RegistrationFormInlineProps) => {
                 type="submit"
                 variant="cta-green"
                 size="lg"
-                className="w-full h-12 text-base"
+                className="w-full h-12 rounded-full text-base"
                 disabled={!isValid || isSubmitting}
               >
                 {isSubmitting ? "Redirecionando..." : "CONFIRMAR INSCRIÇÃO"}
@@ -308,7 +308,7 @@ const RegistrationFormInline = ({ evento }: RegistrationFormInlineProps) => {
                 type="button"
                 variant="cta-green-soft"
                 size="lg"
-                className="w-full h-12 text-base sm:w-auto sm:px-6"
+                className="w-full h-12 rounded-full text-base sm:w-auto sm:px-6"
                 onClick={() => setStep(1)}
                 disabled={isSubmitting}
               >

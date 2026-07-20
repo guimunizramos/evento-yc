@@ -121,7 +121,7 @@ const AgendaSection = () => {
           </ol>
 
           <div className="text-center">
-            <Button variant="cta-green" size="xl" onClick={scrollToForm} className="w-full sm:w-auto text-sm md:text-base h-12 md:h-14">
+            <Button variant="cta-green" size="xl" onClick={scrollToForm} className="w-full sm:w-auto rounded-full text-sm md:text-base h-12 md:h-14">
               QUERO PARTICIPAR DESSA AULA
             </Button>
           </div>

@@ -57,7 +57,7 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col items-center gap-4 w-full">
-            <Button variant="cta-green" size="xl" onClick={scrollToForm} className="w-full sm:w-auto text-sm md:text-base h-12 md:h-14">
+            <Button variant="cta-green" size="xl" onClick={scrollToForm} className="w-full sm:w-auto rounded-full text-sm md:text-base h-12 md:h-14">
               QUERO GARANTIR MINHA VAGA
             </Button>
           </div>
