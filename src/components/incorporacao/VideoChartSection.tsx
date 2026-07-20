@@ -2,40 +2,71 @@ import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
 
 /**
- * Quando o vídeo vertical (9:16) estiver disponível, basta apontar VIDEO_SRC
- * para o arquivo (ex: "/videos/incorporacao-vertical.mp4") e, opcionalmente,
- * VIDEO_POSTER para a imagem de capa. Enquanto for null, renderiza o placeholder.
+ * Vídeo vertical 9:16 hospedado no Vercel Blob. Enquanto for null,
+ * renderiza o placeholder.
  */
-const VIDEO_SRC: string | null = null;
+const VIDEO_SRC: string | null =
+  "https://527cfmgcrs4j7fu9.public.blob.vercel-storage.com/incorporacao/workshop-incorporacao.mp4";
 const VIDEO_POSTER: string | null = null;
 
-const VideoPlayer = () => (
-  <div className="mx-auto w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[340px]">
-    <div className="relative aspect-[9/16] overflow-hidden rounded-[2rem] border-2 border-primary/30 bg-card shadow-lg">
-      {VIDEO_SRC ? (
-        <video
-          controls
-          preload="metadata"
-          poster={VIDEO_POSTER ?? undefined}
-          className="h-full w-full object-cover"
-        >
-          <source src={VIDEO_SRC} type="video/mp4" />
-          Seu navegador não suporta a reprodução de vídeo.
-        </video>
-      ) : (
-        <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-gradient-to-b from-card to-background px-6 text-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/20 md:h-16 md:w-16">
-            <Play className="ml-0.5 h-6 w-6 text-primary md:h-7 md:w-7" fill="currentColor" />
+const VideoPlayer = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || typeof IntersectionObserver === "undefined") return;
+
+    // Só começa a tocar quando o vídeo entra na viewport: com autoplay puro, o
+    // arquivo inteiro seria baixado já no carregamento da página.
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {
+            /* navegador bloqueou o autoplay: os controles seguem disponíveis */
+          });
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.4 },
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="mx-auto w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[340px]">
+      <div className="relative aspect-[9/16] overflow-hidden rounded-[2rem] border-2 border-primary/30 bg-card shadow-lg">
+        {VIDEO_SRC ? (
+          <video
+            ref={videoRef}
+            controls
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={VIDEO_POSTER ?? undefined}
+            className="h-full w-full object-cover"
+          >
+            <source src={VIDEO_SRC} type="video/mp4" />
+            Seu navegador não suporta a reprodução de vídeo.
+          </video>
+        ) : (
+          <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-gradient-to-b from-card to-background px-6 text-center">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/20 md:h-16 md:w-16">
+              <Play className="ml-0.5 h-6 w-6 text-primary md:h-7 md:w-7" fill="currentColor" />
+            </div>
+            <p className="text-sm font-semibold text-foreground">Vídeo em breve</p>
           </div>
-          <p className="text-sm font-semibold text-foreground">Vídeo em breve</p>
-        </div>
-      )}
+        )}
+      </div>
+      <p className="mt-4 text-center text-sm leading-relaxed text-muted-foreground md:text-base">
+        Assista ao vídeo e entenda o que você vai aprender neste workshop.
+      </p>
     </div>
-    <p className="mt-4 text-center text-sm leading-relaxed text-muted-foreground md:text-base">
-      Assista ao vídeo e entenda o que você vai aprender neste workshop.
-    </p>
-  </div>
-);
+  );
+};
 
 const stages = ["Concepção", "Viabilidade", "Projeto", "Desenvolvimento"];
 const semEstruturacao = [32, 37, 41, 45];
