@@ -1,10 +1,8 @@
 import { Calendar, Clock, MapPin } from "lucide-react";
-import AmbientGlow from "./AmbientGlow";
 import RegistrationFormInline from "./RegistrationFormInline";
 
 const CTASection = () => (
-  <section id="cta-section" className="relative overflow-hidden py-10 md:py-20 lg:py-28 bg-background">
-    <AmbientGlow preset="d" />
+  <section id="cta-section" className="relative py-10 md:py-20 lg:py-28">
     <div className="relative container mx-auto px-4 md:px-6">
       <div className="max-w-3xl mx-auto">
         <div className="p-6 md:p-8 lg:p-12 rounded-xl md:rounded-3xl border-2 border-primary/40 bg-card/50 glow-box">

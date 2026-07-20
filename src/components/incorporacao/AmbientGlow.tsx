@@ -1,37 +1,32 @@
 /**
- * Luzes de fundo difusas. As posições são fixas por preset — usar Math.random()
- * faria os brilhos saltarem a cada re-render do React.
+ * Camada única de luzes de fundo para a página inteira.
+ *
+ * Fica atrás de todas as seções de propósito: quando cada seção tinha o próprio
+ * brilho com overflow-hidden, o corte na borda criava uma linha horizontal
+ * visível entre seções de mesma cor. Numa camada só, os brilhos atravessam as
+ * divisões e não há emenda.
+ *
+ * As posições são fixas — usar Math.random() faria os brilhos saltarem a cada
+ * re-render do React.
  */
-type Blob = { top?: string; bottom?: string; left?: string; right?: string; size: string; tone: string; opacity: string };
+const blobs = [
+  { top: "4%", left: "-12%", size: "42rem", tone: "hsl(25 100% 50%)", opacity: 0.15 },
+  { top: "17%", right: "-10%", size: "34rem", tone: "hsl(36 100% 57%)", opacity: 0.12 },
+  { top: "31%", left: "-6%", size: "36rem", tone: "hsl(14 92% 45%)", opacity: 0.13 },
+  { top: "46%", right: "-4%", size: "38rem", tone: "hsl(25 100% 50%)", opacity: 0.12 },
+  { top: "61%", left: "-10%", size: "34rem", tone: "hsl(36 100% 57%)", opacity: 0.12 },
+  { top: "74%", right: "-8%", size: "36rem", tone: "hsl(25 100% 50%)", opacity: 0.13 },
+  { top: "88%", left: "-4%", size: "32rem", tone: "hsl(14 92% 45%)", opacity: 0.12 },
+];
 
-const presets: Record<string, Blob[]> = {
-  a: [
-    { top: "-10%", left: "-8%", size: "38rem", tone: "hsl(25 100% 50%)", opacity: "0.16" },
-    { bottom: "-15%", right: "-5%", size: "30rem", tone: "hsl(145 75% 36%)", opacity: "0.12" },
-  ],
-  b: [
-    { top: "12%", right: "-12%", size: "34rem", tone: "hsl(36 100% 57%)", opacity: "0.14" },
-    { bottom: "-20%", left: "8%", size: "26rem", tone: "hsl(150 85% 26%)", opacity: "0.14" },
-  ],
-  c: [
-    { top: "-18%", right: "18%", size: "32rem", tone: "hsl(145 75% 36%)", opacity: "0.13" },
-    { bottom: "-10%", left: "-10%", size: "36rem", tone: "hsl(14 92% 45%)", opacity: "0.15" },
-  ],
-  d: [
-    { top: "25%", left: "-14%", size: "28rem", tone: "hsl(25 100% 50%)", opacity: "0.13" },
-    { top: "-12%", right: "-8%", size: "34rem", tone: "hsl(140 70% 45%)", opacity: "0.11" },
-  ],
-};
-
-const AmbientGlow = ({ preset = "a" }: { preset?: keyof typeof presets }) => (
+const AmbientGlow = () => (
   <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-    {presets[preset].map((blob, index) => (
+    {blobs.map((blob, index) => (
       <div
         key={index}
-        className="absolute rounded-full blur-[110px]"
+        className="absolute rounded-full blur-[120px]"
         style={{
           top: blob.top,
-          bottom: blob.bottom,
           left: blob.left,
           right: blob.right,
           width: blob.size,

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import AmbientGlow from "./AmbientGlow";
 
 const agendaItems = [
   { title: "Como funciona uma incorporação imobiliária", description: "Entenda as principais etapas, decisões e agentes envolvidos na estruturação de um empreendimento." },
@@ -58,9 +57,8 @@ const AgendaSection = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden py-10 md:py-20 lg:py-28 bg-background">
-      <AmbientGlow preset="c" />
-      <div className="relative container mx-auto px-4 md:px-6">
+    <section className="relative py-10 md:py-20 lg:py-28">
+        <div className="relative container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 md:mb-14">
             <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">

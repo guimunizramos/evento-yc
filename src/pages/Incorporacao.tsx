@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import AmbientGlow from "@/components/incorporacao/AmbientGlow";
 import CountdownBanner from "@/components/incorporacao/CountdownBanner";
 import HeroSection from "@/components/incorporacao/HeroSection";
 import BenefitsSection from "@/components/incorporacao/BenefitsSection";
@@ -18,7 +19,8 @@ const Incorporacao = () => {
   }, []);
 
   return (
-  <main className="min-h-screen bg-background pt-[64px] md:pt-[56px]">
+  <main className="relative min-h-screen overflow-hidden bg-background pt-[64px] md:pt-[56px]">
+    <AmbientGlow />
     <CountdownBanner />
     <HeroSection />
     <BenefitsSection />
