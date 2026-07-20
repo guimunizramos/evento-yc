@@ -65,13 +65,13 @@ const stages = ["Concepção", "Viabilidade", "Projeto", "Desenvolvimento"];
 const semEstruturacao = [32, 37, 41, 45];
 const comEstruturacao = [32, 54, 90, 130];
 
-// A área plotada é recuada das bordas do viewBox para os rótulos das pontas
-// ("Concepção" e "Desenvolvimento"), centralizados nos pontos, terem respiro e
-// não encostarem na borda do card.
+// A área plotada preenche quase toda a largura do viewBox — margens grandes aqui
+// virariam vazio proporcionalmente grande no desktop (o SVG escala com a largura).
+// O respiro dos rótulos das pontas vem da fonte pequena, não de margens largas.
 const CHART_W = 400;
 const BASELINE = 150;
-const X_START = 66;
-const X_END = 326;
+const X_START = 34;
+const X_END = 362;
 
 const pointsFor = (values: number[]) =>
   values.map((value, index) => ({
@@ -172,8 +172,8 @@ const ComparisonChart = () => {
           {[0, 40, 80, 120].map((offset) => (
             <line
               key={offset}
-              x1={X_START - 24}
-              x2={X_END + 12}
+              x1={X_START - 20}
+              x2={X_END + 8}
               y1={BASELINE - offset}
               y2={BASELINE - offset}
               className="stroke-border"
@@ -183,15 +183,16 @@ const ComparisonChart = () => {
           ))}
 
           <line
-            x1={X_START - 24}
-            x2={X_END + 12}
+            x1={X_START - 20}
+            x2={X_END + 8}
             y1={BASELINE}
             y2={BASELINE}
             className="stroke-border"
             strokeWidth="1.5"
           />
 
-          <text x={X_START - 30} y={BASELINE - 116} textAnchor="end" className="fill-muted-foreground text-[9px]">
+          {/* "valor" acima do gráfico (não à esquerda) para não exigir margem lateral */}
+          <text x={X_START - 20} y={BASELINE - 130} textAnchor="start" className="fill-muted-foreground text-[8px]">
             valor
           </text>
 
@@ -268,7 +269,7 @@ const ComparisonChart = () => {
               x={point.x}
               y={BASELINE + 18}
               textAnchor="middle"
-              className="fill-muted-foreground text-[8.5px]"
+              className="fill-muted-foreground text-[8px]"
             >
               {stages[index]}
             </text>
