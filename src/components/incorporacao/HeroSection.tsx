@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/inc-hero-desktop.jpg";
 import heroImageMobile from "@/assets/inc-hero-mobile.jpg";
@@ -52,9 +53,9 @@ const HeroSection = () => {
 
           <p className="text-[14px] md:text-[18px] text-[#cfcfcf] leading-relaxed mb-8 md:mb-10 max-w-2xl">
             A <span className="text-foreground font-semibold">YouCon Arquitetura</span> e a{" "}
-            <span className="text-foreground font-semibold">SMH</span> se reúnem em um bate-papo estilo podcast com{" "}
+            <span className="text-foreground font-semibold">SMH</span> reúnem{" "}
             <span className="text-foreground font-semibold">Thiago Cardim</span> e{" "}
-            <span className="text-foreground font-semibold">Samuel Mosca</span> sobre incorporação imobiliária. Entenda como identificar o potencial de um terreno, estruturar um empreendimento e tomar decisões mais estratégicas para a construção de patrimônio.
+            <span className="text-foreground font-semibold">Samuel Mosca</span> em um workshop prático sobre incorporação imobiliária. Entenda como identificar o potencial de um terreno, estruturar um empreendimento e tomar decisões mais estratégicas para a construção de patrimônio.
           </p>
 
           <div className="flex flex-col items-center gap-4 w-full">
@@ -63,9 +64,16 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          <p className="text-xs md:text-sm text-muted-foreground mt-3 md:mt-4">
-            Workshop online e gratuito | Vagas limitadas
-          </p>
+          <div className="mt-3 md:mt-4 flex flex-col items-center gap-1.5 md:flex-row md:gap-3">
+            <span className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-primary">
+              <Users className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              +50 pessoas já confirmaram presença
+            </span>
+            <span className="hidden md:inline text-muted-foreground">|</span>
+            <p className="text-xs md:text-sm text-muted-foreground">
+              Workshop online e gratuito | Vagas limitadas
+            </p>
+          </div>
         </div>
       </div>
     </section>

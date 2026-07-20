@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import CountdownBanner from "@/components/incorporacao/CountdownBanner";
 import HeroSection from "@/components/incorporacao/HeroSection";
 import BenefitsSection from "@/components/incorporacao/BenefitsSection";
+import AudienceSection from "@/components/incorporacao/AudienceSection";
 import AgendaSection from "@/components/incorporacao/AgendaSection";
 import HostsSection from "@/components/incorporacao/HostsSection";
 import CTASection from "@/components/incorporacao/CTASection";
@@ -21,6 +22,7 @@ const Incorporacao = () => {
     <CountdownBanner />
     <HeroSection />
     <BenefitsSection />
+    <AudienceSection />
     <AgendaSection />
     <HostsSection />
     <CTASection />

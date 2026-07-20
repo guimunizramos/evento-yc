@@ -1,3 +1,5 @@
+import VideoChartSection from "./VideoChartSection";
+
 const LandIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-8 md:h-8 text-primary">
     <path d="M3 21h18" /><path d="M5 21V7l7-4 7 4v14" /><path d="M9 21v-6h6v6" /><circle cx="12" cy="10" r="1" /><path d="M3 10h2M19 10h2" />
@@ -30,6 +32,9 @@ const BenefitsSection = () => (
         <p className="text-sm md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
           Um empreendimento não começa na obra. Ele começa com uma leitura estratégica do terreno, uma análise criteriosa de viabilidade e uma estruturação capaz de conectar arquitetura, mercado e patrimônio.
         </p>
+      </div>
+      <div className="mb-10 md:mb-16">
+        <VideoChartSection />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
         {benefits.map((benefit, index) => (
