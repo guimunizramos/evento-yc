@@ -2,11 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import {
   Building2,
   CalendarDays,
+  Check,
   Clock,
-  Hammer,
-  Handshake,
+  Coffee,
+  Flag,
   MapPin,
   Menu,
+  Star,
+  UtensilsCrossed,
   Users,
   X,
 } from "lucide-react";
@@ -30,20 +33,55 @@ import heroImageMobile from "@/assets/inc-hero-mobile.jpg";
 const CHECKOUT_URL = "https://www.sympla.com.br/evento/incorp-experience-2026/3514481";
 
 const EVENTO = "incorporacao-presencial";
-
-// Investimento por lote. Edite valores, datas e textos aqui.
-const LOTE_1 = {
-  parcela: "12x de",
-  parcelaValor: "R$ 99,70",
-  aVista: "ou R$ 997 à vista",
-  urgencia: "válido até 26/07 às 23h59",
-};
-const LOTE_2_AVISO = "A partir de 27/07, o valor sobe para R$ 1.597 (2º lote), até o dia do evento.";
+const EVENTO_NOME = "Incorp Experience 2026";
 const EVENTO_DATAS = "18 e 19 de setembro";
 
-const PAGE_TITLE = "Imersão Presencial de Incorporação Imobiliária | YouCon + SMH";
+// Ingressos. Edite nomes, valores, datas e benefícios aqui.
+const PARCELAMENTO = "em até 12x";
+const TAXA_NOTA = "+ taxa";
+const INCLUI_PADRAO = ["Acesso aos dois dias completos de imersão", "Coffee break e networking"];
+
+const INGRESSOS = [
+  {
+    nome: "Condição Exclusiva",
+    valor: "R$ 997",
+    tag: "1º lote · vendas até 26/07",
+    inclui: INCLUI_PADRAO,
+    destaque: false,
+    selo: null as string | null,
+  },
+  {
+    nome: "Incorp Experience Pass",
+    valor: "R$ 1.597",
+    tag: "2º lote · vendas até 17/09",
+    inclui: INCLUI_PADRAO,
+    destaque: false,
+    selo: null as string | null,
+  },
+  {
+    nome: "Incorp Experience Black Pass",
+    valor: "R$ 2.497",
+    tag: "vendas até 26/07",
+    inclui: [
+      "Tudo do ingresso padrão",
+      "Almoço exclusivo com Samuel Mosca e Thiago Cardim nos dois dias do evento",
+      "Networking exclusivo",
+      "Mentoria individual de 1 hora após o evento (online)",
+    ],
+    destaque: true,
+    selo: "Experiência completa" as string | null,
+  },
+];
+
+const LINHA_CONFIANCA = "Parcele em até 12x · Pagamento 100% seguro via Sympla";
+
+// Local do evento (endereço completo fica para depois).
+const LOCAL_NOME = "Centro Empresarial Manhattan";
+const LOCAL_CIDADE = "Poços de Caldas, MG";
+
+const PAGE_TITLE = "Incorp Experience 2026 · Imersão presencial de Incorporação Imobiliária";
 const PAGE_DESCRIPTION =
-  "Dois dias presenciais em Poços de Caldas com Thiago Cardim e Samuel Mosca para transformar o conteúdo de Incorporação Imobiliária em um plano real de ação. Apenas 10 vagas.";
+  "Imersão presencial de dois dias sobre todas as etapas da incorporação imobiliária, com Thiago Cardim e Samuel Mosca. 18 e 19 de setembro, em Poços de Caldas.";
 const OG_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/Nw4i1Ut272fGcuAe5gSx9v8g1G42/social-images/social-1776173734241-open-graph-yc.webp";
 
@@ -102,27 +140,26 @@ const chips = [
   { icon: Users, label: "Apenas 10 vagas" },
 ];
 
-// [PLACEHOLDER: trocar pela grade real depois]
 const takeaways = [
   {
-    title: "Como avaliar um terreno com olhar de incorporador",
-    detail: "O que observar em localização, zoneamento e potencial construtivo antes de dar o primeiro passo.",
+    title: "Prospecção e análise de terrenos",
+    detail: "Como identificar, prospectar e avaliar terrenos com potencial real de incorporação.",
   },
   {
-    title: "Estruturar um empreendimento do zero, do estudo à viabilidade",
-    detail: "Do estudo de massa à definição do produto, o caminho de tirar o projeto do papel.",
+    title: "Estudos de viabilidade",
+    detail: "Como validar se o empreendimento fecha a conta antes de colocar dinheiro.",
   },
   {
-    title: "Entender custos, margem e viabilidade sem achismo",
-    detail: "Como montar a conta do empreendimento e enxergar a margem real antes de investir.",
+    title: "Produto imobiliário, projetos e aprovações",
+    detail: "Da concepção do produto imobiliário ao desenvolvimento de projetos e às aprovações.",
   },
   {
-    title: "Estratégias de captação e venda de unidades",
-    detail: "Como estruturar a oferta e vender as unidades com previsibilidade.",
+    title: "Planejamento e execução da obra",
+    detail: "Métodos construtivos, planejamento executivo e gestão de prazos até a entrega.",
   },
   {
-    title: "Networking com quem já está no jogo",
-    detail: "Dois dias ao lado de pessoas que estão construindo de verdade.",
+    title: "Estruturação jurídica, societária e financeira",
+    detail: "Contratos, sociedade, tributação, modelagem financeira e captação de capital.",
   },
 ];
 
@@ -131,53 +168,48 @@ const hosts = [
     name: "THIAGO CARDIM",
     role: "Arquiteto e CEO da YouCon Arquitetura e Engenharia",
     photo: thiagoPhoto as string | null,
-    // [PLACEHOLDER: trocar pela mini bio real]
     description:
-      "À frente da YouCon Arquitetura e Engenharia, conduz projetos completos e estudos de viabilidade para empreendimentos imobiliários. No presencial, mostra na prática como as decisões de projeto definem aproveitamento, custos e potencial comercial.",
+      "Traz a visão técnica da incorporação: concepção do produto imobiliário, viabilidade, projetos, aprovações, engenharia, planejamento executivo e gestão da execução da obra.",
   },
   {
     name: "SAMUEL MOSCA",
     role: "Cofundador da SMH Patrimonial",
     photo: samuelPhoto as string | null,
-    // [PLACEHOLDER: trocar pela mini bio real]
     description:
-      "Cofundador da SMH Patrimonial, atua na estruturação estratégica de negócios e empreendimentos imobiliários. No presencial, orienta a modelagem da incorporação, os riscos e as decisões que viabilizam o negócio.",
+      "Traz a experiência na estruturação de negócios imobiliários: estratégia, contratos, sociedade, tributação, modelagem financeira e captação de recursos.",
   },
 ];
 
 const diferenciais = [
   {
-    icon: Handshake,
-    title: "Networking real",
-    description: "Um happy hour de sexta pensado para você trocar com quem já está no jogo, sem crachá e sem discurso pronto.",
-  },
-  {
-    icon: Hammer,
-    title: "Dinâmica prática",
-    description: "Mão na massa: você caminha o percurso da incorporação com casos reais e sai com um plano de ação começado.",
+    icon: Users,
+    title: "Sala fechada",
+    description: "No máximo 10 pessoas na sala, para você perguntar o que precisa e ser ouvido de verdade nos dois dias.",
   },
   {
     icon: Building2,
-    title: "Visita técnica",
-    description: "Uma obra de verdade para ver de perto o que na teoria fica abstrato, do canteiro às decisões que mudam o resultado.",
+    title: "Dois dias completos",
+    description: "Das 09h às 18h, o percurso inteiro da incorporação: terreno, viabilidade, projeto, obra e estruturação.",
+  },
+  {
+    icon: Coffee,
+    title: "Coffee break e networking",
+    description: "Das 18h às 19h30, nos dois dias, para trocar com quem já está no jogo sem crachá e sem discurso pronto.",
   },
 ];
 
+// Os dois dias seguem a mesma estrutura de horários.
+const CRONOGRAMA_DIA = [
+  { time: "09h00", label: "Início das atividades", icon: Clock },
+  { time: "12h00", label: "Intervalo para almoço", icon: UtensilsCrossed },
+  { time: "14h00", label: "Retorno das atividades", icon: Clock },
+  { time: "18h00", label: "Encerramento do conteúdo", icon: Flag },
+  { time: "18h às 19h30", label: "Coffee break e networking", icon: Coffee },
+];
+
 const agenda = [
-  {
-    day: "Sexta, 18 de setembro",
-    blocks: [
-      { time: "09h às 17h", label: "Imersão", icon: Clock },
-      { time: "19h", label: "Happy Hour de networking", icon: Handshake },
-    ],
-  },
-  {
-    day: "Sábado, 19 de setembro",
-    blocks: [
-      { time: "09h às 13h", label: "Imersão + dinâmica prática", icon: Hammer },
-      { time: "Na sequência", label: "Visita técnica a uma obra real", icon: Building2 },
-    ],
-  },
+  { day: "Sexta, 18 de setembro", blocks: CRONOGRAMA_DIA },
+  { day: "Sábado, 19 de setembro", blocks: CRONOGRAMA_DIA },
 ];
 
 const IncorporacaoPresencial = () => {
@@ -321,9 +353,14 @@ const IncorporacaoPresencial = () => {
 
         <div className="relative z-10 container mx-auto px-4 md:px-6">
           <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-            <Reveal className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 md:px-4 md:py-2">
-              <span className="text-[0.6rem] font-semibold uppercase tracking-wider text-primary md:text-sm">
-                Imersão presencial exclusiva
+            <Reveal className="flex flex-col items-center gap-3 md:gap-4">
+              <p className="text-gradient text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
+                {EVENTO_NOME}
+              </p>
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 md:px-4 md:py-2">
+                <span className="text-[0.6rem] font-semibold uppercase tracking-wider text-primary md:text-sm">
+                  Imersão presencial exclusiva
+                </span>
               </span>
             </Reveal>
 
@@ -379,8 +416,10 @@ const IncorporacaoPresencial = () => {
             </h2>
             <p className="mt-4 md:mt-6 text-sm md:text-lg lg:text-xl leading-relaxed text-muted-foreground">
               No workshop você viu o mapa completo da incorporação. Aqui, numa sala com no máximo 10 pessoas, você
-              caminha o percurso ao lado de quem já fez, com casos reais, dinâmica prática e uma obra pra visitar de
-              perto.
+              caminha o percurso ao lado de quem já fez, com casos reais e dois dias inteiros de conteúdo.
+            </p>
+            <p className="mt-4 text-sm md:text-base font-semibold text-foreground">
+              Feito para arquitetos, engenheiros, construtores, investidores e profissionais do mercado imobiliário.
             </p>
           </Reveal>
 
@@ -547,57 +586,87 @@ const IncorporacaoPresencial = () => {
       {/* Investimento: CTA final */}
       <section id="investimento" className="relative scroll-mt-24 py-10 md:py-20 lg:py-28">
         <div className="relative container mx-auto px-4 md:px-6">
-          <Reveal className="mx-auto max-w-3xl">
-            <div className="rounded-xl md:rounded-3xl border-2 border-primary/40 bg-card/50 p-6 md:p-8 lg:p-12 glow-box">
-              <div className="text-center">
-                <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground">
-                  Uma imersão. Dez vagas.
-                  <br />
-                  Dois dias que mudam o seu <span className="text-primary">jogo</span>.
-                </h2>
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground">
+              Uma imersão. Dez vagas.
+              <br />
+              Dois dias que mudam o seu <span className="text-primary">jogo</span>.
+            </h2>
 
-                <div className="mt-6 md:mt-8">
-                  <p className="text-3xl md:text-5xl font-bold text-foreground">
-                    {LOTE_1.parcela} <span className="text-primary">{LOTE_1.parcelaValor}</span>
-                  </p>
-                  <p className="mt-1 text-sm md:text-base text-muted-foreground">{LOTE_1.aVista}</p>
-                  <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary md:text-sm">
-                    {LOTE_1.urgencia}
-                  </span>
-                  <p className="mx-auto mt-4 max-w-md text-xs md:text-sm text-muted-foreground/80">
-                    {LOTE_2_AVISO}
-                  </p>
-                </div>
+            <p className="mt-5 md:mt-6 flex items-center justify-center gap-2 text-base md:text-lg font-semibold text-foreground">
+              <CalendarDays className="h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />
+              {EVENTO_DATAS}
+            </p>
 
-                <p className="mt-6 md:mt-8 flex items-center justify-center gap-2 text-base md:text-lg font-semibold text-foreground">
-                  <CalendarDays className="h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />
-                  {EVENTO_DATAS}
-                </p>
-
-                <div className="mt-3 flex items-start justify-center gap-2 text-center">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />
-                  <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
-                    Escritório SMH Patrimonial
-                    <br />
-                    Poços de Caldas, MG
-                  </p>
-                </div>
-
-                <div className="mt-8 md:mt-10 flex justify-center">
-                  <Button
-                    variant="cta-green"
-                    size="xl"
-                    onClick={openCheckout}
-                    className="w-full sm:w-auto rounded-full text-sm md:text-base h-12 md:h-14"
-                  >
-                    Garantir minha vaga por R$ 997
-                  </Button>
-                </div>
-
-                <p className="mt-4 text-xs md:text-sm text-muted-foreground">Vagas limitadas.</p>
-              </div>
+            <div className="mt-3 flex items-start justify-center gap-2 text-center">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />
+              <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
+                {LOCAL_NOME}
+                <br />
+                {LOCAL_CIDADE}
+              </p>
             </div>
           </Reveal>
+
+          {/* Três opções de ingresso. O Black Pass é o box em destaque. */}
+          <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 items-stretch gap-6 md:mt-16 md:grid-cols-3 md:gap-6 lg:gap-8">
+            {INGRESSOS.map((ingresso, index) => (
+              <Reveal
+                key={ingresso.nome}
+                delay={index * 110}
+                className={`relative flex flex-col rounded-xl md:rounded-2xl p-6 md:p-7 ${
+                  ingresso.destaque
+                    ? "border-2 border-primary bg-card glow-box md:-translate-y-4"
+                    : "border border-border bg-card"
+                }`}
+              >
+                {ingresso.selo && (
+                  <span className="absolute -top-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-orange-gradient px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white md:text-xs">
+                    <Star className="h-3 w-3 fill-current" />
+                    {ingresso.selo}
+                  </span>
+                )}
+
+                <h3
+                  className={`mt-2 text-lg md:text-xl font-bold ${
+                    ingresso.destaque ? "text-primary" : "text-foreground"
+                  }`}
+                >
+                  {ingresso.nome}
+                </h3>
+
+                <span className="mt-3 inline-flex w-fit items-center rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-[11px] font-semibold text-primary md:text-xs">
+                  {ingresso.tag}
+                </span>
+
+                <div className="mt-5">
+                  <p className="text-3xl md:text-4xl font-bold text-foreground">{ingresso.valor}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{PARCELAMENTO}</p>
+                  <p className="text-xs text-muted-foreground/70">{TAXA_NOTA}</p>
+                </div>
+
+                <ul className="mt-5 flex-1 space-y-2.5 border-t border-border pt-5">
+                  {ingresso.inclui.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-left">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span className="text-sm leading-relaxed text-muted-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  variant={ingresso.destaque ? "cta-green" : "cta-green-soft"}
+                  onClick={openCheckout}
+                  className="mt-6 w-full rounded-full h-12 text-sm md:text-base"
+                >
+                  Garantir minha vaga
+                </Button>
+              </Reveal>
+            ))}
+          </div>
+
+          <p className="mt-8 md:mt-10 text-center text-xs md:text-sm text-muted-foreground">{LINHA_CONFIANCA}</p>
+          <p className="mt-2 text-center text-xs md:text-sm text-muted-foreground">Vagas limitadas.</p>
         </div>
       </section>
 
