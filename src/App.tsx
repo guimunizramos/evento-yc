@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import SteelFrame from "./pages/SteelFrame";
 import Incorporacao from "./pages/Incorporacao";
+import IncorporacaoPresencial from "./pages/IncorporacaoPresencial";
 import Aniversario from "./pages/Aniversario";
 import TreinamentoImagensIA from "./pages/TreinamentoImagensIA";
 import { initPixel } from "@/lib/pixel";
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/steel-frame" element={<SteelFrame />} />
             <Route path="/incorporacao" element={<Incorporacao />} />
+            <Route path="/incorporacao-presencial" element={<IncorporacaoPresencial />} />
             <Route path="/aniversario" element={<Aniversario />} />
             <Route path="/treinamento-imagens-ia" element={<TreinamentoImagensIA />} />
             <Route path="*" element={<Navigate to="/" replace />} />
