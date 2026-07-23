@@ -79,11 +79,12 @@ const LINHA_CONFIANCA = "Parcele em até 12x · Pagamento 100% seguro via Sympla
 const LOCAL_NOME = "Centro Empresarial Manhattan";
 const LOCAL_CIDADE = "Poços de Caldas, MG";
 
-const PAGE_TITLE = "Incorp Experience 2026 · Imersão presencial de Incorporação Imobiliária";
+// Espelham as meta tags estáticas de incorporacao-presencial.html, que é o que os
+// crawlers de prévia leem. Mantenha os dois lados iguais ao editar.
+const PAGE_TITLE = "Incorp Experience 2026 | Imersão presencial de Incorporação Imobiliária";
 const PAGE_DESCRIPTION =
-  "Imersão presencial de dois dias sobre todas as etapas da incorporação imobiliária, com Thiago Cardim e Samuel Mosca. 18 e 19 de setembro, em Poços de Caldas.";
-const OG_IMAGE =
-  "https://storage.googleapis.com/gpt-engineer-file-uploads/Nw4i1Ut272fGcuAe5gSx9v8g1G42/social-images/social-1776173734241-open-graph-yc.webp";
+  "Dois dias sobre todas as etapas da incorporação, do terreno à entrega, com Thiago Cardim e Samuel Mosca. 18 e 19 de setembro, em Poços de Caldas. Vagas limitadas.";
+const OG_IMAGE = "https://evento.youconprojetos.com.br/open-graph-presencial.jpg";
 
 /** Atualiza title, description e Open Graph para a rota enquanto a página está montada. */
 function usePageMeta() {

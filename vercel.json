@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/incorporacao", "destination": "/incorporacao.html" },
+    { "source": "/incorporacao-presencial", "destination": "/incorporacao-presencial.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

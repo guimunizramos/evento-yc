@@ -23,6 +23,7 @@ export default defineConfig(({ mode }) => ({
       input: {
         main: path.resolve(__dirname, "index.html"),
         incorporacao: path.resolve(__dirname, "incorporacao.html"),
+        incorporacaoPresencial: path.resolve(__dirname, "incorporacao-presencial.html"),
       },
     },
   },
