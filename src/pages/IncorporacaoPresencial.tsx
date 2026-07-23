@@ -340,15 +340,14 @@ const IncorporacaoPresencial = () => {
             </Reveal>
 
             <Reveal delay={320} className="mt-8 md:mt-10 w-full flex justify-center">
+              {/* O CTA do hero leva para os ingressos. A compra acontece nos boxes. */}
               <Button
-                asChild
                 variant="cta-green"
                 size="xl"
+                onClick={() => handleNav("investimento")}
                 className="w-full sm:w-auto rounded-full text-sm md:text-base h-12 md:h-14"
               >
-                <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
-                  Garantir minha vaga
-                </a>
+                Garantir minha vaga
               </Button>
             </Reveal>
           </div>
