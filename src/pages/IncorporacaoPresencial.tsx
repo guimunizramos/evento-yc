@@ -28,8 +28,10 @@ import heroImageMobile from "@/assets/inc-hero-mobile.jpg";
 import smhLogo from "@/assets/logo-smh.webp";
 import pocosFoto from "@/assets/pocos-evento.webp";
 
-// Link do checkout externo. O modal de conversão redireciona para esta URL após capturar o lead.
+// Links de checkout no Sympla. O Black Pass tem link próprio.
 const CHECKOUT_URL = "https://www.sympla.com.br/evento/incorp-experience-2026/3514481";
+const CHECKOUT_URL_BLACK =
+  "https://www.sympla.com.br/evento/incorp-experience-2026/3514481?token=f6de96c61ea5a7e2df93a5aee00b4c16";
 
 const EVENTO_NOME = "Incorp Experience 2026";
 const EVENTO_DATAS = "18 e 19 de setembro";
@@ -47,6 +49,7 @@ const INGRESSOS = [
     inclui: INCLUI_PADRAO,
     destaque: false,
     selo: null as string | null,
+    checkout: CHECKOUT_URL,
   },
   {
     nome: "Incorp Experience Pass",
@@ -55,6 +58,7 @@ const INGRESSOS = [
     inclui: INCLUI_PADRAO,
     destaque: false,
     selo: null as string | null,
+    checkout: CHECKOUT_URL,
   },
   {
     nome: "Incorp Experience Black Pass",
@@ -68,6 +72,7 @@ const INGRESSOS = [
     ],
     destaque: true,
     selo: "Experiência completa" as string | null,
+    checkout: CHECKOUT_URL_BLACK,
   },
 ];
 
@@ -136,7 +141,7 @@ const navLinks = [
 const chips = [
   { icon: CalendarDays, label: "18 e 19 de setembro" },
   { icon: MapPin, label: "Poços de Caldas, MG" },
-  { icon: Users, label: "Apenas 10 vagas" },
+  { icon: Users, label: "Vagas limitadas" },
 ];
 
 const takeaways = [
@@ -183,7 +188,7 @@ const diferenciais = [
   {
     icon: Users,
     title: "Sala fechada",
-    description: "No máximo 10 pessoas na sala, para você perguntar o que precisa e ser ouvido de verdade nos dois dias.",
+    description: "Turma exclusiva, para você perguntar o que precisa e ser ouvido de verdade nos dois dias.",
   },
   {
     icon: Building2,
@@ -365,8 +370,8 @@ const IncorporacaoPresencial = () => {
               O online abriu a porta. O presencial te leva <span className="text-primary">pra execução</span>.
             </h2>
             <p className="mt-4 md:mt-6 text-sm md:text-lg lg:text-xl leading-relaxed text-muted-foreground">
-              No workshop você viu o mapa completo da incorporação. Aqui, numa sala com no máximo 10 pessoas, você
-              caminha o percurso ao lado de quem já fez, com casos reais e dois dias inteiros de conteúdo.
+              No workshop você viu o mapa completo da incorporação. Aqui, numa sala fechada e com turma exclusiva,
+              você caminha o percurso ao lado de quem já fez, com casos reais e dois dias inteiros de conteúdo.
             </p>
             <p className="mt-4 text-sm md:text-base font-semibold text-foreground">
               Feito para arquitetos, engenheiros, construtores, investidores e profissionais do mercado imobiliário.
@@ -551,7 +556,7 @@ const IncorporacaoPresencial = () => {
         <div className="relative container mx-auto px-4 md:px-6">
           <Reveal className="mx-auto max-w-3xl text-center">
             <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground">
-              Uma imersão. Dez vagas.
+              Uma imersão. Vagas limitadas.
               <br />
               Dois dias que mudam o seu <span className="text-primary">jogo</span>.
             </h2>
@@ -623,7 +628,7 @@ const IncorporacaoPresencial = () => {
                   variant={ingresso.destaque ? "cta-green" : "cta-green-soft"}
                   className="mt-6 w-full rounded-full h-12 text-sm md:text-base"
                 >
-                  <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+                  <a href={ingresso.checkout} target="_blank" rel="noopener noreferrer">
                     Garantir minha vaga
                   </a>
                 </Button>
