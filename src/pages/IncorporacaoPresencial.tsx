@@ -266,7 +266,9 @@ const IncorporacaoPresencial = () => {
             className="rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             aria-label="Voltar ao topo"
           >
-            <img src={youconLogo} alt="YouCon Arquitetura e Engenharia" className="h-7 md:h-10" />
+            <span className="text-gradient whitespace-nowrap text-base font-bold tracking-tight md:text-xl">
+              {EVENTO_NOME}
+            </span>
           </button>
 
           {/* Navegação desktop, em negrito e centralizada */}
@@ -353,14 +355,9 @@ const IncorporacaoPresencial = () => {
 
         <div className="relative z-10 container mx-auto px-4 md:px-6">
           <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-            <Reveal className="flex flex-col items-center gap-3 md:gap-4">
-              <p className="text-gradient text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
-                {EVENTO_NOME}
-              </p>
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 md:px-4 md:py-2">
-                <span className="text-[0.6rem] font-semibold uppercase tracking-wider text-primary md:text-sm">
-                  Imersão presencial exclusiva
-                </span>
+            <Reveal className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 md:px-4 md:py-2">
+              <span className="text-[0.6rem] font-semibold uppercase tracking-wider text-primary md:text-sm">
+                Imersão presencial exclusiva
               </span>
             </Reveal>
 
@@ -460,8 +457,11 @@ const IncorporacaoPresencial = () => {
         <div className="relative container mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-3xl">
             <Reveal className="mb-8 md:mb-12 text-center">
-              <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground">
-                O que você <span className="text-primary">leva</span>
+              <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary">
+                Do terreno à entrega
+              </span>
+              <h2 className="mt-3 text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground">
+                O que você vai <span className="text-primary">dominar</span> em dois dias
               </h2>
             </Reveal>
             <Reveal>
@@ -494,10 +494,16 @@ const IncorporacaoPresencial = () => {
       {/* Quem conduz */}
       <section id="quem-conduz" className="relative scroll-mt-24 py-10 md:py-20 lg:py-28">
         <div className="relative container mx-auto px-4 md:px-6">
-          <Reveal className="mb-6 md:mb-10 text-center">
-            <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              Quem <span className="text-primary">conduz</span>
+          <Reveal className="mx-auto mb-6 md:mb-10 max-w-3xl text-center">
+            <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary">
+              Quem conduz
+            </span>
+            <h2 className="mt-3 text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground">
+              Duas visões que se <span className="text-primary">completam</span>
             </h2>
+            <p className="mt-3 md:mt-4 text-sm md:text-lg text-muted-foreground">
+              A engenharia da obra e a estratégia do negócio, no mesmo lugar.
+            </p>
           </Reveal>
           <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:gap-12">
             {hosts.map((host, index) => (
@@ -593,16 +599,17 @@ const IncorporacaoPresencial = () => {
               Dois dias que mudam o seu <span className="text-primary">jogo</span>.
             </h2>
 
-            <p className="mt-5 md:mt-6 flex items-center justify-center gap-2 text-base md:text-lg font-semibold text-foreground">
-              <CalendarDays className="h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />
-              {EVENTO_DATAS}
-            </p>
-
-            <div className="mt-3 flex items-start justify-center gap-2 text-center">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />
-              <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
+            <div className="mt-5 md:mt-6 flex flex-col items-center gap-2 md:gap-2.5">
+              <p className="flex items-center gap-2 text-base md:text-lg font-semibold text-foreground">
+                <CalendarDays className="h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />
+                {EVENTO_DATAS}
+              </p>
+              <p className="flex items-center gap-2 text-sm md:text-base text-muted-foreground">
+                <Building2 className="h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />
                 {LOCAL_NOME}
-                <br />
+              </p>
+              <p className="flex items-center gap-2 text-sm md:text-base text-muted-foreground">
+                <MapPin className="h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />
                 {LOCAL_CIDADE}
               </p>
             </div>
