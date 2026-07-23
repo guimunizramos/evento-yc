@@ -26,10 +26,20 @@ import samuelPhoto from "@/assets/samuel-mosca.jpg";
 import heroImage from "@/assets/inc-hero-desktop.jpg";
 import heroImageMobile from "@/assets/inc-hero-mobile.jpg";
 
-// Cole aqui o link do checkout externo depois. O modal de conversão redireciona para esta URL.
-const CHECKOUT_URL = "#";
+// Link do checkout externo. O modal de conversão redireciona para esta URL após capturar o lead.
+const CHECKOUT_URL = "https://www.sympla.com.br/evento/incorp-experience-2026/3514481";
 
 const EVENTO = "incorporacao-presencial";
+
+// Investimento por lote. Edite valores, datas e textos aqui.
+const LOTE_1 = {
+  parcela: "12x de",
+  parcelaValor: "R$ 99,70",
+  aVista: "ou R$ 997 à vista",
+  urgencia: "válido até 26/07 às 23h59",
+};
+const LOTE_2_AVISO = "A partir de 27/07, o valor sobe para R$ 1.597 (2º lote), até o dia do evento.";
+const EVENTO_DATAS = "18 e 19 de setembro";
 
 const PAGE_TITLE = "Imersão Presencial de Incorporação Imobiliária | YouCon + SMH";
 const PAGE_DESCRIPTION =
@@ -175,7 +185,16 @@ const IncorporacaoPresencial = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const bgRef = useRef<HTMLDivElement>(null);
+
+  // Header ganha o vidro fosco (blur + escurecido) só depois que a pessoa rola.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Parallax do fundo do hero, igual à /incorporacao e respeitando reduce-motion.
   useEffect(() => {
@@ -200,9 +219,15 @@ const IncorporacaoPresencial = () => {
     <main className="relative min-h-screen overflow-hidden bg-background">
       <AmbientGlow />
 
-      {/* Header com menu de navegação */}
-      <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-        <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
+      {/* Header fixo: transparente no topo, vidro fosco ao rolar */}
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+          scrolled || menuOpen
+            ? "border-b border-border/40 bg-background/70 backdrop-blur-md"
+            : "border-b border-transparent bg-transparent"
+        }`}
+      >
+        <div className="container mx-auto flex items-center gap-4 px-4 py-3 md:px-6 md:py-4">
           <button
             type="button"
             onClick={() => handleNav("hero")}
@@ -212,18 +237,22 @@ const IncorporacaoPresencial = () => {
             <img src={youconLogo} alt="YouCon Arquitetura e Engenharia" className="h-7 md:h-10" />
           </button>
 
-          {/* Navegação desktop */}
-          <nav className="hidden items-center gap-6 md:flex" aria-label="Navegação principal">
+          {/* Navegação desktop, em negrito e centralizada */}
+          <nav className="hidden flex-1 items-center justify-center gap-8 md:flex" aria-label="Navegação principal">
             {navLinks.map((link) => (
               <button
                 key={link.target}
                 type="button"
                 onClick={() => handleNav(link.target)}
-                className="rounded text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="rounded text-sm font-bold text-foreground/90 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 {link.label}
               </button>
             ))}
+          </nav>
+
+          {/* CTA desktop à direita */}
+          <div className="hidden md:block">
             <Button
               variant="cta-green"
               onClick={() => handleNav("investimento")}
@@ -231,13 +260,13 @@ const IncorporacaoPresencial = () => {
             >
               Garantir vaga
             </Button>
-          </nav>
+          </div>
 
           {/* Botão hambúrguer mobile */}
           <button
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={menuOpen}
           >
@@ -487,16 +516,16 @@ const IncorporacaoPresencial = () => {
       {/* Estadia: seção de destaque laranja */}
       <section id="estadia" className="relative scroll-mt-24 py-10 md:py-20 lg:py-24">
         <div className="relative container mx-auto px-4 md:px-6">
-          <Reveal className="mx-auto max-w-4xl overflow-hidden rounded-xl md:rounded-3xl bg-gradient-brand shadow-card">
+          <Reveal className="overflow-hidden rounded-xl md:rounded-3xl bg-gradient-brand shadow-card">
             <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
               {/* Espaço para imagem de Poços de Caldas */}
-              <div className="flex min-h-[200px] items-center justify-center border-b border-white/20 bg-black/10 p-6 md:min-h-full md:border-b-0 md:border-r">
+              <div className="flex min-h-[240px] items-center justify-center border-b border-white/20 bg-black/10 p-6 md:min-h-[420px] md:border-b-0 md:border-r">
                 <span className="text-center text-xs font-semibold uppercase tracking-wider text-white/80">
                   [ASSET PENDENTE: foto de Poços de Caldas]
                 </span>
               </div>
 
-              <div className="p-6 md:p-10 lg:p-12">
+              <div className="flex flex-col justify-center p-6 md:p-12 lg:p-16">
                 <h2 className="text-xl sm:text-2xl md:text-4xl font-bold leading-tight text-white">
                   Vem de fora? A gente cuida da sua estadia.
                 </h2>
@@ -529,19 +558,28 @@ const IncorporacaoPresencial = () => {
 
                 <div className="mt-6 md:mt-8">
                   <p className="text-3xl md:text-5xl font-bold text-foreground">
-                    12x de <span className="text-primary">R$ 99,70</span>
+                    {LOTE_1.parcela} <span className="text-primary">{LOTE_1.parcelaValor}</span>
                   </p>
-                  <p className="mt-1 text-sm md:text-base text-muted-foreground">ou R$ 997 à vista</p>
+                  <p className="mt-1 text-sm md:text-base text-muted-foreground">{LOTE_1.aVista}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary md:text-sm">
+                    {LOTE_1.urgencia}
+                  </span>
+                  <p className="mx-auto mt-4 max-w-md text-xs md:text-sm text-muted-foreground/80">
+                    {LOTE_2_AVISO}
+                  </p>
                 </div>
 
-                <p className="mt-5 md:mt-6 text-base md:text-lg font-semibold text-foreground">
-                  18 e 19 de setembro
+                <p className="mt-6 md:mt-8 flex items-center justify-center gap-2 text-base md:text-lg font-semibold text-foreground">
+                  <CalendarDays className="h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />
+                  {EVENTO_DATAS}
                 </p>
 
                 <div className="mt-3 flex items-start justify-center gap-2 text-center">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />
-                  <p className="text-sm md:text-base text-muted-foreground">
-                    Escritório da SMH Patrimonial, Rua Prefeito Chagas, 305, Sala 701, Centro, Poços de Caldas, MG.
+                  <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
+                    Escritório SMH Patrimonial
+                    <br />
+                    Poços de Caldas, MG
                   </p>
                 </div>
 
