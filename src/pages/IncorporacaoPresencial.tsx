@@ -28,6 +28,8 @@ import thiagoPhoto from "@/assets/thiago-cardim.png";
 import samuelPhoto from "@/assets/samuel-mosca.jpg";
 import heroImage from "@/assets/inc-hero-desktop.jpg";
 import heroImageMobile from "@/assets/inc-hero-mobile.jpg";
+import smhLogo from "@/assets/logo-smh.webp";
+import pocosFoto from "@/assets/pocos-evento.webp";
 
 // Link do checkout externo. O modal de conversão redireciona para esta URL após capturar o lead.
 const CHECKOUT_URL = "https://www.sympla.com.br/evento/incorp-experience-2026/3514481";
@@ -563,11 +565,15 @@ const IncorporacaoPresencial = () => {
         <div className="relative container mx-auto px-4 md:px-6">
           <Reveal className="overflow-hidden rounded-xl md:rounded-3xl bg-gradient-brand shadow-card">
             <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
-              {/* Espaço para imagem de Poços de Caldas */}
-              <div className="flex min-h-[240px] items-center justify-center border-b border-white/20 bg-black/10 p-6 md:min-h-[420px] md:border-b-0 md:border-r">
-                <span className="text-center text-xs font-semibold uppercase tracking-wider text-white/80">
-                  [ASSET PENDENTE: foto de Poços de Caldas]
-                </span>
+              {/* Foto de Poços de Caldas. O slot muda de proporção conforme a tela,
+                  então a imagem é quadrada e entra com object-cover. */}
+              <div className="relative min-h-[240px] border-b border-white/20 md:min-h-[420px] md:border-b-0 md:border-r">
+                <img
+                  src={pocosFoto}
+                  alt="Vista aérea de Poços de Caldas, com o Palace Hotel e a serra da Mantiqueira ao fundo"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
 
               <div className="flex flex-col justify-center p-6 md:p-12 lg:p-16">
@@ -683,9 +689,7 @@ const IncorporacaoPresencial = () => {
           <div className="flex flex-col items-center justify-center gap-5 md:flex-row md:gap-10">
             <img src={youconLogo} alt="YouCon Arquitetura e Engenharia" className="h-8 md:h-10" />
             <span className="hidden text-2xl font-light text-border md:inline">+</span>
-            <span className="flex h-10 items-center rounded-md border border-dashed border-border px-4 text-center text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-              [ASSET PENDENTE: logo da SMH Patrimonial]
-            </span>
+            <img src={smhLogo} alt="SMH Patrimonial" className="h-5 md:h-6" />
           </div>
           <p className="mt-6 text-center text-xs md:text-sm text-muted-foreground">
             Uma realização YouCon Arquitetura e Engenharia + SMH Patrimonial.
