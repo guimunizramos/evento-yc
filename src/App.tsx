@@ -29,7 +29,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/steel-frame" element={<SteelFrame />} />
             <Route path="/incorporacao" element={<Incorporacao />} />
-            <Route path="/incorporacao-presencial" element={<IncorporacaoPresencial />} />
+            <Route path="/incorp2026" element={<IncorporacaoPresencial />} />
             <Route path="/aniversario" element={<Aniversario />} />
             <Route path="/treinamento-imagens-ia" element={<TreinamentoImagensIA />} />
             <Route path="*" element={<Navigate to="/" replace />} />

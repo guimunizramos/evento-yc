@@ -79,8 +79,8 @@ const LINHA_CONFIANCA = "Parcele em até 12x · Pagamento 100% seguro via Sympla
 const LOCAL_NOME = "Centro Empresarial Manhattan";
 const LOCAL_CIDADE = "Poços de Caldas, MG";
 
-// Espelham as meta tags estáticas de incorporacao-presencial.html, que é o que os
-// crawlers de prévia leem. Mantenha os dois lados iguais ao editar.
+// Espelham as meta tags estáticas de incorp2026.html, que é o que os crawlers de
+// prévia leem. Mantenha os dois lados iguais ao editar.
 const PAGE_TITLE = "Incorp Experience 2026 | Imersão presencial de Incorporação Imobiliária";
 const PAGE_DESCRIPTION =
   "Dois dias sobre todas as etapas da incorporação, do terreno à entrega, com Thiago Cardim e Samuel Mosca. 18 e 19 de setembro, em Poços de Caldas. Vagas limitadas.";
