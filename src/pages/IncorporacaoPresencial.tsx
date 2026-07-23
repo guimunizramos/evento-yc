@@ -63,7 +63,8 @@ const INGRESSOS = [
   {
     nome: "Incorp Experience Black Pass",
     valor: "R$ 2.497",
-    tag: "vendas até 26/07",
+    // Sem limite de data: o Black Pass não tem tag de lote.
+    tag: null as string | null,
     inclui: [
       "Tudo do ingresso padrão",
       "Almoço exclusivo com Samuel Mosca e Thiago Cardim nos dois dias do evento",
@@ -604,9 +605,11 @@ const IncorporacaoPresencial = () => {
                   {ingresso.nome}
                 </h3>
 
-                <span className="mt-3 inline-flex w-fit items-center rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-[11px] font-semibold text-primary md:text-xs">
-                  {ingresso.tag}
-                </span>
+                {ingresso.tag && (
+                  <span className="mt-3 inline-flex w-fit items-center rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-[11px] font-semibold text-primary md:text-xs">
+                    {ingresso.tag}
+                  </span>
+                )}
 
                 <div className="mt-5">
                   <p className="text-3xl md:text-4xl font-bold text-foreground">{ingresso.valor}</p>
