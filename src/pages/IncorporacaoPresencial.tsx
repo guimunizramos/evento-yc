@@ -1,24 +1,35 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Building2,
   CalendarDays,
-  Check,
   Clock,
   Hammer,
   Handshake,
-  Hotel,
   MapPin,
+  Menu,
   Users,
+  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import AmbientGlow from "@/components/incorporacao/AmbientGlow";
 import Reveal from "@/components/incorporacao-presencial/Reveal";
+import CheckoutLeadDialog from "@/components/incorporacao-presencial/CheckoutLeadDialog";
 import youconLogo from "@/assets/youcon-logo.png";
 import thiagoPhoto from "@/assets/thiago-cardim.png";
 import samuelPhoto from "@/assets/samuel-mosca.jpg";
+import heroImage from "@/assets/inc-hero-desktop.jpg";
+import heroImageMobile from "@/assets/inc-hero-mobile.jpg";
 
-// Cole aqui o link do checkout externo depois. Todos os CTAs abrem esta URL em nova aba.
+// Cole aqui o link do checkout externo depois. O modal de conversão redireciona para esta URL.
 const CHECKOUT_URL = "#";
+
+const EVENTO = "incorporacao-presencial";
 
 const PAGE_TITLE = "Imersão Presencial de Incorporação Imobiliária | YouCon + SMH";
 const PAGE_DESCRIPTION =
@@ -66,6 +77,15 @@ function usePageMeta() {
   }, []);
 }
 
+const scrollToId = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
+const navLinks = [
+  { label: "Cronograma", target: "cronograma" },
+  { label: "Conteúdo", target: "conteudo" },
+  { label: "Quem conduz", target: "quem-conduz" },
+  { label: "Estadia", target: "estadia" },
+];
+
 const chips = [
   { icon: CalendarDays, label: "18 e 19 de setembro" },
   { icon: MapPin, label: "Poços de Caldas, MG" },
@@ -74,11 +94,26 @@ const chips = [
 
 // [PLACEHOLDER: trocar pela grade real depois]
 const takeaways = [
-  "Como avaliar um terreno com olhar de incorporador",
-  "Estruturar um empreendimento do zero, do estudo à viabilidade",
-  "Entender custos, margem e viabilidade sem achismo",
-  "Estratégias de captação e venda de unidades",
-  "Networking com quem já está no jogo",
+  {
+    title: "Como avaliar um terreno com olhar de incorporador",
+    detail: "O que observar em localização, zoneamento e potencial construtivo antes de dar o primeiro passo.",
+  },
+  {
+    title: "Estruturar um empreendimento do zero, do estudo à viabilidade",
+    detail: "Do estudo de massa à definição do produto, o caminho de tirar o projeto do papel.",
+  },
+  {
+    title: "Entender custos, margem e viabilidade sem achismo",
+    detail: "Como montar a conta do empreendimento e enxergar a margem real antes de investir.",
+  },
+  {
+    title: "Estratégias de captação e venda de unidades",
+    detail: "Como estruturar a oferta e vender as unidades com previsibilidade.",
+  },
+  {
+    title: "Networking com quem já está no jogo",
+    detail: "Dois dias ao lado de pessoas que estão construindo de verdade.",
+  },
 ];
 
 const hosts = [
@@ -135,51 +170,131 @@ const agenda = [
   },
 ];
 
-/** CTA de checkout reutilizável, sempre em nova aba. */
-const CheckoutButton = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Button
-    asChild
-    variant="cta-green"
-    size="xl"
-    className={`w-full sm:w-auto rounded-full text-sm md:text-base h-12 md:h-14 ${className}`}
-  >
-    <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
-      {children}
-    </a>
-  </Button>
-);
-
-const scrollToCta = () => document.getElementById("cta-final")?.scrollIntoView({ behavior: "smooth" });
-
 const IncorporacaoPresencial = () => {
   usePageMeta();
+
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const bgRef = useRef<HTMLDivElement>(null);
+
+  // Parallax do fundo do hero, igual à /incorporacao e respeitando reduce-motion.
+  useEffect(() => {
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateParallax = () => {
+      if (!bgRef.current || reducedMotionQuery.matches) return;
+      bgRef.current.style.transform = `translate3d(0, ${window.scrollY * 0.3}px, 0)`;
+    };
+    updateParallax();
+    window.addEventListener("scroll", updateParallax, { passive: true });
+    return () => window.removeEventListener("scroll", updateParallax);
+  }, []);
+
+  const handleNav = (target: string) => {
+    setMenuOpen(false);
+    scrollToId(target);
+  };
+
+  const openCheckout = () => setCheckoutOpen(true);
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-background">
       <AmbientGlow />
 
-      {/* Header */}
+      {/* Header com menu de navegação */}
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
-          <img src={youconLogo} alt="YouCon Arquitetura e Engenharia" className="h-7 md:h-10" />
-          <Button
-            variant="cta-green"
-            onClick={scrollToCta}
-            className="rounded-full h-9 px-4 text-xs md:h-11 md:px-6 md:text-sm"
+          <button
+            type="button"
+            onClick={() => handleNav("hero")}
+            className="rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            aria-label="Voltar ao topo"
           >
-            Garantir vaga
-          </Button>
+            <img src={youconLogo} alt="YouCon Arquitetura e Engenharia" className="h-7 md:h-10" />
+          </button>
+
+          {/* Navegação desktop */}
+          <nav className="hidden items-center gap-6 md:flex" aria-label="Navegação principal">
+            {navLinks.map((link) => (
+              <button
+                key={link.target}
+                type="button"
+                onClick={() => handleNav(link.target)}
+                className="rounded text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                {link.label}
+              </button>
+            ))}
+            <Button
+              variant="cta-green"
+              onClick={() => handleNav("investimento")}
+              className="rounded-full h-10 px-5 text-sm"
+            >
+              Garantir vaga
+            </Button>
+          </nav>
+
+          {/* Botão hambúrguer mobile */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen((v) => !v)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
+
+        {/* Menu mobile colapsável */}
+        {menuOpen && (
+          <nav
+            className="border-t border-border/60 bg-background/95 px-4 py-3 md:hidden"
+            aria-label="Navegação principal"
+          >
+            <ul className="flex flex-col gap-1">
+              {navLinks.map((link) => (
+                <li key={link.target}>
+                  <button
+                    type="button"
+                    onClick={() => handleNav(link.target)}
+                    className="w-full rounded-md px-2 py-2.5 text-left text-sm font-medium text-muted-foreground transition-colors hover:bg-card hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+              <li className="mt-2">
+                <Button
+                  variant="cta-green"
+                  onClick={() => handleNav("investimento")}
+                  className="w-full rounded-full h-11 text-sm"
+                >
+                  Garantir vaga
+                </Button>
+              </li>
+            </ul>
+          </nav>
+        )}
       </header>
 
       {/* Hero */}
-      <section className="relative py-14 md:py-24 lg:py-28">
-        <div className="relative container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+      <section id="hero" className="relative flex min-h-[88vh] items-center overflow-hidden py-14 md:py-24">
+        {/* Fundo com parallax (mesma imagem da /incorporacao) e camadas de luz por cima */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div ref={bgRef} className="absolute inset-0 scale-110 will-change-transform">
+            <img src={heroImage} alt="" className="hidden h-full w-full object-cover md:block" />
+            <img src={heroImageMobile} alt="" className="block h-full w-full object-cover md:hidden" />
+          </div>
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
+        </div>
+
+        <div className="relative z-10 container mx-auto px-4 md:px-6">
+          <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
             <Reveal className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 md:px-4 md:py-2">
-              <MapPin className="h-3.5 w-3.5 text-primary md:h-4 md:w-4" />
               <span className="text-[0.6rem] font-semibold uppercase tracking-wider text-primary md:text-sm">
-                Imersão presencial · Poços de Caldas · 18 e 19 de setembro
+                Imersão presencial exclusiva
               </span>
             </Reveal>
 
@@ -210,38 +325,34 @@ const IncorporacaoPresencial = () => {
             </Reveal>
 
             <Reveal delay={320} className="mt-8 md:mt-10 w-full flex justify-center">
-              <CheckoutButton>Garantir minha vaga</CheckoutButton>
+              <Button
+                variant="cta-green"
+                size="xl"
+                onClick={openCheckout}
+                className="w-full sm:w-auto rounded-full text-sm md:text-base h-12 md:h-14"
+              >
+                Garantir minha vaga
+              </Button>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Ponte online -> presencial */}
-      <section className="relative py-10 md:py-20 lg:py-24">
+      {/* Cronograma: ponte online -> presencial fundida com a agenda dos dias */}
+      <section id="cronograma" className="relative scroll-mt-24 py-10 md:py-20 lg:py-28">
         <div className="relative container mx-auto px-4 md:px-6">
-          <Reveal className="mx-auto max-w-3xl rounded-xl md:rounded-3xl border border-border bg-card/50 p-6 md:p-10 lg:p-12 text-center">
-            <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight text-foreground">
-              O online abriu a porta. O presencial te leva <span className="text-primary">pra dentro</span>.
+          <Reveal className="mx-auto mb-8 md:mb-14 max-w-3xl text-center">
+            <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary">
+              Dois dias, um percurso
+            </span>
+            <h2 className="mt-3 text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground">
+              O online abriu a porta. O presencial te leva <span className="text-primary">pra execução</span>.
             </h2>
             <p className="mt-4 md:mt-6 text-sm md:text-lg lg:text-xl leading-relaxed text-muted-foreground">
               No workshop você viu o mapa completo da incorporação. Aqui, numa sala com no máximo 10 pessoas, você
               caminha o percurso ao lado de quem já fez, com casos reais, dinâmica prática e uma obra pra visitar de
               perto.
             </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Agenda dos 2 dias (seção principal) */}
-      <section className="relative py-10 md:py-20 lg:py-28">
-        <div className="relative container mx-auto px-4 md:px-6">
-          <Reveal className="mx-auto mb-8 md:mb-14 max-w-3xl text-center">
-            <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-primary">
-              Dois dias, um percurso
-            </span>
-            <h2 className="mt-3 text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              A agenda da <span className="text-primary">imersão</span>
-            </h2>
           </Reveal>
 
           <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
@@ -276,8 +387,8 @@ const IncorporacaoPresencial = () => {
         </div>
       </section>
 
-      {/* O que você leva */}
-      <section className="relative py-10 md:py-20 lg:py-28">
+      {/* Conteúdo: O que você leva (accordion) */}
+      <section id="conteudo" className="relative scroll-mt-24 py-10 md:py-20 lg:py-28">
         <div className="relative container mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-3xl">
             <Reveal className="mb-8 md:mb-12 text-center">
@@ -285,27 +396,35 @@ const IncorporacaoPresencial = () => {
                 O que você <span className="text-primary">leva</span>
               </h2>
             </Reveal>
-            <ul className="space-y-3 md:space-y-4">
-              {takeaways.map((item, index) => (
-                <Reveal
-                  as="li"
-                  key={item}
-                  delay={index * 70}
-                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 md:gap-4 md:p-5"
-                >
-                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground md:h-7 md:w-7">
-                    <Check className="h-3.5 w-3.5 md:h-4 md:w-4" />
-                  </span>
-                  <span className="text-sm md:text-lg leading-relaxed text-foreground">{item}</span>
-                </Reveal>
-              ))}
-            </ul>
+            <Reveal>
+              <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
+                {takeaways.map((item, index) => (
+                  <AccordionItem
+                    key={item.title}
+                    value={`item-${index}`}
+                    className="overflow-hidden rounded-xl border border-border bg-card px-4 md:px-5"
+                  >
+                    <AccordionTrigger className="gap-3 py-4 text-left text-sm font-semibold text-foreground hover:no-underline md:text-lg">
+                      <span className="flex items-center gap-3 md:gap-4">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground md:h-7 md:w-7">
+                          {index + 1}
+                        </span>
+                        {item.title}
+                      </span>
+                    </AccordionTrigger>
+                    <AccordionContent className="pl-9 text-sm leading-relaxed text-muted-foreground md:pl-11 md:text-base">
+                      {item.detail}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Quem conduz */}
-      <section className="relative py-10 md:py-20 lg:py-28">
+      <section id="quem-conduz" className="relative scroll-mt-24 py-10 md:py-20 lg:py-28">
         <div className="relative container mx-auto px-4 md:px-6">
           <Reveal className="mb-6 md:mb-10 text-center">
             <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground">
@@ -317,9 +436,9 @@ const IncorporacaoPresencial = () => {
               <Reveal
                 key={host.name}
                 delay={index * 120}
-                className="rounded-xl md:rounded-2xl border border-border bg-card p-4 pt-10 text-center md:p-8 md:pt-12"
+                className="group rounded-xl md:rounded-2xl border border-border bg-card p-4 pt-10 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_0_35px_hsl(var(--primary)/0.28)] md:p-8 md:pt-12"
               >
-                <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full border-2 border-primary/30 md:mb-6 md:h-32 md:w-32">
+                <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full border-2 border-primary/30 transition-colors duration-300 group-hover:border-primary md:mb-6 md:h-32 md:w-32">
                   {host.photo ? (
                     <img src={host.photo} alt={host.name} className="h-full w-full object-cover" />
                   ) : (
@@ -365,28 +484,30 @@ const IncorporacaoPresencial = () => {
         </div>
       </section>
 
-      {/* Poços de Caldas + hotel parceiro */}
-      <section className="relative py-10 md:py-20 lg:py-24">
+      {/* Estadia: seção de destaque laranja */}
+      <section id="estadia" className="relative scroll-mt-24 py-10 md:py-20 lg:py-24">
         <div className="relative container mx-auto px-4 md:px-6">
-          <Reveal className="mx-auto max-w-3xl rounded-xl md:rounded-3xl border border-border bg-card/50 p-6 md:p-10 lg:p-12">
-            <div className="flex flex-col items-center gap-4 text-center md:flex-row md:items-start md:gap-6 md:text-left">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 md:h-14 md:w-14">
-                <Hotel className="h-6 w-6 text-primary md:h-7 md:w-7" />
-              </span>
-              <div>
-                <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-foreground">
-                  Vem de fora? A gente cuida da sua <span className="text-primary">estadia</span>.
+          <Reveal className="mx-auto max-w-4xl overflow-hidden rounded-xl md:rounded-3xl bg-gradient-brand shadow-card">
+            <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
+              {/* Espaço para imagem de Poços de Caldas */}
+              <div className="flex min-h-[200px] items-center justify-center border-b border-white/20 bg-black/10 p-6 md:min-h-full md:border-b-0 md:border-r">
+                <span className="text-center text-xs font-semibold uppercase tracking-wider text-white/80">
+                  [ASSET PENDENTE: foto de Poços de Caldas]
+                </span>
+              </div>
+
+              <div className="p-6 md:p-10 lg:p-12">
+                <h2 className="text-xl sm:text-2xl md:text-4xl font-bold leading-tight text-white">
+                  Vem de fora? A gente cuida da sua estadia.
                 </h2>
-                <p className="mt-4 text-sm md:text-lg leading-relaxed text-muted-foreground">
+                <p className="mt-4 text-sm md:text-lg leading-relaxed text-white/90">
                   Poços de Caldas é uma cidade turística e aconchegante da serra da Mantiqueira, com águas termais,
                   parques e boa gastronomia. Um ótimo motivo para estender o fim de semana e emendar a imersão com um
                   descanso de verdade.
                 </p>
-                <p className="mt-3 text-sm md:text-lg leading-relaxed text-muted-foreground">
-                  Temos um hotel parceiro com valores especiais de hospedagem para os participantes.{" "}
-                  <span className="text-foreground">
-                    [PLACEHOLDER: nome do hotel, valores e como acionar a condição especial]
-                  </span>
+                <p className="mt-3 text-sm md:text-lg leading-relaxed text-white/90">
+                  Temos uma parceria de hospedagem com valores especiais para os participantes. Vamos enviar todos os
+                  detalhes por email depois da sua inscrição.
                 </p>
               </div>
             </div>
@@ -394,38 +515,48 @@ const IncorporacaoPresencial = () => {
         </div>
       </section>
 
-      {/* CTA final */}
-      <section id="cta-final" className="relative scroll-mt-24 py-10 md:py-20 lg:py-28">
+      {/* Investimento: CTA final */}
+      <section id="investimento" className="relative scroll-mt-24 py-10 md:py-20 lg:py-28">
         <div className="relative container mx-auto px-4 md:px-6">
           <Reveal className="mx-auto max-w-3xl">
             <div className="rounded-xl md:rounded-3xl border-2 border-primary/40 bg-card/50 p-6 md:p-8 lg:p-12 glow-box">
               <div className="text-center">
-                <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground">
-                  10 vagas. Uma sala. Dois dias que <span className="text-primary">mudam seu jogo</span>.
+                <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground">
+                  Uma imersão. Dez vagas.
+                  <br />
+                  Dois dias que mudam o seu <span className="text-primary">jogo</span>.
                 </h2>
 
-                <div className="mt-6 md:mt-8 inline-flex flex-col items-center rounded-2xl border border-primary/30 bg-primary/5 px-6 py-4 md:px-10 md:py-5">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                    Investimento
-                  </span>
-                  <span className="text-3xl md:text-5xl font-bold text-foreground">R$ 997</span>
+                <div className="mt-6 md:mt-8">
+                  <p className="text-3xl md:text-5xl font-bold text-foreground">
+                    12x de <span className="text-primary">R$ 99,70</span>
+                  </p>
+                  <p className="mt-1 text-sm md:text-base text-muted-foreground">ou R$ 997 à vista</p>
                 </div>
 
-                <div className="mt-6 md:mt-8 flex items-start justify-center gap-2 text-left">
+                <p className="mt-5 md:mt-6 text-base md:text-lg font-semibold text-foreground">
+                  18 e 19 de setembro
+                </p>
+
+                <div className="mt-3 flex items-start justify-center gap-2 text-center">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />
                   <p className="text-sm md:text-base text-muted-foreground">
-                    <span className="font-semibold text-foreground">Local:</span> Escritório da SMH Patrimonial, Rua
-                    Prefeito Chagas, 305, Sala 701, Centro, Poços de Caldas, MG.
+                    Escritório da SMH Patrimonial, Rua Prefeito Chagas, 305, Sala 701, Centro, Poços de Caldas, MG.
                   </p>
                 </div>
 
                 <div className="mt-8 md:mt-10 flex justify-center">
-                  <CheckoutButton>Garantir minha vaga por R$ 997</CheckoutButton>
+                  <Button
+                    variant="cta-green"
+                    size="xl"
+                    onClick={openCheckout}
+                    className="w-full sm:w-auto rounded-full text-sm md:text-base h-12 md:h-14"
+                  >
+                    Garantir minha vaga por R$ 997
+                  </Button>
                 </div>
 
-                <p className="mt-4 text-xs md:text-sm text-muted-foreground">
-                  Vagas limitadas pelo tamanho da sala. São só 10.
-                </p>
+                <p className="mt-4 text-xs md:text-sm text-muted-foreground">Vagas limitadas.</p>
               </div>
             </div>
           </Reveal>
@@ -433,9 +564,16 @@ const IncorporacaoPresencial = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-card py-6 md:py-8">
+      <footer className="border-t border-border bg-card py-8 md:py-10">
         <div className="container mx-auto px-4 md:px-6">
-          <p className="text-center text-xs md:text-sm text-muted-foreground">
+          <div className="flex flex-col items-center justify-center gap-5 md:flex-row md:gap-10">
+            <img src={youconLogo} alt="YouCon Arquitetura e Engenharia" className="h-8 md:h-10" />
+            <span className="hidden text-2xl font-light text-border md:inline">+</span>
+            <span className="flex h-10 items-center rounded-md border border-dashed border-border px-4 text-center text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+              [ASSET PENDENTE: logo da SMH Patrimonial]
+            </span>
+          </div>
+          <p className="mt-6 text-center text-xs md:text-sm text-muted-foreground">
             Uma realização YouCon Arquitetura e Engenharia + SMH Patrimonial.
           </p>
           <p className="mt-1 text-center text-xs text-muted-foreground/70">
@@ -443,6 +581,13 @@ const IncorporacaoPresencial = () => {
           </p>
         </div>
       </footer>
+
+      <CheckoutLeadDialog
+        open={checkoutOpen}
+        onOpenChange={setCheckoutOpen}
+        evento={EVENTO}
+        checkoutUrl={CHECKOUT_URL}
+      />
     </main>
   );
 };
