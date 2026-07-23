@@ -20,7 +20,6 @@ import {
 } from "@/components/ui/accordion";
 import AmbientGlow from "@/components/incorporacao/AmbientGlow";
 import Reveal from "@/components/incorporacao-presencial/Reveal";
-import CheckoutLeadDialog from "@/components/incorporacao-presencial/CheckoutLeadDialog";
 import youconLogo from "@/assets/youcon-logo.png";
 import thiagoPhoto from "@/assets/thiago-cardim.png";
 import samuelPhoto from "@/assets/samuel-mosca.jpg";
@@ -32,7 +31,6 @@ import pocosFoto from "@/assets/pocos-evento.webp";
 // Link do checkout externo. O modal de conversão redireciona para esta URL após capturar o lead.
 const CHECKOUT_URL = "https://www.sympla.com.br/evento/incorp-experience-2026/3514481";
 
-const EVENTO = "incorporacao-presencial";
 const EVENTO_NOME = "Incorp Experience 2026";
 const EVENTO_DATAS = "18 e 19 de setembro";
 
@@ -216,7 +214,6 @@ const agenda = [
 const IncorporacaoPresencial = () => {
   usePageMeta();
 
-  const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const bgRef = useRef<HTMLDivElement>(null);
 
@@ -241,8 +238,6 @@ const IncorporacaoPresencial = () => {
   }, []);
 
   const handleNav = (target: string) => scrollToId(target);
-
-  const openCheckout = () => setCheckoutOpen(true);
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-background">
@@ -346,12 +341,14 @@ const IncorporacaoPresencial = () => {
 
             <Reveal delay={320} className="mt-8 md:mt-10 w-full flex justify-center">
               <Button
+                asChild
                 variant="cta-green"
                 size="xl"
-                onClick={openCheckout}
                 className="w-full sm:w-auto rounded-full text-sm md:text-base h-12 md:h-14"
               >
-                Garantir minha vaga
+                <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+                  Garantir minha vaga
+                </a>
               </Button>
             </Reveal>
           </div>
@@ -623,11 +620,13 @@ const IncorporacaoPresencial = () => {
                 </ul>
 
                 <Button
+                  asChild
                   variant={ingresso.destaque ? "cta-green" : "cta-green-soft"}
-                  onClick={openCheckout}
                   className="mt-6 w-full rounded-full h-12 text-sm md:text-base"
                 >
-                  Garantir minha vaga
+                  <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+                    Garantir minha vaga
+                  </a>
                 </Button>
               </Reveal>
             ))}
@@ -655,12 +654,6 @@ const IncorporacaoPresencial = () => {
         </div>
       </footer>
 
-      <CheckoutLeadDialog
-        open={checkoutOpen}
-        onOpenChange={setCheckoutOpen}
-        evento={EVENTO}
-        checkoutUrl={CHECKOUT_URL}
-      />
     </main>
   );
 };
