@@ -7,11 +7,9 @@ import {
   Coffee,
   Flag,
   MapPin,
-  Menu,
   Star,
   UtensilsCrossed,
   Users,
-  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -217,7 +215,6 @@ const agenda = [
 const IncorporacaoPresencial = () => {
   usePageMeta();
 
-  const [menuOpen, setMenuOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const bgRef = useRef<HTMLDivElement>(null);
@@ -242,10 +239,7 @@ const IncorporacaoPresencial = () => {
     return () => window.removeEventListener("scroll", updateParallax);
   }, []);
 
-  const handleNav = (target: string) => {
-    setMenuOpen(false);
-    scrollToId(target);
-  };
+  const handleNav = (target: string) => scrollToId(target);
 
   const openCheckout = () => setCheckoutOpen(true);
 
@@ -256,16 +250,17 @@ const IncorporacaoPresencial = () => {
       {/* Header fixo: transparente no topo, vidro fosco ao rolar */}
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-          scrolled || menuOpen
+          scrolled
             ? "border-b border-border/40 bg-background/70 backdrop-blur-md"
             : "border-b border-transparent bg-transparent"
         }`}
       >
         <div className="container mx-auto flex items-center gap-4 px-4 py-3 md:px-6 md:py-4">
+          {/* No mobile o cabeçalho fica só com o nome do evento, centralizado. */}
           <button
             type="button"
             onClick={() => handleNav("hero")}
-            className="rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="mx-auto rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:mx-0"
             aria-label="Voltar ao topo"
           >
             <span className="text-gradient whitespace-nowrap text-base font-bold tracking-tight md:text-xl">
@@ -298,48 +293,7 @@ const IncorporacaoPresencial = () => {
             </Button>
           </div>
 
-          {/* Botão hambúrguer mobile */}
-          <button
-            type="button"
-            onClick={() => setMenuOpen((v) => !v)}
-            className="ml-auto inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
         </div>
-
-        {/* Menu mobile colapsável */}
-        {menuOpen && (
-          <nav
-            className="border-t border-border/60 bg-background/95 px-4 py-3 md:hidden"
-            aria-label="Navegação principal"
-          >
-            <ul className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <li key={link.target}>
-                  <button
-                    type="button"
-                    onClick={() => handleNav(link.target)}
-                    className="w-full rounded-md px-2 py-2.5 text-left text-sm font-medium text-muted-foreground transition-colors hover:bg-card hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-              <li className="mt-2">
-                <Button
-                  variant="cta-green"
-                  onClick={() => handleNav("investimento")}
-                  className="w-full rounded-full h-11 text-sm"
-                >
-                  Garantir vaga
-                </Button>
-              </li>
-            </ul>
-          </nav>
-        )}
       </header>
 
       {/* Hero */}
