@@ -24,6 +24,7 @@ export default defineConfig(({ mode }) => ({
         main: path.resolve(__dirname, "index.html"),
         incorporacao: path.resolve(__dirname, "incorporacao.html"),
         incorp2026: path.resolve(__dirname, "incorp2026.html"),
+        projetos: path.resolve(__dirname, "projetos.html"),
       },
     },
   },
