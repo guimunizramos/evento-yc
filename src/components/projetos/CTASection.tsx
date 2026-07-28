@@ -8,10 +8,10 @@ const CTASection = () => (
         <div className="p-6 md:p-8 lg:p-12 rounded-xl md:rounded-3xl border-2 border-primary/40 bg-card/50 glow-box">
           <div className="text-center">
             <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">
-              Traga seu terreno. Vamos ver o que dá para <span className="text-primary">projetar nele</span>.
+              O projeto de uma vida começa com <span className="text-primary">expectativa alinhada à realidade</span>.
             </h2>
             <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 md:mb-10 leading-relaxed">
-              Participe desta consultoria gratuita com Thiago Cardim e a equipe YouCon, veja projetos reais abertos por dentro e entenda as possibilidades do seu terreno antes de começar a construir.
+              Participe desta consultoria gratuita com Thiago Cardim e a equipe YouCon, veja projetos reais abertos por dentro e entenda o caminho completo entre a planta e a casa pronta.
             </p>
             <div className="flex flex-col gap-4 md:flex-row md:justify-center md:gap-6">
               <div className="flex items-center justify-center gap-2 text-foreground">
