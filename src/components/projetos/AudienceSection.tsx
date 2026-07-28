@@ -1,25 +1,25 @@
-import { LandPlot, KeyRound, FileText, Hammer } from "lucide-react";
+import { CalendarClock, LandPlot, FileSearch, Receipt } from "lucide-react";
 
 const profiles = [
   {
+    icon: CalendarClock,
+    title: "Vai construir em 2026",
+    description: "Quer entender as diretrizes certas antes de fechar projeto e orçamento.",
+  },
+  {
     icon: LandPlot,
     title: "Já tem o terreno",
-    description: "Quer entender as possibilidades reais de projeto antes de tomar qualquer decisão de obra.",
+    description: "Inclusive terrenos complexos, em declive ou com formato irregular.",
   },
   {
-    icon: KeyRound,
-    title: "Está prestes a comprar",
-    description: "Quer saber avaliar se um terreno comporta a casa que você imagina.",
+    icon: FileSearch,
+    title: "Está avaliando um projeto",
+    description: "Recebeu uma proposta e quer saber o que observar antes de aprovar.",
   },
   {
-    icon: FileText,
-    title: "Tem um projeto em mãos",
-    description: "Recebeu uma planta e quer entender se ela realmente aproveita bem o seu terreno.",
-  },
-  {
-    icon: Hammer,
-    title: "Vai construir em breve",
-    description: "Está no momento de decidir e quer ver soluções reais antes de investir.",
+    icon: Receipt,
+    title: "Quer entender custos de verdade",
+    description: "Busca uma conversa transparente sobre acabamentos, execução e orçamento.",
   },
 ];
 
@@ -32,7 +32,7 @@ const AudienceSection = () => (
           Para quem é <span className="text-white">esta consultoria</span>
         </h2>
         <p className="text-sm md:text-lg lg:text-xl text-primary-foreground/80 leading-relaxed">
-          Um encontro para quem já deu o primeiro passo e quer entender o que é possível fazer com o próprio terreno antes de começar a construir.
+          Um encontro para quem está prestes a tirar do papel o projeto de uma vida e quer referências concretas antes de decidir.
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">

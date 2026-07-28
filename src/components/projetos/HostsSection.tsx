@@ -6,14 +6,14 @@ const hosts = [
     name: "THIAGO CARDIM",
     role: "Arquiteto e CEO da YouCon Arquitetura",
     photo: thiagoPhoto as string | null,
-    description: "À frente da YouCon Arquitetura, Thiago une arquitetura, engenharia e planejamento para desenvolver projetos completos e preparados para uma execução segura. Nesta consultoria, ele abre projetos reais e mostra as decisões que transformaram cada terreno em uma casa que funciona.",
+    description: "À frente da YouCon Arquitetura, Thiago une arquitetura, engenharia e planejamento para desenvolver projetos completos e preparados para uma execução segura. Nesta consultoria, ele abre projetos e obras reais e mostra as decisões técnicas por trás de cada solução.",
   },
   {
     name: "EQUIPE YOUCON",
     role: "Arquitetos e projetistas",
     // Placeholder: Gui substitui pela foto da equipe depois.
     photo: null as string | null,
-    description: "Arquitetos da equipe YouCon participam da consultoria apresentando soluções de planta, implantação e interiores desenvolvidas em projetos reais do escritório — e respondendo às dúvidas dos participantes ao vivo.",
+    description: "Arquitetos da equipe YouCon participam da consultoria apresentando soluções de projeto, escolhas de acabamento e detalhes de execução aplicados em obras reais do escritório — e respondendo às dúvidas dos participantes ao vivo.",
   },
 ];
 
@@ -22,10 +22,10 @@ const HostsSection = () => (
     <div className="relative container mx-auto px-4 md:px-6">
       <div className="text-center mb-4 md:mb-8">
         <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground">
-          Arquitetura, engenharia e <span className="text-primary">projetos que funcionam</span>
+          Arquitetura, engenharia e <span className="text-primary">projetos que saem do papel</span>
         </h2>
         <p className="text-sm md:text-lg text-muted-foreground mt-3 md:mt-6 max-w-2xl mx-auto">
-          Uma consultoria conduzida por quem projeta e executa todos os dias.
+          Uma consultoria conduzida por quem projeta e acompanha a execução todos os dias.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-4xl mx-auto">

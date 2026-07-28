@@ -44,17 +44,17 @@ const HeroSection = () => {
       <div className="container mx-auto md:px-6 relative z-10 flex-1 py-0 flex-row px-6 flex items-start md:items-center justify-center pt-[60px] md:pt-0">
         <div className="max-w-4xl text-center flex-col flex items-center justify-center">
           <div className="inline-flex items-center px-2 py-1 md:px-4 md:py-2 rounded-full bg-primary/10 border border-primary/30 -mt-1.5 mb-3 md:mt-0 md:mb-8">
-            <span className="text-[0.6rem] md:text-sm font-semibold text-primary uppercase tracking-wider">CONVITE EXCLUSIVO YOUCON</span>
+            <span className="text-[0.6rem] md:text-sm font-semibold text-primary uppercase tracking-wider">CONSULTORIA EXCLUSIVA YOUCON · ARQUITETURA NA PRÁTICA</span>
           </div>
 
           <h1 className="max-w-[20rem] sm:max-w-[38rem] md:max-w-[48rem] lg:max-w-[58rem] xl:max-w-[68rem] text-[28px] sm:text-[2.15rem] md:text-[2.75rem] lg:text-[3.4rem] xl:text-[4rem] font-bold text-foreground leading-[1.08] tracking-[-0.02em] mb-4 md:mb-6">
-            Seu terreno tem <span className="text-primary">mais possibilidades</span> do que você imagina.
+            Projetos reais, custos reais e as <span className="text-primary">diretrizes para construir em 2026</span>.
           </h1>
 
           <p className="text-[14px] md:text-[18px] text-[#cfcfcf] leading-relaxed mb-8 md:mb-10 max-w-2xl">
             Uma consultoria ao vivo com o arquiteto{" "}
             <span className="text-foreground font-semibold">Thiago Cardim</span> e a{" "}
-            <span className="text-foreground font-semibold">equipe YouCon</span>: projetos reais abertos, soluções de planta e de interiores, e respostas para quem já está planejando construir.
+            <span className="text-foreground font-semibold">equipe YouCon</span>: abrimos os bastidores de obras reais para mostrar soluções de projeto, decisões de acabamento e o que realmente acontece entre a planta e a casa pronta.
           </p>
 
           <div className="flex flex-col items-center gap-4 w-full">

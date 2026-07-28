@@ -1,21 +1,21 @@
-import { Compass, LayoutDashboard, Sofa } from "lucide-react";
-import VideoTerrainSection from "./VideoTerrainSection";
+import { Eye, Receipt, Target } from "lucide-react";
+import VideoShowcaseSection from "./VideoShowcaseSection";
 
 const benefits = [
   {
-    icon: Compass,
-    title: "Implantação inteligente",
-    description: "Onde a casa se posiciona no terreno define insolação, ventilação, privacidade e aproveitamento da área externa.",
+    icon: Eye,
+    title: "Projetos abertos por dentro",
+    description: "Obras reais da YouCon apresentadas do desafio inicial até a solução executada.",
   },
   {
-    icon: LayoutDashboard,
-    title: "Planta bem resolvida",
-    description: "Circulação, integração e proporção dos ambientes: o que faz uma casa parecer maior do que ela é.",
+    icon: Receipt,
+    title: "Custos e acabamentos na mesa",
+    description: "Uma conversa transparente sobre o que cada escolha representa no orçamento final.",
   },
   {
-    icon: Sofa,
-    title: "Interiores desde o início",
-    description: "Quando arquitetura e interiores são projetados juntos, a casa nasce pronta para ser vivida — sem retrabalho depois.",
+    icon: Target,
+    title: "Diretrizes para 2026",
+    description: "O que priorizar para construir com segurança, funcionalidade e valor construtivo — longe dos modismos.",
   },
 ];
 
@@ -24,14 +24,14 @@ const BenefitsSection = () => (
     <div className="relative container mx-auto px-4 md:px-6">
       <div className="text-center max-w-3xl mx-auto mb-6 md:mb-16">
         <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-6">
-          O que um bom projeto consegue <span className="text-primary">extrair de um terreno</span>?
+          O que ninguém mostra entre o <span className="text-primary">projeto e a obra pronta</span>
         </h2>
         <p className="text-sm md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
-          Dois terrenos idênticos podem virar casas completamente diferentes. A diferença não está no tamanho, está nas decisões de projeto: como a casa se implanta, como a planta se organiza e como os interiores nascem junto com a arquitetura.
+          A maioria das pessoas só vê o resultado final: a foto pronta, o render bonito. Mas entre a planta e a casa entregue existem centenas de decisões técnicas, escolhas de acabamento e ajustes de custo que definem se a expectativa vai bater com a realidade. É isso que vamos abrir nesta consultoria.
         </p>
       </div>
       <div className="mb-10 md:mb-16">
-        <VideoTerrainSection />
+        <VideoShowcaseSection />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
         {benefits.map((benefit, index) => (

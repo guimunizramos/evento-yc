@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const agendaItems = [
-  { title: "Leitura do terreno", description: "Como topografia, orientação solar, vizinhança e dimensões definem o que é possível construir." },
-  { title: "Estudos de caso reais", description: "Projetos desenvolvidos pela YouCon abertos por dentro: o terreno que chegou e a casa que saiu." },
-  { title: "Soluções de implantação", description: "Como posicionar a casa para aproveitar melhor a área externa, a luz e a privacidade." },
-  { title: "Plantas bem resolvidas", description: "Integração, circulação e setorização: as decisões que fazem a casa funcionar no dia a dia." },
-  { title: "Terrenos difíceis", description: "Declive, formato irregular, testada estreita: soluções aplicadas a casos complexos." },
-  { title: "Arquitetura e interiores integrados", description: "Por que projetar os dois juntos gera uma casa melhor e uma obra mais previsível." },
-  { title: "Suas dúvidas ao vivo", description: "Espaço aberto para perguntas de quem já tem terreno e está planejando construir." },
+  { title: "Bastidores de projetos reais", description: "Obras desenvolvidas pela YouCon apresentadas do desafio inicial à solução entregue." },
+  { title: "Terrenos em declive e casos complexos", description: "Como o projeto resolve topografia difícil, formato irregular e restrições de terreno." },
+  { title: "Da planta ao que se vive", description: "Como as decisões de arquitetura e interiores se conectam para gerar uma casa funcional." },
+  { title: "Acabamentos e escolhas de material", description: "O que muda no resultado, na manutenção e no custo ao longo do tempo." },
+  { title: "Custos e realidade de obra", description: "Uma conversa transparente sobre orçamento, imprevistos e alinhamento de expectativa." },
+  { title: "Diretrizes 2026", description: "O que priorizar e o que evitar para construir com segurança e valor construtivo." },
+  { title: "Espaço para perguntas", description: "Dúvidas dos participantes respondidas ao vivo pelo Thiago e pela equipe." },
 ];
 
 const AgendaSection = () => {
@@ -65,7 +65,7 @@ const AgendaSection = () => {
               O que vamos abordar <span className="text-primary">nesta consultoria</span>:
             </h2>
             <p className="text-sm md:text-lg lg:text-xl text-muted-foreground">
-              Um encontro direto e prático, com projetos reais abertos por dentro e as decisões que fizeram cada um funcionar.
+              Um encontro direto e prático, com projetos e obras reais abertos por dentro e as decisões técnicas por trás de cada solução.
             </p>
           </div>
 

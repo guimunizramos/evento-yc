@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 const Projetos = () => {
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = "Consultoria Gratuita: Projetos e Terrenos | YouCon";
+    document.title = "Arquitetura na Prática | Consultoria Gratuita YouCon";
     return () => {
       document.title = previousTitle;
     };
