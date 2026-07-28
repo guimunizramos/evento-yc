@@ -69,3 +69,7 @@ Allow: /
 # Demais
 User-agent: *
 Allow: /
+
+# Conteúdo para leitura por IA (markdown) e mapa do site
+# llms.txt: índice · llms-full.txt: conteúdo completo de todas as páginas
+Sitemap: https://evento.youconprojetos.com.br/sitemap.xml
