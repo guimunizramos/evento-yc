@@ -48,11 +48,11 @@ export function HeroSection({ hero, tema }: { hero: EventoConfig["hero"]; tema: 
             <span className="text-[0.6rem] font-semibold uppercase tracking-wider text-primary md:text-sm">{hero.tag}</span>
           </div>
 
-          <h1 className="mb-4 max-w-[20rem] text-[28px] font-bold leading-[1.08] tracking-[-0.02em] text-foreground sm:max-w-[38rem] sm:text-[2.15rem] md:mb-6 md:max-w-[48rem] md:text-[2.75rem] lg:max-w-[58rem] lg:text-[3.4rem] xl:max-w-[68rem] xl:text-[4rem]">
+          <h1 className="mb-4 max-w-[20rem] text-[26px] font-bold leading-[1.08] tracking-[-0.02em] text-foreground sm:max-w-[38rem] sm:text-[1.9rem] md:mb-6 md:max-w-[48rem] md:text-[2.25rem] lg:max-w-[58rem] lg:text-[2.6rem] xl:max-w-[68rem] xl:text-[2.85rem]">
             <Titulo t={hero.titulo} />
           </h1>
 
-          <p className="mb-8 max-w-2xl text-[14px] leading-relaxed text-[#cfcfcf] md:mb-10 md:text-[18px]">
+          <p className="mb-8 max-w-2xl text-[14px] leading-relaxed text-[#cfcfcf] md:mb-9 md:text-[16px]">
             {hero.subtitulo.map((p, i) => (
               <span key={i} className={p.forte ? "font-semibold text-foreground" : p.destaque ? "font-semibold text-primary" : undefined}>
                 {p.texto}
@@ -64,7 +64,7 @@ export function HeroSection({ hero, tema }: { hero: EventoConfig["hero"]; tema: 
             variant={tema === "verde" ? "cta-green" : "hero"}
             size="xl"
             onClick={irAoFormulario}
-            className="h-12 w-full rounded-full text-sm sm:w-auto md:h-14 md:text-base"
+            className="h-11 w-full rounded-full text-sm sm:w-auto md:h-12 md:text-[15px]"
           >
             {hero.cta.toUpperCase()}
           </Button>

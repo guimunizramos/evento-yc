@@ -40,12 +40,12 @@ export function AgendaSection({ agenda, tema }: Props) {
   }, [timeline, agenda.itens.length]);
 
   return (
-    <section className={`relative py-10 md:py-20 lg:py-28 ${timeline ? "" : "bg-section-alt"}`}>
+    <section className={`relative py-10 md:py-16 lg:py-20 ${timeline ? "" : "bg-section-alt"}`}>
       <div className="container relative mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl">
           <div className="mb-8 text-center md:mb-14">
-            <h2 className="mb-3 text-xl font-bold text-foreground sm:text-2xl md:mb-6 md:text-4xl lg:text-5xl"><Titulo t={agenda.titulo} /></h2>
-            <p className="text-sm text-muted-foreground md:text-lg lg:text-xl">{agenda.subtitulo}</p>
+            <h2 className="mb-3 text-lg font-bold text-foreground sm:text-xl md:mb-6 md:text-3xl lg:text-[2.25rem]"><Titulo t={agenda.titulo} /></h2>
+            <p className="text-sm text-muted-foreground md:text-base lg:text-[17px]">{agenda.subtitulo}</p>
           </div>
 
           {timeline ? (
@@ -74,14 +74,14 @@ export function AgendaSection({ agenda, tema }: Props) {
               {agenda.itens.map((item) => (
                 <div key={item.titulo} className="flex items-start gap-4 rounded-lg border border-border bg-card/50 p-4 transition-all duration-300 hover:border-primary/30 md:rounded-xl md:p-5">
                   <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20 md:h-8 md:w-8"><Check className="h-3 w-3 text-primary md:h-5 md:w-5" /></div>
-                  <p className="text-base leading-relaxed text-foreground md:text-lg">{item.titulo}</p>
+                  <p className="text-sm leading-relaxed text-foreground md:text-base">{item.titulo}</p>
                 </div>
               ))}
             </div>
           )}
 
           <div className="text-center">
-            <Button variant={tema === "verde" ? "cta-green" : "hero-outline"} size="xl" onClick={irAoFormulario} className="h-12 w-full rounded-full text-sm sm:w-auto md:h-14 md:text-base">
+            <Button variant={tema === "verde" ? "cta-green" : "hero-outline"} size="xl" onClick={irAoFormulario} className="h-11 w-full rounded-full text-sm sm:w-auto md:h-12 md:text-[15px]">
               {agenda.cta.toUpperCase()}
             </Button>
           </div>

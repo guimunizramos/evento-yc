@@ -12,13 +12,13 @@ export function CTASection({ cta, formulario, webhookEvento, tema }: Props) {
     [MapPin, "", cta.local],
   ] as const;
   return (
-    <section id="cta-section" className="relative py-10 md:py-20 lg:py-28">
+    <section id="cta-section" className="relative py-10 md:py-16 lg:py-20">
       <div className="container relative mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl">
           <div className="glow-box rounded-xl border-2 border-primary/40 bg-card/50 p-6 md:rounded-3xl md:p-8 lg:p-12">
             <div className="text-center">
-              <h2 className="mb-3 text-xl font-bold text-foreground sm:text-2xl md:mb-6 md:text-4xl lg:text-5xl"><Titulo t={cta.titulo} /></h2>
-              <p className="mb-8 text-base leading-relaxed text-muted-foreground md:mb-10 md:text-lg lg:text-xl">{cta.descricao}</p>
+              <h2 className="mb-3 text-lg font-bold text-foreground sm:text-xl md:mb-6 md:text-3xl lg:text-[2.25rem]"><Titulo t={cta.titulo} /></h2>
+              <p className="mb-8 text-sm leading-relaxed text-muted-foreground md:mb-10 md:text-base lg:text-[17px]">{cta.descricao}</p>
               <div className="flex flex-col gap-4 md:flex-row md:justify-center md:gap-6">
                 {dados.map(([I, rotulo, valor]) => (
                   <div key={valor} className="flex items-center justify-center gap-2 text-foreground">

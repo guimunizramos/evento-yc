@@ -8,11 +8,11 @@ type Props = { beneficios: EventoConfig["beneficios"]; video?: EventoConfig["vid
 
 export function BenefitsSection({ beneficios, video, grafico }: Props) {
   return (
-    <section className="relative py-10 md:py-20 lg:py-28">
+    <section className="relative py-10 md:py-16 lg:py-20">
       <div className="container relative mx-auto px-4 md:px-6">
         <div className="mx-auto mb-6 max-w-3xl text-center md:mb-16">
-          <h2 className="mb-3 text-xl font-bold text-foreground sm:text-2xl md:mb-6 md:text-4xl lg:text-5xl"><Titulo t={beneficios.titulo} /></h2>
-          {beneficios.subtitulo && <p className="text-sm leading-relaxed text-muted-foreground md:text-lg lg:text-xl">{beneficios.subtitulo}</p>}
+          <h2 className="mb-3 text-lg font-bold text-foreground sm:text-xl md:mb-6 md:text-3xl lg:text-[2.25rem]"><Titulo t={beneficios.titulo} /></h2>
+          {beneficios.subtitulo && <p className="text-sm leading-relaxed text-muted-foreground md:text-base lg:text-[17px]">{beneficios.subtitulo}</p>}
         </div>
 
         {video && (
@@ -28,7 +28,7 @@ export function BenefitsSection({ beneficios, video, grafico }: Props) {
               <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 transition-colors duration-300 group-hover:bg-primary/20 md:mb-6 md:h-16 md:w-16 md:rounded-xl">
                 <Icone nome={b.icone} className="h-5 w-5 text-primary md:h-8 md:w-8" strokeWidth={1.75} />
               </div>
-              <h3 className="mb-2 text-base font-bold text-foreground md:mb-4 md:text-xl lg:text-2xl">{b.titulo}</h3>
+              <h3 className="mb-2 text-base font-bold text-foreground md:mb-3 md:text-lg">{b.titulo}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground md:text-base">{b.descricao}</p>
             </div>
           ))}

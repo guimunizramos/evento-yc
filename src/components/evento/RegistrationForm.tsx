@@ -119,7 +119,7 @@ export function RegistrationForm({ evento, formulario, tema }: Props) {
                 {errors.state && <p className="text-xs text-destructive">{errors.state.message}</p>}
               </div>
             </div>
-            <Button type="button" variant={cta} size="lg" className="mt-6 h-12 w-full rounded-full text-base" onClick={avancar}>CONTINUAR</Button>
+            <Button type="button" variant={cta} size="lg" className="mt-6 h-11 w-full rounded-full text-[15px]" onClick={avancar}>CONTINUAR</Button>
           </>
         )}
 
@@ -152,10 +152,10 @@ export function RegistrationForm({ evento, formulario, tema }: Props) {
               {errors.investmentAmount && <p className="text-xs text-destructive">{errors.investmentAmount.message}</p>}
             </div>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row-reverse">
-              <Button type="submit" variant={cta} size="lg" className="h-12 w-full rounded-full text-base" disabled={!isValid || enviando}>
+              <Button type="submit" variant={cta} size="lg" className="h-11 w-full rounded-full text-[15px]" disabled={!isValid || enviando}>
                 {enviando ? "Redirecionando..." : "CONFIRMAR INSCRIÇÃO"}
               </Button>
-              <Button type="button" variant={ctaSuave} size="lg" className="h-12 w-full rounded-full text-base sm:w-auto sm:px-6" onClick={() => setEtapa(1)} disabled={enviando}>Voltar</Button>
+              <Button type="button" variant={ctaSuave} size="lg" className="h-11 w-full rounded-full text-[15px] sm:w-auto sm:px-6" onClick={() => setEtapa(1)} disabled={enviando}>Voltar</Button>
             </div>
           </>
         )}

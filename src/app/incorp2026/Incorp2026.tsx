@@ -149,12 +149,12 @@ export function Incorp2026() {
               <span className="text-[0.6rem] font-semibold uppercase tracking-wider text-primary md:text-sm">Imersão presencial exclusiva</span>
             </Reveal>
             <Reveal delay={80}>
-              <h1 className="mt-5 max-w-[22rem] text-[30px] font-bold leading-[1.08] tracking-[-0.02em] text-foreground sm:max-w-[40rem] sm:text-[2.25rem] md:mt-8 md:max-w-[52rem] md:text-[2.9rem] lg:text-[3.5rem]">
+              <h1 className="mt-5 max-w-[22rem] text-[26px] font-bold leading-[1.1] tracking-[-0.02em] text-foreground sm:max-w-[40rem] sm:text-[1.9rem] md:mt-8 md:max-w-[52rem] md:text-[2.25rem] lg:text-[2.6rem]">
                 Você entendeu o caminho. Agora vem <span className="text-primary">colocar em prática</span>.
               </h1>
             </Reveal>
             <Reveal delay={160}>
-              <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-[#cfcfcf] md:mt-6 md:text-[18px]">
+              <p className="mt-5 max-w-2xl text-[14px] leading-relaxed text-[#cfcfcf] md:mt-6 md:text-[16px]">
                 Dois dias presenciais com <span className="font-semibold text-foreground">Thiago Cardim</span> e <span className="font-semibold text-foreground">Samuel Mosca</span> para transformar o conteúdo de Incorporação Imobiliária em um plano real de ação.
               </p>
             </Reveal>
@@ -164,18 +164,18 @@ export function Incorp2026() {
               ))}
             </Reveal>
             <Reveal delay={320} className="mt-8 flex w-full justify-center md:mt-10">
-              <Button variant="cta-green" size="xl" onClick={() => irPara("investimento")} className="h-12 w-full rounded-full text-sm sm:w-auto md:h-14 md:text-base">Garantir minha vaga</Button>
+              <Button variant="cta-green" size="xl" onClick={() => irPara("investimento")} className="h-11 w-full rounded-full text-sm sm:w-auto md:h-12 md:text-[15px]">Garantir minha vaga</Button>
             </Reveal>
           </div>
         </div>
       </section>
 
-      <section id="cronograma" className="relative scroll-mt-24 py-10 md:py-20 lg:py-28">
+      <section id="cronograma" className="relative scroll-mt-24 py-10 md:py-16 lg:py-20">
         <div className="container relative mx-auto px-4 md:px-6">
           <Reveal className="mx-auto mb-8 max-w-3xl text-center md:mb-14">
             <span className="text-xs font-semibold uppercase tracking-wider text-primary md:text-sm">Dois dias, um percurso</span>
-            <h2 className="mt-3 text-xl font-bold leading-tight text-foreground sm:text-2xl md:text-4xl lg:text-5xl">O online abriu a porta. O presencial te leva <span className="text-primary">pra execução</span>.</h2>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:mt-6 md:text-lg lg:text-xl">No workshop você viu o mapa completo da incorporação. Aqui, numa sala fechada e com turma exclusiva, você caminha o percurso ao lado de quem já fez, com casos reais e dois dias inteiros de conteúdo.</p>
+            <h2 className="mt-3 text-lg font-bold leading-tight text-foreground sm:text-lg md:text-3xl lg:text-[2.25rem]">O online abriu a porta. O presencial te leva <span className="text-primary">pra execução</span>.</h2>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:mt-6 md:text-base lg:text-[17px]">No workshop você viu o mapa completo da incorporação. Aqui, numa sala fechada e com turma exclusiva, você caminha o percurso ao lado de quem já fez, com casos reais e dois dias inteiros de conteúdo.</p>
             <p className="mt-4 text-sm font-semibold text-foreground md:text-base">Feito para arquitetos, engenheiros, construtores, investidores e profissionais do mercado imobiliário.</p>
           </Reveal>
           <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
@@ -183,7 +183,7 @@ export function Incorp2026() {
               <Reveal key={dia.day} delay={i * 120} className="glow-box overflow-hidden rounded-xl border-2 border-primary/40 bg-card md:rounded-2xl">
                 <div className="bg-orange-gradient px-5 py-4 md:px-7 md:py-5">
                   <p className="text-[10px] font-semibold uppercase tracking-wider text-white/80 md:text-xs">Dia {i + 1}</p>
-                  <h3 className="text-lg font-bold text-white md:text-2xl">{dia.day}</h3>
+                  <h3 className="text-base font-bold text-white md:text-xl">{dia.day}</h3>
                 </div>
                 <ul className="space-y-4 p-5 md:space-y-6 md:p-7">
                   {dia.blocks.map(({ time, label, icon: I }) => (
@@ -199,12 +199,12 @@ export function Incorp2026() {
         </div>
       </section>
 
-      <section id="conteudo" className="relative scroll-mt-24 py-10 md:py-20 lg:py-28">
+      <section id="conteudo" className="relative scroll-mt-24 py-10 md:py-16 lg:py-20">
         <div className="container relative mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-3xl">
             <Reveal className="mb-8 text-center md:mb-12">
               <span className="text-xs font-semibold uppercase tracking-wider text-primary md:text-sm">Do terreno à entrega</span>
-              <h2 className="mt-3 text-xl font-bold text-foreground sm:text-2xl md:text-4xl lg:text-5xl">O que você vai <span className="text-primary">dominar</span> em dois dias</h2>
+              <h2 className="mt-3 text-lg font-bold text-foreground sm:text-lg md:text-3xl lg:text-[2.25rem]">O que você vai <span className="text-primary">dominar</span> em dois dias</h2>
             </Reveal>
             <Reveal>
               <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
@@ -225,12 +225,12 @@ export function Incorp2026() {
         </div>
       </section>
 
-      <section id="quem-conduz" className="relative scroll-mt-24 py-10 md:py-20 lg:py-28">
+      <section id="quem-conduz" className="relative scroll-mt-24 py-10 md:py-16 lg:py-20">
         <div className="container relative mx-auto px-4 md:px-6">
           <Reveal className="mx-auto mb-6 max-w-3xl text-center md:mb-10">
             <span className="text-xs font-semibold uppercase tracking-wider text-primary md:text-sm">Quem conduz</span>
-            <h2 className="mt-3 text-xl font-bold text-foreground sm:text-2xl md:text-4xl lg:text-5xl">Duas visões que se <span className="text-primary">completam</span></h2>
-            <p className="mt-3 text-sm text-muted-foreground md:mt-4 md:text-lg">A engenharia da obra e a estratégia do negócio, no mesmo lugar.</p>
+            <h2 className="mt-3 text-lg font-bold text-foreground sm:text-lg md:text-3xl lg:text-[2.25rem]">Duas visões que se <span className="text-primary">completam</span></h2>
+            <p className="mt-3 text-sm text-muted-foreground md:mt-4 md:text-base">A engenharia da obra e a estratégia do negócio, no mesmo lugar.</p>
           </Reveal>
           <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:gap-12">
             {hosts.map((h, i) => (
@@ -238,7 +238,7 @@ export function Incorp2026() {
                 <div className="relative mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full border-2 border-primary/30 transition-colors duration-300 group-hover:border-primary md:mb-6 md:h-32 md:w-32">
                   <Image src={h.photo} alt={h.name} fill sizes="128px" className="object-cover" />
                 </div>
-                <h3 className="mb-2 text-lg font-bold text-primary md:text-2xl">{h.name}</h3>
+                <h3 className="mb-2 text-base font-bold text-primary md:text-lg">{h.name}</h3>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-foreground md:mb-5 md:text-sm">{h.role}</p>
                 <p className="text-sm leading-relaxed text-muted-foreground md:text-base">{h.description}</p>
               </Reveal>
@@ -247,16 +247,16 @@ export function Incorp2026() {
         </div>
       </section>
 
-      <section className="relative py-10 md:py-20 lg:py-28">
+      <section className="relative py-10 md:py-16 lg:py-20">
         <div className="container relative mx-auto px-4 md:px-6">
           <Reveal className="mx-auto mb-8 max-w-3xl text-center md:mb-14">
-            <h2 className="text-xl font-bold text-foreground sm:text-2xl md:text-4xl lg:text-5xl">O que só acontece <span className="text-primary">presencialmente</span></h2>
+            <h2 className="text-lg font-bold text-foreground sm:text-lg md:text-3xl lg:text-[2.25rem]">O que só acontece <span className="text-primary">presencialmente</span></h2>
           </Reveal>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8 lg:gap-12">
             {diferenciais.map(({ icon: I, title, description }, i) => (
               <Reveal key={title} delay={i * 100} className="rounded-xl border border-border bg-card p-5 text-center md:rounded-2xl md:p-8 md:text-left">
-                <span className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 md:mx-0 md:h-14 md:w-14"><I className="h-6 w-6 text-primary md:h-7 md:w-7" /></span>
-                <h3 className="mb-2 text-lg font-bold text-foreground md:text-xl">{title}</h3>
+                <span className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 md:mx-0 md:h-12 md:w-12"><I className="h-6 w-6 text-primary md:h-7 md:w-7" /></span>
+                <h3 className="mb-2 text-base font-bold text-foreground md:text-lg">{title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground md:text-base">{description}</p>
               </Reveal>
             ))}
@@ -264,7 +264,7 @@ export function Incorp2026() {
         </div>
       </section>
 
-      <section id="estadia" className="relative scroll-mt-24 py-10 md:py-20 lg:py-24">
+      <section id="estadia" className="relative scroll-mt-24 py-10 md:py-16 lg:py-20">
         <div className="container relative mx-auto px-4 md:px-6">
           <Reveal className="shadow-card overflow-hidden rounded-xl bg-gradient-brand md:rounded-3xl">
             <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
@@ -272,19 +272,19 @@ export function Incorp2026() {
                 <Image src={midia("img/pocos-evento.webp")} alt="Vista aérea de Poços de Caldas, com o Palace Hotel e a serra da Mantiqueira ao fundo" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
               </div>
               <div className="flex flex-col justify-center p-6 md:p-12 lg:p-16">
-                <h2 className="text-xl font-bold leading-tight text-white sm:text-2xl md:text-4xl">Vem de fora? A gente cuida da sua estadia.</h2>
-                <p className="mt-4 text-sm leading-relaxed text-white/90 md:text-lg">Poços de Caldas é uma cidade turística e aconchegante da serra da Mantiqueira, com águas termais, parques e boa gastronomia. Um ótimo motivo para estender o fim de semana e emendar a imersão com um descanso de verdade.</p>
-                <p className="mt-3 text-sm leading-relaxed text-white/90 md:text-lg">Temos uma parceria de hospedagem com valores especiais para os participantes. Vamos enviar todos os detalhes por email depois da sua inscrição.</p>
+                <h2 className="text-lg font-bold leading-tight text-white sm:text-lg md:text-3xl">Vem de fora? A gente cuida da sua estadia.</h2>
+                <p className="mt-4 text-sm leading-relaxed text-white/90 md:text-base">Poços de Caldas é uma cidade turística e aconchegante da serra da Mantiqueira, com águas termais, parques e boa gastronomia. Um ótimo motivo para estender o fim de semana e emendar a imersão com um descanso de verdade.</p>
+                <p className="mt-3 text-sm leading-relaxed text-white/90 md:text-base">Temos uma parceria de hospedagem com valores especiais para os participantes. Vamos enviar todos os detalhes por email depois da sua inscrição.</p>
               </div>
             </div>
           </Reveal>
         </div>
       </section>
 
-      <section id="investimento" className="relative scroll-mt-24 py-10 md:py-20 lg:py-28">
+      <section id="investimento" className="relative scroll-mt-24 py-10 md:py-16 lg:py-20">
         <div className="container relative mx-auto px-4 md:px-6">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <h2 className="text-xl font-bold leading-tight text-foreground sm:text-2xl md:text-4xl lg:text-5xl">Uma imersão. Vagas limitadas.<br />Dois dias que mudam o seu <span className="text-primary">jogo</span>.</h2>
+            <h2 className="text-lg font-bold leading-tight text-foreground sm:text-lg md:text-3xl lg:text-[2.25rem]">Uma imersão. Vagas limitadas.<br />Dois dias que mudam o seu <span className="text-primary">jogo</span>.</h2>
             <div className="mt-5 flex flex-col items-center gap-2 md:mt-6 md:gap-2.5">
               <p className="flex items-center gap-2 text-base font-semibold text-foreground md:text-lg"><CalendarDays className="h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />{EVENTO_DATAS}</p>
               <p className="flex items-center gap-2 text-sm text-muted-foreground md:text-base"><Building2 className="h-4 w-4 shrink-0 text-primary md:h-5 md:w-5" />{LOCAL_NOME}</p>
@@ -300,7 +300,7 @@ export function Incorp2026() {
                 <h3 className={`mt-2 text-lg font-bold md:text-xl ${ing.destaque ? "text-primary" : "text-foreground"}`}>{ing.nome}</h3>
                 {ing.tag && <span className="mt-3 inline-flex w-fit items-center rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-[11px] font-semibold text-primary md:text-xs">{ing.tag}</span>}
                 <div className="mt-5">
-                  <p className="text-3xl font-bold text-foreground md:text-4xl">{ing.valor}</p>
+                  <p className="text-2xl font-bold text-foreground md:text-3xl">{ing.valor}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{PARCELAMENTO}</p>
                   <p className="text-xs text-muted-foreground/70">{TAXA_NOTA}</p>
                 </div>
@@ -309,7 +309,7 @@ export function Incorp2026() {
                     <li key={item} className="flex items-start gap-2.5 text-left"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" /><span className="text-sm leading-relaxed text-muted-foreground">{item}</span></li>
                   ))}
                 </ul>
-                <Button asChild variant={ing.destaque ? "cta-green" : "cta-green-soft"} className="mt-6 h-12 w-full rounded-full text-sm md:text-base">
+                <Button asChild variant={ing.destaque ? "cta-green" : "cta-green-soft"} className="mt-6 h-11 w-full rounded-full text-sm md:text-[15px]">
                   <a href={ing.checkout} target="_blank" rel="noopener noreferrer">Garantir minha vaga</a>
                 </Button>
               </Reveal>
