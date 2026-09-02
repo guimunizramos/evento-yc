@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
     return [
       // Eventos já encerrados: a URL antiga não pode virar 404 para quem chega de anúncio ou e-mail
       { source: "/steel-frame", destination: "/", permanent: false },
+      { source: "/aniversario", destination: "/", permanent: false },
+      { source: "/treinamento-imagens-ia", destination: "/", permanent: false },
+      { source: "/projetos", destination: "/", permanent: false },
       { source: "/incorporacao-presencial", destination: "/incorp2026", permanent: false },
     ];
   },
