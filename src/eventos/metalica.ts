@@ -4,7 +4,7 @@ import type { EventoConfig } from "./tipos";
 /**
  * Consultoria de Estrutura Metálica, 24/09/2026 às 20h, só com o Thiago.
  * A copy vem da edição de 02/04/2026 (repo lp-metalica), ajustada para um
- * apresentador. O vídeo entra assim que estiver pronto.
+ * apresentador. Vídeo (VSL 9:16, 55s) e pôster no MinIO em metalica/.
  */
 export const metalica: EventoConfig = {
   slug: "metalica",
@@ -47,8 +47,8 @@ export const metalica: EventoConfig = {
     ],
   },
   video: {
-    src: null,
-    poster: null,
+    src: midia("metalica/vsl-metalica.mp4"),
+    poster: midia("metalica/vsl-metalica-poster.jpg"),
     legenda: "Assista ao vídeo e entenda o que você vai ver nesta consultoria.",
   },
   publico: {
