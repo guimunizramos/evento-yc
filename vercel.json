@@ -1,15 +1,3 @@
 {
-  "redirects": [
-    {
-      "source": "/incorporacao-presencial",
-      "destination": "/incorp2026",
-      "permanent": false
-    }
-  ],
-  "rewrites": [
-    { "source": "/incorporacao", "destination": "/incorporacao.html" },
-    { "source": "/incorp2026", "destination": "/incorp2026.html" },
-    { "source": "/projetos", "destination": "/projetos.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  "framework": "nextjs"
 }

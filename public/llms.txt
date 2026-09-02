@@ -1,19 +1,15 @@
 # YouCon Arquitetura e Engenharia — Eventos
 
-> Páginas de eventos, workshops e imersões da YouCon Arquitetura e Engenharia, escritório de arquitetura de alto padrão liderado pelo arquiteto Thiago Cardim. Os eventos cobrem planejamento de obra, tecnologias construtivas (Light Steel Frame), incorporação imobiliária (online e presencial, em parceria com a SMH Patrimonial) e uso de IA na criação de imagens de projeto.
-
-Este site (evento.youconprojetos.com.br) é uma aplicação de página única (SPA) — cada rota abaixo é uma landing page independente. O conteúdo completo de todas as páginas está em [/llms-full.txt](https://evento.youconprojetos.com.br/llms-full.txt).
+> Páginas de eventos, workshops e consultorias da YouCon Arquitetura e Engenharia, escritório de arquitetura de alto padrão liderado pelo arquiteto Thiago Cardim. Os eventos cobrem planejamento de obra, sistemas construtivos (Estrutura Metálica) e incorporação imobiliária (em parceria com a SMH Patrimonial).
 
 ## Páginas
 
 - [Antes de Construir: Erros que Podem Encarecer a Sua Obra](https://evento.youconprojetos.com.br/): consultoria gratuita ao vivo com o arquiteto Thiago Cardim sobre os erros que começam antes da construção (terreno, projeto, orçamento e decisões antecipadas).
-- [Light Steel Frame — uma nova forma de construir](https://evento.youconprojetos.com.br/steel-frame): consultoria gratuita com Thiago Cardim sobre a tecnologia construtiva Light Steel Frame aplicada ao alto padrão (velocidade, previsibilidade e conforto).
-- [Workshop Incorporação Imobiliária](https://evento.youconprojetos.com.br/incorporacao): workshop online e gratuito com Thiago Cardim (YouCon) e Samuel Mosca (SMH Patrimonial) sobre como estruturar empreendimentos imobiliários viáveis e rentáveis — produto, projeto, viabilidade e incorporação.
-- [Incorp Experience 2026 — Imersão presencial](https://evento.youconprojetos.com.br/incorp2026): imersão presencial de dois dias (18 e 19 de setembro, Poços de Caldas/MG) com Thiago Cardim e Samuel Mosca, do terreno à entrega, incluindo estruturação jurídica, societária e financeira. Ingressos pagos.
-- [Aniversário YouCon — 6 anos](https://evento.youconprojetos.com.br/aniversario): página comemorativa dos 6 anos da YouCon (desde 2020) com condição especial para novos projetos.
-- [Treinamento — Otimização de Imagens com IA](https://evento.youconprojetos.com.br/treinamento-imagens-ia): treinamento sobre uso do agente de IA da YouCon (YouRender) para criar imagens de projeto mais realistas e impactantes.
+- [Workshop Incorporação Imobiliária](https://evento.youconprojetos.com.br/incorporacao): workshop online e gratuito com Thiago Cardim (YouCon) e Samuel Mosca (SMH Patrimonial) sobre como estruturar empreendimentos imobiliários viáveis e rentáveis.
+- [Consultoria Estrutura Metálica](https://evento.youconprojetos.com.br/metalica): consultoria fechada e gratuita com Thiago Cardim (YouCon) e o engenheiro Rodrigo Vilela (Arka Engenharia) sobre vãos livres, velocidade de obra e o comparativo financeiro entre concreto e estrutura metálica.
 
 ## Quem conduz
 
 - **Thiago Cardim** — arquiteto e CEO da YouCon Arquitetura e Engenharia. Especialista em projetos residenciais de alto padrão, com mais de 400 projetos desenvolvidos em 60 cidades do Brasil.
-- **Samuel Mosca** — formado em Direito, cofundador da SMH Patrimonial. Especialista em incorporação imobiliária e estruturação de negócios (estratégia, contratos, societário, tributário, modelagem financeira e captação).
+- **Samuel Mosca** — formado em Direito, cofundador da SMH Patrimonial. Especialista em incorporação imobiliária e estruturação de negócios.
+- **Rodrigo Vilela** — engenheiro da Arka Engenharia, especialista em cálculo estrutural e soluções em BIM para estruturas metálicas.

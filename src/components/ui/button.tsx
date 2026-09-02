@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
@@ -10,19 +9,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary-hover",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        // Hero CTA - Primary orange with glow animation
+        // CTA laranja com brilho pulsante
         hero: "bg-primary text-primary-foreground hover:bg-primary-hover animate-pulse-glow font-bold tracking-wide",
-        // Outline orange for secondary CTAs
-        "hero-outline": "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground font-semibold",
-        // CTA verde preenchido (LP de incorporação) — degradê com brilho pulsante
+        "hero-outline":
+          "border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground font-semibold",
+        // CTA verde em degradê, com pulso, usado nos workshops
         "cta-green":
           "bg-[linear-gradient(135deg,hsl(150_85%_26%)_0%,hsl(145_75%_36%)_50%,hsl(140_70%_45%)_100%)] text-white hover:brightness-110 animate-pulse-glow-green font-bold tracking-wide",
-        // Variante secundária do CTA verde, sem pulso, para ações de apoio
         "cta-green-soft":
           "bg-[linear-gradient(135deg,hsl(150_85%_22%)_0%,hsl(145_60%_30%)_100%)] text-white hover:brightness-125 font-semibold",
       },
@@ -31,13 +26,9 @@ const buttonVariants = cva(
         sm: "h-9 rounded-md px-3",
         lg: "h-12 rounded-md px-8 text-base",
         xl: "h-14 rounded-lg px-10 text-lg",
-        icon: "h-10 w-10",
       },
     },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
+    defaultVariants: { variant: "default", size: "default" },
   },
 );
 
