@@ -1,15 +1,15 @@
 # YouCon Arquitetura e Engenharia — Eventos
 
-> Páginas de eventos, workshops e consultorias da YouCon Arquitetura e Engenharia, escritório de arquitetura de alto padrão liderado pelo arquiteto Thiago Cardim. Os eventos cobrem planejamento de obra, sistemas construtivos (Estrutura Metálica) e incorporação imobiliária (em parceria com a SMH Patrimonial).
+> Páginas de eventos, workshops, imersões e consultorias da YouCon Arquitetura e Engenharia, escritório de arquitetura de alto padrão liderado pelo arquiteto Thiago Cardim. Os eventos cobrem planejamento de obra, sistemas construtivos (Estrutura Metálica) e incorporação imobiliária (online e presencial, em parceria com a SMH Patrimonial).
 
 ## Páginas
 
 - [Antes de Construir: Erros que Podem Encarecer a Sua Obra](https://evento.youconprojetos.com.br/): consultoria gratuita ao vivo com o arquiteto Thiago Cardim sobre os erros que começam antes da construção (terreno, projeto, orçamento e decisões antecipadas).
 - [Workshop Incorporação Imobiliária](https://evento.youconprojetos.com.br/incorporacao): workshop online e gratuito com Thiago Cardim (YouCon) e Samuel Mosca (SMH Patrimonial) sobre como estruturar empreendimentos imobiliários viáveis e rentáveis.
-- [Consultoria Estrutura Metálica](https://evento.youconprojetos.com.br/metalica): consultoria fechada e gratuita com Thiago Cardim (YouCon) e o engenheiro Rodrigo Vilela (Arka Engenharia) sobre vãos livres, velocidade de obra e o comparativo financeiro entre concreto e estrutura metálica.
+- [Incorp Experience 2026 — Imersão presencial](https://evento.youconprojetos.com.br/incorp2026): imersão presencial de dois dias (18 e 19 de setembro de 2026, Poços de Caldas/MG) com Thiago Cardim e Samuel Mosca, do terreno à entrega, incluindo estruturação jurídica, societária e financeira. Ingressos pagos via Sympla.
+- [Consultoria Estrutura Metálica](https://evento.youconprojetos.com.br/metalica): consultoria fechada, online e gratuita, em 24 de setembro de 2026 às 20h, com o arquiteto Thiago Cardim, sobre vãos livres, velocidade de obra e o comparativo financeiro entre concreto e estrutura metálica.
 
 ## Quem conduz
 
 - **Thiago Cardim** — arquiteto e CEO da YouCon Arquitetura e Engenharia. Especialista em projetos residenciais de alto padrão, com mais de 400 projetos desenvolvidos em 60 cidades do Brasil.
-- **Samuel Mosca** — formado em Direito, cofundador da SMH Patrimonial. Especialista em incorporação imobiliária e estruturação de negócios.
-- **Rodrigo Vilela** — engenheiro da Arka Engenharia, especialista em cálculo estrutural e soluções em BIM para estruturas metálicas.
+- **Samuel Mosca** — formado em Direito, cofundador da SMH Patrimonial. Especialista em incorporação imobiliária e estruturação de negócios (estratégia, contratos, societário, tributário, modelagem financeira e captação).

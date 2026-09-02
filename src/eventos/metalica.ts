@@ -2,10 +2,9 @@ import { midia } from "@/lib/midia";
 import type { EventoConfig } from "./tipos";
 
 /**
- * Consultoria de Estrutura Metálica. A copy vem da edição de 02/04/2026
- * (repo lp-metalica), na estrutura nova dos eventos.
- *
- * TODO: validar data do evento, vídeo e link do grupo antes de publicar.
+ * Consultoria de Estrutura Metálica, 24/09/2026 às 20h, só com o Thiago.
+ * A copy vem da edição de 02/04/2026 (repo lp-metalica), ajustada para um
+ * apresentador. O vídeo entra assim que estiver pronto.
  */
 export const metalica: EventoConfig = {
   slug: "metalica",
@@ -14,20 +13,22 @@ export const metalica: EventoConfig = {
   meta: {
     titulo: "Consultoria Estrutura Metálica | YouCon",
     descricao:
-      "Participe da consultoria fechada com especialistas e entenda por que a Estrutura Metálica é a escolha certa para a sua casa. Inscreva-se gratuitamente.",
+      "Participe da consultoria fechada com o arquiteto Thiago Cardim e entenda por que a Estrutura Metálica é a escolha certa para a sua casa. Inscreva-se gratuitamente.",
     ogImage: midia("img/metalica-hero-desktop.jpg"),
   },
   banner: {
     antes: "Consultoria gratuita e ao vivo em:",
     depois: "A consultoria já começou!",
-    dataIso: "2026-09-30T20:00:00-03:00",
-    rotuloData: "30/09/2026 às 20h",
+    dataIso: "2026-09-24T20:00:00-03:00",
+    rotuloData: "24/09/2026 às 20h",
   },
   hero: {
     tag: "Convite exclusivo YouCon",
     titulo: { antes: "Vãos livres, elegância e velocidade: o diferencial da ", destaque: "Estrutura Metálica", depois: " para a sua nova casa." },
     subtitulo: [
-      { texto: "Chega de limitações no seu projeto. Descubra como a " },
+      { texto: "Chega de limitações no seu projeto. " },
+      { texto: "Thiago Cardim", forte: true },
+      { texto: " mostra como a " },
       { texto: "Estrutura Metálica", destaque: true },
       { texto: " entrega residências de alto padrão mais rápido, com ambientes 100% integrados e um nível de sofisticação que o concreto comum não acompanha." },
     ],
@@ -62,39 +63,32 @@ export const metalica: EventoConfig = {
   },
   agenda: {
     titulo: { antes: "O que vamos apresentar nesta ", destaque: "consultoria fechada", depois: ":" },
-    subtitulo: "Nesta mesa redonda exclusiva, o CEO da YouCon, Thiago Cardim, e o engenheiro Rodrigo Vilela (Arka) vão abrir os bastidores de casas reais e tirar todas as suas dúvidas.",
+    subtitulo: "Nesta consultoria exclusiva, o CEO da YouCon, Thiago Cardim, abre os bastidores de casas reais em estrutura metálica e responde às suas dúvidas ao vivo.",
     estilo: "timeline",
     itens: [
       { titulo: "A força da Estrutura Metálica na prática", descricao: "Como o sistema cria vãos livres e integração total entre os ambientes." },
       { titulo: "Linha de produção e montagem", descricao: "Como funciona a fabricação que elimina o improviso do canteiro de obras." },
       { titulo: "Abertura de números reais", descricao: "O comparativo financeiro entre o concreto e a estrutura metálica." },
-      { titulo: "Mesa redonda", descricao: "O momento exato para você trazer as perguntas sobre o seu terreno ou as ideias que tem para a sua futura casa." },
+      { titulo: "Perguntas ao vivo", descricao: "O momento exato para você trazer as dúvidas sobre o seu terreno ou as ideias que tem para a sua futura casa." },
     ],
     cta: "Garantir meu acesso gratuito",
   },
   hosts: {
-    titulo: { antes: "A união da ", destaque: "estética com a engenharia" },
+    titulo: { antes: "Arquitetura, engenharia e uma ", destaque: "nova forma de construir" },
     itens: [
       {
         nome: "Thiago Cardim",
-        cargo: "Anfitrião",
+        cargo: "Arquiteto",
         titulo: "CEO YouCon",
         foto: midia("img/thiago-cardim.png"),
-        descricao: "Arquiteto focado em entregar residências únicas. É especialista em traduzir os desejos das famílias em projetos atemporais, utilizando métodos construtivos que garantem conforto e previsibilidade.",
-      },
-      {
-        nome: "Rodrigo Vilela",
-        cargo: "Convidado especial",
-        titulo: "Arka Engenharia",
-        foto: midia("img/rodrigo-vilela.png"),
-        descricao: "Engenheiro especialista em cálculo estrutural e soluções em BIM. É o responsável por transformar projetos arquitetônicos de alta complexidade em estruturas metálicas viáveis e extremamente seguras.",
+        descricao: "Arquiteto focado em entregar residências únicas. É especialista em traduzir os desejos das famílias em projetos atemporais, utilizando métodos construtivos que garantem conforto e previsibilidade. Nesta consultoria, ele explica como a Estrutura Metálica funciona, esclarece as principais dúvidas e mostra em quais situações ela é a escolha mais inteligente para uma casa de alto padrão.",
       },
     ],
   },
   cta: {
     titulo: { antes: "O projeto da sua nova casa não precisa ter limites. ", destaque: "Inscreva-se." },
-    descricao: "Essa é a oportunidade de tirar todas as suas dúvidas diretamente com quem projeta e com quem constrói, antes de tomar sua decisão.",
-    data: "30/09",
+    descricao: "Essa é a oportunidade de tirar todas as suas dúvidas diretamente com quem projeta, antes de tomar a sua decisão.",
+    data: "24/09",
     horario: "20:00",
     local: "Call fechada ao vivo (Meet)",
   },
