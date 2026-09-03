@@ -46,12 +46,12 @@ export function ComparisonChart() {
   const fade = (ms: number) => ({ opacity: visivel ? 1 : 0, transition: `opacity 400ms ease-out ${ms}ms` });
 
   return (
-    <div ref={ref} className="flex flex-col rounded-xl border border-border bg-card/50 p-5 md:rounded-2xl md:p-8 lg:h-[560px]">
-      <h3 className="text-center text-base font-bold text-foreground md:text-left md:text-xl">
+    <div ref={ref} className="flex flex-col rounded-xl border border-border bg-card/50 p-4 md:rounded-2xl md:p-6 lg:h-[500px]">
+      <h3 className="text-center text-[15px] font-bold text-foreground md:text-left md:text-lg">
         <span className="block md:inline">Decisões isoladas</span> <span className="block md:inline">x</span>{" "}
         <span className="block text-primary md:inline">empreendimento bem estruturado</span>
       </h3>
-      <p className="mt-2 text-center text-sm leading-relaxed text-muted-foreground md:text-left md:text-base">
+      <p className="mt-2 text-center text-[13px] leading-relaxed text-muted-foreground md:text-left md:text-sm">
         Quando projeto, viabilidade e incorporação são desenvolvidos em conjunto, as decisões se tornam mais precisas e o empreendimento ganha mais potencial de resultado.
       </p>
       <div className="mt-5 flex flex-1 flex-col justify-center md:mt-7">

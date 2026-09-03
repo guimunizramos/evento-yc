@@ -28,7 +28,7 @@ export function HeroSection({ hero, tema }: { hero: EventoConfig["hero"]; tema: 
     <section className="relative flex min-h-screen flex-col overflow-hidden py-8 md:py-[95px]">
       <header className="relative z-20 py-3 md:py-6">
         <div className="container mx-auto flex items-center justify-center px-4 md:px-6">
-          <Image src={LOGO_YOUCON} alt="YouCon Arquitetura" width={192} height={48} priority className="h-8 w-auto md:h-12" />
+          <Image src={LOGO_YOUCON} alt="YouCon Arquitetura" width={192} height={48} priority className="h-7 w-auto md:h-10" />
         </div>
       </header>
 
@@ -48,11 +48,11 @@ export function HeroSection({ hero, tema }: { hero: EventoConfig["hero"]; tema: 
             <span className="text-[0.6rem] font-semibold uppercase tracking-wider text-primary md:text-sm">{hero.tag}</span>
           </div>
 
-          <h1 className="mb-4 max-w-[20rem] text-[26px] font-bold leading-[1.08] tracking-[-0.02em] text-foreground sm:max-w-[38rem] sm:text-[1.9rem] md:mb-6 md:max-w-[48rem] md:text-[2.25rem] lg:max-w-[58rem] lg:text-[2.6rem] xl:max-w-[68rem] xl:text-[2.85rem]">
+          <h1 className="mb-4 max-w-[20rem] text-[24px] font-bold leading-[1.1] tracking-[-0.02em] text-foreground sm:max-w-[36rem] sm:text-[1.7rem] md:mb-6 md:max-w-[44rem] md:text-[2rem] lg:max-w-[52rem] lg:text-[2.25rem] xl:max-w-[58rem] xl:text-[2.45rem]">
             <Titulo t={hero.titulo} />
           </h1>
 
-          <p className="mb-8 max-w-2xl text-[14px] leading-relaxed text-[#cfcfcf] md:mb-9 md:text-[16px]">
+          <p className="mb-8 max-w-xl text-[13px] leading-relaxed text-[#cfcfcf] md:mb-9 md:text-[15px]">
             {hero.subtitulo.map((p, i) => (
               <span key={i} className={p.forte ? "font-semibold text-foreground" : p.destaque ? "font-semibold text-primary" : undefined}>
                 {p.texto}
@@ -64,7 +64,7 @@ export function HeroSection({ hero, tema }: { hero: EventoConfig["hero"]; tema: 
             variant={tema === "verde" ? "cta-green" : "hero"}
             size="xl"
             onClick={irAoFormulario}
-            className="h-11 w-full rounded-full text-sm sm:w-auto md:h-12 md:text-[15px]"
+            className="h-10 w-full rounded-full text-[13px] sm:w-auto md:h-11 md:text-sm"
           >
             {hero.cta.toUpperCase()}
           </Button>

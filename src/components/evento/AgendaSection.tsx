@@ -44,8 +44,8 @@ export function AgendaSection({ agenda, tema }: Props) {
       <div className="container relative mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-4xl">
           <div className="mb-8 text-center md:mb-14">
-            <h2 className="mb-3 text-lg font-bold text-foreground sm:text-xl md:mb-6 md:text-3xl lg:text-[2.25rem]"><Titulo t={agenda.titulo} /></h2>
-            <p className="text-sm text-muted-foreground md:text-base lg:text-[17px]">{agenda.subtitulo}</p>
+            <h2 className="mb-2.5 text-base font-bold text-foreground sm:text-lg md:mb-5 md:text-2xl lg:text-[1.75rem]"><Titulo t={agenda.titulo} /></h2>
+            <p className="text-[13px] text-muted-foreground md:text-[15px] lg:text-base">{agenda.subtitulo}</p>
           </div>
 
           {timeline ? (
@@ -62,8 +62,8 @@ export function AgendaSection({ agenda, tema }: Props) {
                     )}
                     <span className={`absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full border-2 text-[10px] font-bold transition-all duration-500 md:h-8 md:w-8 md:text-xs ${ok ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground"}`} aria-hidden="true">{i + 1}</span>
                     <div className={`transition-all duration-500 ${ok ? "translate-y-0 opacity-100" : "translate-y-1 opacity-80"}`}>
-                      <h3 className="mb-1 text-base font-semibold text-foreground md:mb-2 md:text-lg">{item.titulo}</h3>
-                      {item.descricao && <p className="text-sm leading-relaxed text-muted-foreground md:text-base">{item.descricao}</p>}
+                      <h3 className="mb-1 text-[15px] font-semibold text-foreground md:mb-1.5 md:text-base">{item.titulo}</h3>
+                      {item.descricao && <p className="text-[13px] leading-relaxed text-muted-foreground md:text-sm">{item.descricao}</p>}
                     </div>
                   </li>
                 );
@@ -74,14 +74,14 @@ export function AgendaSection({ agenda, tema }: Props) {
               {agenda.itens.map((item) => (
                 <div key={item.titulo} className="flex items-start gap-4 rounded-lg border border-border bg-card/50 p-4 transition-all duration-300 hover:border-primary/30 md:rounded-xl md:p-5">
                   <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20 md:h-8 md:w-8"><Check className="h-3 w-3 text-primary md:h-5 md:w-5" /></div>
-                  <p className="text-sm leading-relaxed text-foreground md:text-base">{item.titulo}</p>
+                  <p className="text-[13px] leading-relaxed text-foreground md:text-sm">{item.titulo}</p>
                 </div>
               ))}
             </div>
           )}
 
           <div className="text-center">
-            <Button variant={tema === "verde" ? "cta-green" : "hero-outline"} size="xl" onClick={irAoFormulario} className="h-11 w-full rounded-full text-sm sm:w-auto md:h-12 md:text-[15px]">
+            <Button variant={tema === "verde" ? "cta-green" : "hero-outline"} size="xl" onClick={irAoFormulario} className="h-10 w-full rounded-full text-[13px] sm:w-auto md:h-11 md:text-sm">
               {agenda.cta.toUpperCase()}
             </Button>
           </div>
