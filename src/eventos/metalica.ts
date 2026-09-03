@@ -8,7 +8,7 @@ import type { EventoConfig } from "./tipos";
  */
 export const metalica: EventoConfig = {
   slug: "metalica",
-  webhookEvento: "estrutura-metalica",
+  webhookEvento: "metalica",
   tema: "verde",
   meta: {
     titulo: "Consultoria Estrutura Metálica | YouCon",
