@@ -51,6 +51,12 @@ export const metalica: EventoConfig = {
     poster: midia("metalica/vsl-metalica-poster.jpg"),
     legenda: "Assista ao vídeo e entenda o que você vai ver nesta consultoria.",
   },
+  estrutura: {
+    titulo: { antes: "Do projeto à ", destaque: "estrutura" },
+    subtitulo: "Locação dos pilares, pilares, vigas e cobertura. É assim que uma casa em estrutura metálica nasce: peça por peça, com precisão de fábrica.",
+    etapas: ["Locação dos pilares", "Pilares", "Vigas e cobertura"],
+    fonte: "Projeto estrutural real de uma residência YouCon em Poços de Caldas",
+  },
   publico: {
     titulo: { antes: "Para quem é ", destaque: "esta consultoria" },
     subtitulo: "Um encontro para quem está planejando construir e quer decidir o sistema construtivo com informação, antes de fechar projeto e orçamento.",

@@ -107,3 +107,29 @@
   0%, 100% { box-shadow: 0 0 20px hsl(145 70% 40% / 0.4); }
   50% { box-shadow: 0 0 40px hsl(145 70% 40% / 0.6); }
 }
+
+/* Seção "Do projeto à estrutura": o scroll só escreve estas variáveis; o resto é CSS */
+.estrutura-cena {
+  --deitar: 0;
+  --pilares: 0;
+  --vigas: 0;
+  --cobertura: 0;
+}
+.estrutura-cena .plano {
+  opacity: calc(1 - var(--pilares) * 0.55);
+}
+.estrutura-cena .camada.blocos path {
+  opacity: calc(var(--deitar) * 0.9);
+}
+.estrutura-cena .camada.pilares path,
+.estrutura-cena .camada.vigas path,
+.estrutura-cena .camada.cobertura path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--q));
+  opacity: calc(min(1, var(--q) * 4));
+}
+/* q = progresso da camada, adiantado ou atrasado pela altura da peça (--a) */
+.estrutura-cena .camada.pilares path { --q: clamp(0, calc((var(--pilares) - var(--a) * 0.35) / 0.65), 1); }
+.estrutura-cena .camada.vigas path { --q: clamp(0, calc((var(--vigas) - var(--a) * 0.45) / 0.55), 1); }
+.estrutura-cena .camada.cobertura path { --q: clamp(0, calc((var(--cobertura) - var(--a) * 0.45) / 0.55), 1); }
+.estrutura-cena .camada.pilares path[fill] { stroke-dasharray: none; stroke-dashoffset: 0; }

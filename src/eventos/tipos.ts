@@ -58,6 +58,12 @@ export type EventoConfig = {
 
   publico?: { titulo: Titulo; subtitulo: string; itens: Item[] };
 
+  /**
+   * Animação guiada pelo scroll: locação dos pilares deita em perspectiva e a
+   * estrutura metálica sobe sobre ela (dados em components/evento/estrutura).
+   */
+  estrutura?: { titulo: Titulo; subtitulo: string; etapas: [string, string, string]; fonte: string };
+
   agenda: {
     titulo: Titulo;
     subtitulo: string;

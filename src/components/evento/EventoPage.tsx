@@ -4,6 +4,7 @@ import { CountdownBanner } from "./CountdownBanner";
 import { HeroSection } from "./HeroSection";
 import { BenefitsSection } from "./BenefitsSection";
 import { AudienceSection } from "./AudienceSection";
+import { EstruturaSection } from "./estrutura/EstruturaSection";
 import { AgendaSection } from "./AgendaSection";
 import { HostsSection } from "./HostsSection";
 import { CTASection } from "./CTASection";
@@ -20,6 +21,7 @@ export function EventoPage({ evento }: { evento: EventoConfig }) {
       <CountdownBanner {...evento.banner} />
       <HeroSection hero={evento.hero} tema={evento.tema} />
       <BenefitsSection beneficios={evento.beneficios} video={evento.video} grafico={evento.grafico} />
+      {evento.estrutura && <EstruturaSection {...evento.estrutura} />}
       {evento.publico && <AudienceSection publico={evento.publico} />}
       <AgendaSection agenda={evento.agenda} tema={evento.tema} />
       <HostsSection hosts={evento.hosts} />
