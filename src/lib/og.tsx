@@ -1,10 +1,11 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { ImageResponse } from "next/og";
+import sharp from "sharp";
 import type { EventoConfig } from "@/eventos/tipos";
 
 export const OG_TAMANHO = { width: 1200, height: 630 };
-export const OG_TIPO = "image/png";
+export const OG_TIPO = "image/jpeg";
 
 const LARANJA = "#FF6B00";
 
@@ -28,7 +29,8 @@ async function fundo(url: string) {
 /**
  * Arte de Open Graph no padrão da casa: foto do evento escurecida, tag em
  * pílula laranja, nome do evento em caixa alta, data espaçada e logo.
- * Gerada no build por cada rota via opengraph-image.tsx.
+ * Gerada no build por cada rota via opengraph-image.tsx. Sai em JPEG:
+ * o PNG do ImageResponse passa de 1 MB e o WhatsApp descarta prévia pesada.
  */
 export async function imagemOg(evento: EventoConfig) {
   const [m800, m600, logo, foto] = await Promise.all([
@@ -40,7 +42,7 @@ export async function imagemOg(evento: EventoConfig) {
   const titulo = (evento.meta.ogTitulo ?? evento.meta.titulo).toUpperCase();
   const tamanhoTitulo = titulo.length > 16 ? 92 : 118;
 
-  return new ImageResponse(
+  const png = new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", position: "relative", background: "#050505", fontFamily: "Montserrat" }}>
         {foto && (
@@ -78,4 +80,6 @@ export async function imagemOg(evento: EventoConfig) {
       ],
     },
   );
+  const jpeg = await sharp(Buffer.from(await png.arrayBuffer())).jpeg({ quality: 84, mozjpeg: true }).toBuffer();
+  return new Response(jpeg, { headers: { "Content-Type": OG_TIPO } });
 }
