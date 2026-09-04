@@ -30,7 +30,11 @@ export type EventoConfig = {
   /** "laranja" = consultorias (CTA hero); "verde" = workshops (CTA verde) */
   tema: "laranja" | "verde";
 
-  meta: { titulo: string; descricao: string; ogImage: string };
+  /**
+   * ogImage: imagem pronta (1200×630). Sem ela, a página gera a sua a partir de
+   * ogTitulo (o nome curto do evento, em caixa alta na arte) via opengraph-image.
+   */
+  meta: { titulo: string; descricao: string; ogImage?: string; ogTitulo?: string };
 
   banner: { antes: string; depois: string; dataIso: string; rotuloData: string };
 

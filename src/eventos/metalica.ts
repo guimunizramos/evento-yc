@@ -14,7 +14,7 @@ export const metalica: EventoConfig = {
     titulo: "Consultoria Estrutura Metálica | YouCon",
     descricao:
       "Participe da consultoria fechada com o arquiteto Thiago Cardim e entenda por que a Estrutura Metálica é a escolha certa para a sua casa. Inscreva-se gratuitamente.",
-    ogImage: midia("img/metalica-hero-desktop.jpg"),
+    ogTitulo: "Estrutura Metálica",
   },
   banner: {
     antes: "Consultoria gratuita e ao vivo em:",

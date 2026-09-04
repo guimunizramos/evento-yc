@@ -15,14 +15,15 @@ export function metadataDoEvento(e: EventoConfig): Metadata {
       url,
       title: e.meta.titulo,
       description: e.meta.descricao,
-      images: [{ url: e.meta.ogImage }],
+      // Sem ogImage, quem entra é a opengraph-image.tsx da rota
+      ...(e.meta.ogImage ? { images: [{ url: e.meta.ogImage }] } : {}),
       locale: "pt_BR",
     },
     twitter: {
       card: "summary_large_image",
       title: e.meta.titulo,
       description: e.meta.descricao,
-      images: [e.meta.ogImage],
+      ...(e.meta.ogImage ? { images: [e.meta.ogImage] } : {}),
     },
   };
 }
