@@ -97,9 +97,9 @@ export function EstruturaSection({ titulo, subtitulo, etapas, fonte }: Props) {
           <p className="text-[13px] leading-relaxed text-muted-foreground md:text-[15px] lg:text-base">{subtitulo}</p>
         </div>
 
-        {/* No celular o desenho transborda a largura de propósito: cabe mais altura na tela */}
-        <div ref={cenaRef} className="estrutura-cena relative mx-auto flex w-full max-w-5xl items-center justify-center overflow-hidden">
-          <svg viewBox={`${vx} ${vy} ${vw} ${vh}`} className="h-auto w-[125%] max-w-none shrink-0 sm:w-full" role="img" aria-label="Animação: locação dos pilares virando a estrutura metálica de uma casa">
+        {/* Desenho inteiro em qualquer tela, com um respiro mínimo nas laterais no celular */}
+        <div ref={cenaRef} className="estrutura-cena relative mx-auto flex w-full max-w-5xl items-center justify-center px-2 sm:px-0">
+          <svg viewBox={`${vx} ${vy} ${vw} ${vh}`} className="h-auto w-full" role="img" aria-label="Animação: locação dos pilares virando a estrutura metálica de uma casa">
             {/* Locação dos pilares: eixos e pilares em vista de cima; deita até a base da isometria */}
             <g ref={planoRef} transform={`matrix(${dados.P0.join(" ")})`} className="plano">
               <g stroke="hsl(0 0% 40%)" strokeWidth="0.9" strokeDasharray="6 6">
