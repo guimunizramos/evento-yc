@@ -54,7 +54,6 @@ export const metalica: EventoConfig = {
   estrutura: {
     titulo: { antes: "Do projeto à ", destaque: "estrutura" },
     subtitulo: "Descubra como nasce uma casa de alto padrão sem pilares no meio da sala, com vãos abertos e fachadas de vidro. A estrutura metálica torna isso possível, e a consultoria mostra se ela faz sentido para o seu projeto.",
-    etapas: ["Locação dos pilares", "Pilares", "Vigas e cobertura"],
     fonte: "Projeto estrutural real de uma residência YouCon em Poços de Caldas",
   },
   publico: {

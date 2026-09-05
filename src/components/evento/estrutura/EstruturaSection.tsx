@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import type { EventoConfig } from "@/eventos/tipos";
 import { Titulo } from "../Titulo";
 import dados from "./dados.json";
@@ -44,16 +44,15 @@ const camadas = {
  * entra na tela; não prende a rolagem. O SVG é montado uma só vez e, a cada
  * quadro, só mudam quatro variáveis CSS e a matriz do plano.
  */
-export function EstruturaSection({ titulo, subtitulo, etapas, fonte }: Props) {
+export function EstruturaSection({ titulo, subtitulo, fonte }: Props) {
   const cenaRef = useRef<HTMLDivElement>(null);
   const planoRef = useRef<SVGGElement>(null);
-  const [etapa, setEtapa] = useState(-1);
 
   useEffect(() => {
     const cena = cenaRef.current, plano = planoRef.current;
     if (!cena || !plano) return;
     const { P0, T } = dados;
-    let ultimaEtapa = -1, quadro = 0;
+    let quadro = 0;
 
     const aplicar = (p: number) => {
       const d = suave(janela(p, ATO.deitar));
@@ -63,8 +62,6 @@ export function EstruturaSection({ titulo, subtitulo, etapas, fonte }: Props) {
       cena.style.setProperty("--pilares", janela(p, ATO.pilares).toFixed(3));
       cena.style.setProperty("--vigas", janela(p, ATO.vigas).toFixed(3));
       cena.style.setProperty("--cobertura", janela(p, ATO.cobertura).toFixed(3));
-      const e = p < ATO.pilares[0] ? 0 : p < ATO.vigas[0] ? 1 : 2;
-      if (e !== ultimaEtapa) { ultimaEtapa = e; setEtapa(e); }
     };
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { aplicar(1); return; }
@@ -133,17 +130,7 @@ export function EstruturaSection({ titulo, subtitulo, etapas, fonte }: Props) {
           </svg>
         </div>
 
-        <div className="mt-5 text-center md:mt-8">
-          <ol className="mx-auto flex max-w-xl items-center justify-center gap-2 md:gap-4" aria-label="Etapas">
-            {etapas.map((nome, i) => (
-              <li key={nome} className={`flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider transition-colors duration-500 md:text-xs ${i === etapa ? "text-primary" : "text-muted-foreground/70"}`}>
-                <span className={`flex h-5 w-5 items-center justify-center rounded-full border text-[10px] transition-colors duration-500 ${i <= etapa ? "border-primary bg-primary text-primary-foreground" : "border-border"}`}>{i + 1}</span>
-                <span className="hidden sm:inline">{nome}</span>
-              </li>
-            ))}
-          </ol>
-          <p className="mt-3 text-[11px] text-muted-foreground/70 md:text-xs">{fonte}</p>
-        </div>
+        <p className="mt-4 text-center text-[11px] text-muted-foreground/70 md:mt-6 md:text-xs">{fonte}</p>
       </div>
     </section>
   );
